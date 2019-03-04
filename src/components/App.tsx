@@ -1,17 +1,13 @@
 import React from "react";
 
 interface AppProps {
-    who: String;
+    who?: String;
 }
 
 export default class App extends React.Component<AppProps, any> {
     state = {
         text: "Hello, world!",
     };
-
-    constructor(props: AppProps) {
-        super(props);
-    }
 
     componentDidMount() {
         setTimeout(() => {
@@ -23,10 +19,12 @@ export default class App extends React.Component<AppProps, any> {
 
     render() {
         const { who } = this.props;
+        const { text } = this.state;
 
         return (
             <div>
-                {`Hello, ${who}!`}<br/>{this.state.text}
+                {`Hello, ${who}!`}<br/>
+                {text}
             </div>
         );
     }
