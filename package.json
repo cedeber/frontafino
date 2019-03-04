@@ -1,0 +1,38 @@
+{
+  "name": "typescript-rollup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc --project tsconfig.json",
+    "rollup:prod": "rollup --config rollup.config.js --environment INCLUDE_DEPS,BUILD:production",
+    "rollup:dev": "npm run rollup:prod -- --environment INCLUDE_DEPS,BUILD:development",
+    "rollup:watch": "npm run rollup:prod -- --environment INCLUDE_DEPS,BUILD:development --watch",
+    "build:dev": "npm run tsc && npm run rollup:dev",
+    "build:prod": "npm run tsc && npm run rollup:prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cedeber/typescript-rollup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cedeber/typescript-rollup/issues"
+  },
+  "homepage": "https://github.com/cedeber/typescript-rollup#readme",
+  "dependencies": {
+    "@types/react": "^16.8.6",
+    "@types/react-dom": "^16.8.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "rollup": "^1.4.1",
+    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-terser": "^4.0.4",
+    "typescript": "^3.3.3333"
+  }
+}

@@ -1,0 +1,8 @@
+# Project
+node_modules
+out
+build
+
+# IDE & OS
+.idea
+.DS_Store
