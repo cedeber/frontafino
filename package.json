@@ -1,8 +1,7 @@
 {
   "name": "typescript-rollup",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "...",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc --project tsconfig.json",
@@ -12,17 +11,6 @@
     "build:dev": "npm run tsc && npm run rollup:dev",
     "build:prod": "npm run tsc && npm run rollup:prod"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cedeber/typescript-rollup.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cedeber/typescript-rollup/issues"
-  },
-  "homepage": "https://github.com/cedeber/typescript-rollup#readme",
   "dependencies": {
     "@types/react": "^16.8.6",
     "@types/react-dom": "^16.8.2",
