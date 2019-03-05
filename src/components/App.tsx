@@ -1,7 +1,7 @@
 import React from "react";
 
 interface AppProps {
-    who?: String;
+    who?: string;
 }
 
 export default class App extends React.Component<AppProps, any> {
