@@ -4,12 +4,13 @@
   "description": "...",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc --project tsconfig.json",
-    "rollup:prod": "rollup --config rollup.config.js --environment INCLUDE_DEPS,BUILD:production",
-    "rollup:dev": "npm run rollup:prod -- --environment INCLUDE_DEPS,BUILD:development",
-    "rollup:watch": "npm run rollup:prod -- --environment INCLUDE_DEPS,BUILD:development --watch",
-    "build:dev": "npm run tsc && npm run rollup:dev",
-    "build:prod": "npm run tsc && npm run rollup:prod"
+    "tsc:prod": "tsc --project tsconfig.json",
+    "tsc:watch": "tsc -w --project tsconfig.json",
+    "rollup:prod": "rollup --config rollup.config.js --environment INCLUDE_DEPS,BUILD:production,NODE_ENV:production",
+    "rollup:dev": "npm run rollup:prod -- --environment INCLUDE_DEPS,BUILD:development,NODE_ENV:development",
+    "rollup:watch": "npm run rollup:prod -- --environment INCLUDE_DEPS,BUILD:development,NODE_ENV:development --watch",
+    "build:dev": "npm run tsc:prod && npm run rollup:dev",
+    "build:prod": "npm run tsc:prod && npm run rollup:prod"
   },
   "dependencies": {
     "@types/react": "^16.8.6",

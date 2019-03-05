@@ -8,7 +8,7 @@ export default {
     cache: process.env.BUILD === "development",
     plugins: [
         replace({
-            "process.env.NODE_ENV": JSON.stringify(process.env.BUILD),
+            "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
         }),
         resolve(),
         commonjs({
