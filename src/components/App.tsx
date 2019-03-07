@@ -1,8 +1,13 @@
 import React from "react";
+import styled from "@emotion/styled";
 
 interface AppProps {
     who?: string;
 }
+
+const T = styled.span`
+    color: red;
+`;
 
 export default class App extends React.Component<AppProps, any> {
     state = {
@@ -23,8 +28,9 @@ export default class App extends React.Component<AppProps, any> {
 
         return (
             <div>
-                {`Hello, ${who}!`}<br/>
-                {text}
+                {`Hello, ${who}!`}
+                <br />
+                <T>{text}</T>
             </div>
         );
     }
