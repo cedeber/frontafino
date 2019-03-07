@@ -1,7 +1,7 @@
 # Project
 node_modules
-out
-build
+__out__
+static
 
 # IDE & OS
 .idea

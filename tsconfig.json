@@ -21,7 +21,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitThis": true,
-    "outDir": "out",
+    "outDir": "__out__",
     "removeComments": true,
     "sourceMap": true,
     "strictNullChecks": true,
