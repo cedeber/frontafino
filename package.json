@@ -4,7 +4,7 @@
   "description": "...",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc:watch": "tsc -w --project tsconfig.json",
+    "tsc:watch": "npm run tsc -- -w",
     "rollup:watch": "npm run rollup -- --environment NODE_ENV:development --watch",
     "tsc": "tsc --project tsconfig.json",
     "rollup": "rollup --config rollup.config.js --environment NODE_ENV:production",
