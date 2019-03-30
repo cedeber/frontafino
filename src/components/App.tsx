@@ -14,6 +14,10 @@ export default class App extends React.Component<AppProps, any> {
         text: "Hello, world!",
     };
 
+    handleClick = () => {
+        window.alert("Hello, world!")
+    }
+
     componentDidMount() {
         setTimeout(() => {
             this.setState({
@@ -30,7 +34,7 @@ export default class App extends React.Component<AppProps, any> {
             <div>
                 {`Hello, ${who}!`}
                 <br />
-                <T>{text}</T>
+                <T onClick={this.handleClick}>{text}</T>
             </div>
         );
     }
