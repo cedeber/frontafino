@@ -1,3 +1,3 @@
-export default function log(what) {
+export default function log(what: string) {
     console.log(what);
 }
