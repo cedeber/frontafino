@@ -3,9 +3,11 @@ import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
 
+const devMode = process.env.NODE_ENV === "development"
+
 export default {
     input: "__out__/main.js",
-    cache: process.env.NODE_ENV === "development",
+    cache: devMode,
     plugins: [
         replace({
             "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
@@ -13,7 +15,7 @@ export default {
         resolve(),
         commonjs({
             include: "node_modules/**",
-            sourcemap: process.env.NODE_ENV === "development",
+            sourcemap: devMode,
             namedExports: {
                 "node_modules/react/index.js": [
                     "createElement",
@@ -24,11 +26,11 @@ export default {
                 ],
             },
         }),
-        process.env.NODE_ENV === "production" ? terser() : null,
+        devMode ? null : terser(),
     ],
     output: {
         dir: "static",
         format: "esm",
-        sourcemap: process.env.NODE_ENV === "development",
+        sourcemap: devMode,
     },
 };
