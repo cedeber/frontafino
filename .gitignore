@@ -3,6 +3,10 @@ node_modules
 __out__
 static
 
-# IDE & OS
+# IDE
 .idea
+.vscode
+
+# OS
 .DS_Store
+Thumbs.db
