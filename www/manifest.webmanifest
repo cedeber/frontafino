@@ -1,6 +1,6 @@
 {
-    "name": "PWA Boilerplate",
-    "short_name": "PWABP",
+    "name": "PWA Starter kit",
+    "short_name": "PWAST",
     "start_url": "/",
     "display": "standalone",
     "theme_color": "#2D2D2D",
