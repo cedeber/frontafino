@@ -2,9 +2,10 @@ import typescript from 'rollup-plugin-typescript';
 import replace from "rollup-plugin-replace";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
+import workz0r from "rollup-plugin-workz0r";
 import { terser } from "rollup-plugin-terser";
 
-const devMode = process.env.NODE_ENV === "development"
+const devMode = process.env.NODE_ENV === "development";
 
 export default {
     input: "src/main.tsx",
@@ -28,10 +29,11 @@ export default {
                 ],
             },
         }),
+        workz0r(),
         devMode ? null : terser(),
     ],
     output: {
-        dir: "static",
+        dir: "www/",
         format: "esm",
         sourcemap: devMode,
     },

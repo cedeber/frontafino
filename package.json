@@ -5,8 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npm run rollup -- --environment NODE_ENV:development --watch",
-    "rollup": "rollup --config rollup.config.js --environment NODE_ENV:production",
-    "build": "rimraf static && npm run rollup"
+    "build": "rollup --config rollup.config.js --environment NODE_ENV:production",
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
@@ -15,13 +14,13 @@
     "@types/react-dom": "^16.8.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "rimraf": "^2.6.3",
     "rollup": "^1.7.4",
     "rollup-plugin-commonjs": "^9.2.2",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-replace": "^2.1.1",
     "rollup-plugin-terser": "^4.0.4",
     "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-workz0r": "^0.2.1",
     "tslib": "^1.9.3",
     "typescript": "^3.4.1"
   }

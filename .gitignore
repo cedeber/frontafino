@@ -1,7 +1,8 @@
 # Project
 node_modules
-__out__
-static
+www/*.js
+www/*.js.map
+!www/service-worker.js
 package-lock.json
 
 # IDE
