@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true,
+        "worker": true,
+        "serviceworker": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "prettier",
+        "prettier/@typescript-eslint"
+    ],
+    "globals": {
+        "$": true,
+        "Snipcart": true,
+        "THREE": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "react"
+    ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
+}
