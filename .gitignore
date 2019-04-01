@@ -2,6 +2,7 @@
 node_modules
 __out__
 static
+package-lock.json
 
 # IDE
 .idea
