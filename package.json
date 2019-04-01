@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "...",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "ts-jest",
     "clean": "rimraf 'www/+(main|chunk)*+(.js|.js.map)'",
     "rollup": "rollup --config rollup.config.js --environment NODE_ENV:production",
     "watch": "npm run rollup -- --environment NODE_ENV:development --watch",
@@ -30,9 +30,12 @@
     "typescript-lit-html-plugin": "^0.9.0"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.11",
     "@typescript-eslint/eslint-plugin": "^1.5.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-react": "^7.12.4"
+    "eslint-plugin-react": "^7.12.4",
+    "jest": "^24.5.0",
+    "ts-jest": "^24.0.1"
   }
 }
