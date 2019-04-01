@@ -15,8 +15,8 @@ export default class App extends React.Component<AppProps, any> {
     };
 
     handleClick = () => {
-        window.alert("Hello, world!")
-    }
+        window.alert("Hello, world!");
+    };
 
     componentDidMount() {
         setTimeout(() => {

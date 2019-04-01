@@ -16,4 +16,4 @@ worker.onmessage = event => {
     console.log(message);
 };
 
-worker.postMessage({message: "Hello, worker"});
+worker.postMessage({ message: "Hello, worker" });

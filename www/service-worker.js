@@ -71,7 +71,7 @@ async function staleWhileRevaliate(cacheName, fetchEvent) {
         .then(response => response
             ? Promise.race([
                 Promise.resolve(response),
-                networkFirst(cacheName, fetchEvent)
+                networkFirst(cacheName, fetchEvent),
             ])
             : networkFirst(cacheName, fetchEvent));
 }
