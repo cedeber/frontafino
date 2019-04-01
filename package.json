@@ -4,8 +4,10 @@
   "description": "...",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf 'www/+(main|chunk)*+(.js|.js.map)'",
+    "rollup": "rollup --config rollup.config.js --environment NODE_ENV:production",
     "watch": "npm run rollup -- --environment NODE_ENV:development --watch",
-    "build": "rollup --config rollup.config.js --environment NODE_ENV:production",
+    "build": "npm run clean && npm run rollup"
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
@@ -14,6 +16,7 @@
     "@types/react-dom": "^16.8.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "rimraf": "^2.6.3",
     "rollup": "^1.7.4",
     "rollup-plugin-commonjs": "^9.2.2",
     "rollup-plugin-node-resolve": "^4.0.1",
