@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.static(path.resolve("assets")));
 
-app.get(/.+\.(js|webmanifest)$/, function(request, response) {
+app.get(/.+\.(js|js.map|webmanifest)$/, function(request, response) {
     response.sendFile(path.resolve(path.join("www", request.path)));
 });
 
