@@ -24,10 +24,5 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": false,
     "target": "es2017"
-  },
-  "plugins": [
-    {
-      "name": "typescript-lit-html-plugin"
-    }
-  ]
+  }
 }
