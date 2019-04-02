@@ -5,7 +5,7 @@
   "scripts": {
     "test": "ts-jest",
     "postinstall": "npm run build",
-    "clean": "rimraf 'www/+(main|chunk)*+(.js|.js.map)'",
+    "clean": "rimraf build/",
     "rollup": "rollup --config rollup.config.js --environment NODE_ENV:production",
     "watch": "npm run rollup -- --environment NODE_ENV:development --watch",
     "build": "npm run clean && npm run rollup",

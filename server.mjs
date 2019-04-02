@@ -19,13 +19,13 @@ app.use(function(req, res, next) {
 app.use(express.static(path.resolve("static")));
 
 // Serve JS and Web Manifest
-app.get(/.+\.(js|js.map|webmanifest)$/, function(req, res) {
-    res.sendFile(path.resolve(path.join("www", req.path)));
+app.get(/.+\.(js|js.map)$/, function(req, res) {
+    res.sendFile(path.resolve(path.join("build", req.path)));
 });
 
 // Single Page Application
 app.get("*", function(req, res) {
-    res.sendFile(path.resolve("www/index.html"));
+    res.sendFile(path.resolve("index.html"));
 });
 
 app.listen(port);

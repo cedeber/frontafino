@@ -33,7 +33,7 @@ export default {
         devMode ? null : terser(),
     ],
     output: {
-        dir: "www/",
+        dir: "build/",
         format: "esm",
         sourcemap: devMode,
     },

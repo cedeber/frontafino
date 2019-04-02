@@ -1,8 +1,6 @@
 # Project
 node_modules
-www/*.js
-www/*.js.map
-!www/service-worker.js
+build/
 package-lock.json
 
 # IDE
