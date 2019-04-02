@@ -15,8 +15,8 @@ app.use(function(req, res, next) {
         : res.redirect(`https://${req.headers.host}${req.url}`);
 });
 
-// Serve assets
-app.use(express.static(path.resolve("assets")));
+// Serve static
+app.use(express.static(path.resolve("static")));
 
 // Serve JS and Web Manifest
 app.get(/.+\.(js|js.map|webmanifest)$/, function(req, res) {
