@@ -6,6 +6,7 @@ const app = express();
 
 // Ensure secure connection
 app.use(function(req, res, next) {
+    console.log(req.secure, req.headers["x-forwarded-proto"]);
     if (req.hostname === "localhost") {
         return next();
     }
