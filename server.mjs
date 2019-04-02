@@ -6,12 +6,13 @@ const app = express();
 
 // Ensure secure connection
 app.use(function(req, res, next) {
-    console.log(req.secure, req.headers["x-forwarded-proto"]);
     if (req.hostname === "localhost") {
         return next();
     }
 
-    req.secure ? next() : res.redirect(`https://${req.headers.host}${req.url}`);
+    req.headers["x-forwarded-proto"] === "https"
+        ? next()
+        : res.redirect(`https://${req.headers.host}${req.url}`);
 });
 
 // Serve assets
