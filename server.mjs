@@ -18,7 +18,7 @@ app.use(function(req, res, next) {
 // Serve static
 app.use(express.static(path.resolve("static")));
 
-// Serve JS and Web Manifest
+// Serve JavaScript
 app.get(/.+\.(js|js.map)$/, function(req, res) {
     res.sendFile(path.resolve(path.join("build", req.path)));
 });
