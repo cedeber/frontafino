@@ -4,16 +4,20 @@
   "description": "...",
   "scripts": {
     "test": "ts-jest",
+    "postinstall": "npm run build",
     "clean": "rimraf 'www/+(main|chunk)*+(.js|.js.map)'",
     "rollup": "rollup --config rollup.config.js --environment NODE_ENV:production",
     "watch": "npm run rollup -- --environment NODE_ENV:development --watch",
-    "build": "npm run clean && npm run rollup"
+    "build": "npm run clean && npm run rollup",
+    "start": "node --experimental-modules server.mjs"
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
+    "@reach/router": "^1.2.1",
     "@types/react": "^16.8.10",
     "@types/react-dom": "^16.8.3",
+    "express": "^4.16.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "rimraf": "^2.6.3",
