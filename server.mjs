@@ -4,28 +4,26 @@ import path from "path";
 const port = process.env.PORT || 8000;
 const app = express();
 
-app.use(express.static(path.resolve("assets")));
-
-app.get("*", ensureSecure);
-
-app.get(/.+\.(js|js.map|webmanifest)$/, function(request, response) {
-    response.sendFile(path.resolve(path.join("www", request.path)));
-});
-
-app.get("*", function(request, response) {
-    response.sendFile(path.resolve("www/index.html"));
-});
-
-app.listen(port);
-
-function ensureSecure(request, response, next) {
-    if (
-        request.secure ||
-        request.hostname === "localhost" ||
-        request.hostname === "127.0.0.1"
-    ) {
+// Ensure secure connection
+app.use(function(req, res, next) {
+    if (req.hostname === "localhost") {
         return next();
     }
 
-    response.redirect("https://" + request.hostname + request.url);
-}
+    req.secure ? next() : res.redirect(`https://${req.headers.host}${req.url}`);
+});
+
+// Serve assets
+app.use(express.static(path.resolve("assets")));
+
+// Serve JS and Web Manifest
+app.get(/.+\.(js|js.map|webmanifest)$/, function(req, res) {
+    res.sendFile(path.resolve(path.join("www", req.path)));
+});
+
+// Single Page Application
+app.get("*", function(req, res) {
+    res.sendFile(path.resolve("www/index.html"));
+});
+
+app.listen(port);
