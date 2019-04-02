@@ -33,3 +33,5 @@ worker.onmessage = event => {
 };
 
 worker.postMessage({ message: "Hello, worker" });
+
+navigator.serviceWorker.register("/service-worker.js", { scope: "/" });
