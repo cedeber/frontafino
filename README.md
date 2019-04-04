@@ -1,5 +1,5 @@
 # Progressive Web Application Starter Kit
-Progressive Web App with TypeScript, React, Emotion, Reach Router, Rollup, Workers, ES 2017.
+Progressive Web Hello with TypeScript, React, Emotion, Reach Router, Rollup, Workers, ES 2017.
 
 ## Purpose
 As usual, it is as light and easy as possible.

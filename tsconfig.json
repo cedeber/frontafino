@@ -3,12 +3,10 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "jsx": "react",
-    "incremental": true,
+    "incremental": false,
     "lib": [
       "dom",
-      "dom.iterable",
-      "esnext",
-      "scripthost"
+      "esnext"
     ],
     "module": "esnext",
     "moduleResolution": "node",
@@ -24,5 +22,8 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": false,
     "target": "es2017"
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

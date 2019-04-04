@@ -1,5 +1,7 @@
-onmessage = event => {
+const ctx: Worker = self as any;
+
+ctx.onmessage = event => {
     const { message } = event.data;
 
-    postMessage({ message });
+    ctx.postMessage({ message });
 };

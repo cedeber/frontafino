@@ -1,7 +1,8 @@
 # Project
 node_modules
-build/
 package-lock.json
+__build__
+__server__
 
 # IDE
 .idea

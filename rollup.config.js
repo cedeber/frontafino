@@ -1,4 +1,4 @@
-import typescript from 'rollup-plugin-typescript';
+import typescript from "rollup-plugin-typescript";
 import replace from "rollup-plugin-replace";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
@@ -26,6 +26,10 @@ export default {
                     "forwardRef",
                     "Component",
                     "Fragment",
+                    "Suspense",
+                    "useEffect",
+                    "useRef",
+                    "useState",
                 ],
             },
         }),
@@ -33,7 +37,7 @@ export default {
         devMode ? null : terser(),
     ],
     output: {
-        dir: "build/",
+        dir: "__build__",
         format: "esm",
         sourcemap: devMode,
     },

@@ -20,7 +20,7 @@ app.use(express.static(path.resolve("static")));
 
 // Serve JavaScript
 app.get(/.+\.(js|js.map)$/, function(req, res) {
-    res.sendFile(path.resolve(path.join("build", req.path)));
+    res.sendFile(path.resolve(path.join("__build__", req.path)));
 });
 
 // Single Page Application
