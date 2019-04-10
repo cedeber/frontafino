@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import * as React from "react";
 import styled from "@emotion/styled";
 import { uid } from "../utils";
 
@@ -13,10 +13,10 @@ const T = styled.span`
 
 export default function Home(props: AppProps) {
     console.log("Home");
-    let timeoutID = useRef(0);
-    let [text, setText] = useState("Hello, world!");
+    let timeoutID = React.useRef(0);
+    let [text, setText] = React.useState("Hello, world!");
 
-    useEffect(() => {
+    React.useEffect(() => {
         console.log("Home's effect");
         /*
         const worker = new Worker("../workers/ping");
@@ -30,14 +30,15 @@ export default function Home(props: AppProps) {
         worker.postMessage({ message: "Hello, worker" });
         */
 
-        timeoutID.current = window.setTimeout(() => {
+        // @ts-ignore
+        timeoutID.current = setTimeout(() => {
             console.log("Home's timeout");
             setText(`Hello, ${uid()}!`);
         }, 2000);
 
         return function cleanup() {
             console.log("Home's cleanup");
-            window.clearTimeout(timeoutID.current);
+            clearTimeout(timeoutID.current as any);
             // worker.terminate();
         };
     }, []);
@@ -51,6 +52,6 @@ export default function Home(props: AppProps) {
     );
 
     function handleClick() {
-        window.alert("Hello, world!");
+        console.log("Hello, world!");
     }
 }

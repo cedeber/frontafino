@@ -1,7 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 
 import App from "./App";
 
-/* use hydrate for ssr */
-ReactDOM.render(<App />, document.querySelector("#app"));
+/* use hydrate instead of render for ssr */
+ReactDOM.hydrate(<App />, document.querySelector("#app"));

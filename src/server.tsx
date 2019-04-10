@@ -1,11 +1,11 @@
-import express from "express";
-import path from "path";
-import fs from "fs";
-import React from "react";
+import * as express from "express";
+import * as path from "path";
+import * as fs from "fs";
+import * as React from "react";
 // import { renderToString } from "react-dom/server";
 import { renderToNodeStream } from "react-dom/server";
 import { ServerLocation } from "@reach/router";
-import App from "./src/App";
+import App from "./App";
 
 const port = process.env.PORT || 8000;
 const app = express();

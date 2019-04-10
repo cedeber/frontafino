@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "jsx": "react",
-    "incremental": false,
     "lib": [
       "dom",
       "esnext"

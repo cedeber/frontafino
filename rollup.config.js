@@ -19,6 +19,7 @@ export default {
         commonjs({
             include: "node_modules/**",
             sourcemap: devMode,
+            // fix the commonjs mess from React
             namedExports: {
                 "node_modules/react/index.js": [
                     "createElement",
@@ -30,6 +31,10 @@ export default {
                     "useEffect",
                     "useRef",
                     "useState",
+                    "lazy",
+                ],
+                "node_modules/react-dom/index.js": [
+                    "hydrate",
                 ],
             },
         }),
