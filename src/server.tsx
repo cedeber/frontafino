@@ -23,7 +23,7 @@ app.use(function(req, res, next) {
 });
 
 // Serve static
-app.use(express.static(path.resolve("static")));
+app.use(express.static(path.resolve("www")));
 
 // Serve JavaScript
 app.get(/.+\.(js|js.map)$/, function(req, res) {
