@@ -4,7 +4,6 @@
   "description": "...",
   "scripts": {
     "test": "ts-jest",
-    "postinstall": "npm run build",
     "build": "npm run clean && npm run rollup",
     "clean": "rimraf __build__",
     "rollup": "rollup --config rollup.config.js --environment NODE_ENV:production",
