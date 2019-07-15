@@ -5,9 +5,7 @@ let done = false;
 
 export default function Async(_props: any) {
     return <div>
-        <React.Suspense fallback={<div>Loading...</div>}>
-            {timeoutPromise(() => <p>I am a lazy loaded About page with async content!</p>, 2000)}
-        </React.Suspense>
+        {timeoutPromise(() => <p>I am a lazy loaded About page with async content!</p>, 2000)}
     </div>
 }
 

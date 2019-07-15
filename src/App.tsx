@@ -13,7 +13,7 @@ export default function App() {
                     <Link to="/">Home</Link> | <Link to="about">About</Link>
                 </nav>
             </header>
-            <React.Suspense fallback={<div>Loading...</div>}>
+            <React.Suspense fallback={<div>Loading app...</div>}>
                 <Router>
                     <Home who="You" path="/" />
                     <About path="about" />

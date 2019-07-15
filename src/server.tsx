@@ -7,7 +7,7 @@ import { renderToNodeStream } from "react-dom/server";
 import { ServerLocation } from "@reach/router";
 import App from "./App";
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 const app = express();
 const htmlParts = fs.readFileSync("./index.html").toString().split("<!-- ssr -->");
 
@@ -32,6 +32,10 @@ app.get(/.+\.(js|js.map)$/, function(req, res) {
 
 // Single Page Application
 app.get("*", function(req, res) {
+    res.send(fs.readFileSync("./index.html").toString());
+    res.end();
+    return;
+
     res.write(htmlParts[0]);
 
     const reactMarkup = (
@@ -51,4 +55,5 @@ app.get("*", function(req, res) {
     // res.end();
 });
 
+console.log(port);
 app.listen(port);
