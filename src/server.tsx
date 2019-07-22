@@ -1,7 +1,7 @@
-import * as express from "express";
-import * as path from "path";
-import * as fs from "fs";
-import * as React from "react";
+import express from "express";
+import path from "path";
+import fs from "fs";
+import React from "react";
 // import { renderToString } from "react-dom/server";
 import { renderToNodeStream } from "react-dom/server";
 import { ServerLocation } from "@reach/router";
@@ -23,16 +23,11 @@ app.use(function(req, res, next) {
 });
 
 // Serve static
-app.use(express.static(path.resolve("www")));
-
-// Serve JavaScript
-app.get(/.+\.(js|js.map)$/, function(req, res) {
-    res.sendFile(path.resolve(path.join("__build__", req.path)));
-});
+app.use(express.static(path.resolve("dist")));
 
 // Single Page Application
 app.get("*", function(req, res) {
-    res.send(fs.readFileSync("./index.html").toString());
+    res.send(fs.readFileSync("./dist/index.html").toString());
     res.end();
     return;
 

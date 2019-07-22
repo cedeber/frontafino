@@ -1,7 +1,11 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom";
 
 import App from "./App";
 
 /* use hydrate instead of render for ssr */
-ReactDOM.hydrate(<App />, document.querySelector("#app"));
+if (process.env.NODE_ENV === 'production') {
+    ReactDOM.hydrate(<App />, document.querySelector("#app"));
+} else {
+    ReactDOM.render(<App />, document.querySelector("#app"))
+}

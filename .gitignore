@@ -1,8 +1,10 @@
-# Project
+# Node.js
 node_modules
 package-lock.json
-__build__
-__server__
+
+# Parcel
+.cache
+dist
 
 # IDE
 .idea
