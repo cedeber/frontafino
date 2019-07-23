@@ -4,7 +4,7 @@
   "description": "...",
   "scripts": {
     "test": "ts-jest",
-    "build": "PARCEL_WORKERS=1 parcel build src/index.html --no-source-maps --experimental-scope-hoisting",
+    "build": "parcel build src/index.html --no-source-maps --experimental-scope-hoisting",
     "dev": "parcel src/index.html --port 8888",
     "start": "node server.js"
   },
