@@ -1,17 +1,18 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { RouteComponentProps } from "@reach/router";
+
 import { uid } from "../utils";
 
-interface AppProps {
+interface Props extends RouteComponentProps {
     who?: string;
-    path?: string;
 }
 
 const T = styled.span`
     color: red;
 `;
 
-export default function Home(props: AppProps) {
+export default function Home(props: Props) {
     console.log("Home");
     let timeoutID = React.useRef(0);
     let [text, setText] = React.useState("Hello, world!");
