@@ -26,14 +26,8 @@ declare module "*.json" {
   export default json;
 }
 
-// WASM
-declare module "*.wasm" {
-  const wasm: object | any[];
-  export default wasm;
+// Rust
+declare module "*.rs" {
+  const rust: any;
+  export default rust;
 }
-
-declare interface Window {
-  $: any;
-  jQuery: any;
-}
-
