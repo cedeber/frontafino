@@ -1,3 +1,4 @@
+import { hot } from "react-hot-loader";
 import React from "react";
 import { Router, Link } from "@reach/router";
 
@@ -5,7 +6,7 @@ import Home from "./pages/Home";
 
 const About = React.lazy(() => import("./pages/About"));
 
-export default function App() {
+function App() {
     return (
         <>
             <header>
@@ -22,3 +23,11 @@ export default function App() {
         </>
     );
 }
+
+let exportedApp = App;
+
+if (process.env.NODE_ENV === "development") {
+    exportedApp = hot(module)(App);
+}
+
+export default exportedApp;
