@@ -18,8 +18,8 @@ export default function Home(props: AppProps) {
 
     React.useEffect(() => {
         console.log("Home's effect");
-        /*
-        const worker = new Worker("../workers/ping");
+
+        const worker = new Worker("../workers/ping.ts");
 
         worker.onmessage = event => {
             console.log("Home's worker");
@@ -28,7 +28,6 @@ export default function Home(props: AppProps) {
         };
 
         worker.postMessage({ message: "Hello, worker" });
-        */
 
         // @ts-ignore
         timeoutID.current = setTimeout(() => {
