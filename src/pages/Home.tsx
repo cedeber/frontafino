@@ -3,15 +3,11 @@ import styled from "@emotion/styled";
 
 import { uid } from "../utils";
 
-interface Props {
-    who?: string;
-}
-
 const T = styled.span`
     color: red;
 `;
 
-export default function Home(props: Props) {
+export default function Home() {
     console.log("Home");
     let timeoutID = React.useRef(0);
     let [text, setText] = React.useState("Hello, world!");
@@ -44,8 +40,6 @@ export default function Home(props: Props) {
 
     return (
         <div>
-            Hello, {props.who}!
-            <br />
             <T onClick={handleClick}>{text}</T>
         </div>
     );
