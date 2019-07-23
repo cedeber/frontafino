@@ -1,5 +1,5 @@
 {
     "trailingComma": "all",
     "tabWidth": 4,
-    "parser": "typescript"
+    "printWidth": 120
 }
