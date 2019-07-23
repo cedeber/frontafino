@@ -1,6 +1,6 @@
 import { hot } from "react-hot-loader";
 import React, { Suspense, lazy } from "react";
-import { Router } from "@reach/router";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Global, css } from "@emotion/core";
 import styled from "@emotion/styled";
 
@@ -18,18 +18,20 @@ const Main = styled.main`
 function App() {
     return (
         <>
-            <header>
-                <NavigationBar />
-            </header>
-            <Main>
-                <Suspense fallback={<Loading />}>
-                    <Router>
-                        <Home who="You" path="/" />
-                        <About path="/about" />
-                        <NotFound path="/:rest*" />
-                    </Router>
-                </Suspense>
-            </Main>
+            <BrowserRouter>
+                <header>
+                    <NavigationBar />
+                </header>
+                <Main>
+                    <Suspense fallback={<Loading />}>
+                        <Switch>
+                            <Route path="/about" component={About} />
+                            <Route path="/" who="you" component={Home} />
+                            <Route component={NotFound} />
+                        </Switch>
+                    </Suspense>
+                </Main>
+            </BrowserRouter>
             <Global styles={css`
                 body {
                     margin: 0;

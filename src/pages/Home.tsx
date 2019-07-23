@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { RouteComponentProps } from "@reach/router";
 
 import { uid } from "../utils";
 
-interface Props extends RouteComponentProps {
+interface Props {
     who?: string;
 }
 
