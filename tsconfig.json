@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
+    "incremental": true,
     "jsx": "react",
     "lib": [
       "dom",
@@ -13,7 +14,8 @@
     "newLine": "lf",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitThis": true,
