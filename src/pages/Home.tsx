@@ -44,7 +44,7 @@ export default function Home(props: AppProps) {
 
     return (
         <div>
-            {`Hello, ${props.who}!`}
+            Hello, {props.who}!
             <br />
             <T onClick={handleClick}>{text}</T>
         </div>
