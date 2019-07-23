@@ -13,6 +13,7 @@
     "@emotion/styled": "^10.0.14",
     "@reach/router": "^1.2.1",
     "express": "^4.17.1",
+    "graphql": "^14.4.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
@@ -27,6 +28,7 @@
     "assemblyscript": "github:AssemblyScript/assemblyscript",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-graphql": "^3.0.3",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-react-hooks": "^1.6.1",
