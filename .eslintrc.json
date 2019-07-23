@@ -22,7 +22,8 @@
     "@typescript-eslint",
     "react",
     "react-hooks",
-    "jsx-a11y"
+    "jsx-a11y",
+    "graphql"
   ],
   "rules": {
     "@typescript-eslint/explicit-member-accessibility": "off",
@@ -31,8 +32,13 @@
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-var-requires": "off",
+    "react/prop-types": "off", // Replaced by TypeScript
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "jsx-a11y/no-autofocus": "warn",
+    "graphql/template-strings": ["error", {
+      "env": "apollo"
+    }]
   },
   "settings": {
     "react": {
