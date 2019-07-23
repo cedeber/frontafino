@@ -21,7 +21,6 @@ if ("serviceWorker" in navigator) {
 }
 
 // Web Assembly
-// import { add } from "./assembly/math.wasm";
 import { add } from './assembly/math.rs'
 
 console.log(add(4, 1));
