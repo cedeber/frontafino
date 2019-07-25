@@ -6,18 +6,20 @@ import App from "./App";
 
 // Service Worker
 if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function() {
-        navigator.serviceWorker.register("./service-worker.ts").then(
-            function(registration) {
-                // Registration was successful
-                console.log("ServiceWorker registration successful with scope: ", registration.scope);
-            },
-            function(err) {
-                // registration failed :(
-                console.log("ServiceWorker registration failed: ", err);
-            },
-        );
-    });
+    navigator.serviceWorker.register("./sw.ts").then(
+        function(registration) {
+            // Registration was successful
+            console.log("ServiceWorker registration successful with scope: ", registration.scope);
+
+            fetch("/.ping/whatever")
+                .then(response => response.text())
+                .then(data => alert(data));
+        },
+        function(err) {
+            // registration failed :(
+            console.log("ServiceWorker registration failed: ", err);
+        },
+    );
 }
 
 // Web Assembly

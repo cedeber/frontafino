@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { uid } from "../utils";
+import { uid } from "../utils/tiny-tools";
 
 const T = styled.span`
     color: red;
