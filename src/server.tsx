@@ -1,11 +1,13 @@
 import express from "express";
 import path from "path";
 import fs from "fs";
-import React from "react";
+// import React from "react";
 // import { renderToString } from "react-dom/server";
+/*
 import { renderToNodeStream } from "react-dom/server";
 import { ServerLocation } from "@reach/router";
 import App from "./App";
+ */
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -31,6 +33,7 @@ app.get("*", function(req, res) {
     res.end();
     return;
 
+    /*
     res.write(htmlParts[0]);
 
     const reactMarkup = (
@@ -45,6 +48,7 @@ app.get("*", function(req, res) {
         res.write(htmlParts[1]);
         res.end();
     });
+     */
 
     // res.send(html.replace("<!-- ssr -->", renderToString(reactMarkup)));
     // res.end();
