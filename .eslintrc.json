@@ -12,7 +12,8 @@
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier",
-    "prettier/@typescript-eslint"
+    "prettier/@typescript-eslint",
+    "plugin:compat/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -22,7 +23,8 @@
     "@typescript-eslint",
     "react",
     "react-hooks",
-    "jsx-a11y"
+    "jsx-a11y",
+    "compat"
     // "graphql"
   ],
   "rules": {
