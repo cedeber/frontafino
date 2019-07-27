@@ -2,12 +2,18 @@
   "name": "webapp-starter-kit",
   "version": "1.0.0",
   "description": "...",
+  "main": "electron.js",
   "scripts": {
     "test": "ts-jest",
-    "build": "parcel build src/index.html --no-source-maps --experimental-scope-hoisting",
+    "build": "parcel build src/index.html --experimental-scope-hoisting --no-source-maps --no-cache",
     "dev": "parcel src/index.html --port 8888",
-    "start": "node server.js"
+    "css:ts": "tcm --camelCase --watch src/styles/",
+    "start": "electron .",
+    "ssr:web": "node server.js"
   },
+  "browserslist": [
+    "last 1 year and > 0.3% or last 2 firefox versions or unreleased versions"
+  ],
   "alias": {
     "react-dom": "@hot-loader/react-dom"
   },
@@ -39,15 +45,21 @@
     "@types/react-router-dom": "^4.3.4",
     "@typescript-eslint/eslint-plugin": "^1.12.0",
     "@typescript-eslint/parser": "^1.12.0",
+    "autoprefixer": "^9.6.1",
+    "core-js": "^3.1.4",
+    "electron": "^5.0.8",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-compat": "^3.3.0",
     "eslint-plugin-graphql": "^3.0.3",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-react-hooks": "^1.6.1",
     "jest": "^24.8.0",
     "parcel-bundler": "^1.12.3",
+    "postcss-modules": "^1.4.1",
     "react-hot-loader": "^4.12.8",
+    "typed-css-modules": "^0.6.0",
     "typescript": "^3.5.3"
   }
 }
