@@ -27,7 +27,4 @@ declare module "*.json" {
 }
 
 // Rust
-declare module "*.rs" {
-  const rust: any;
-  export default rust;
-}
+declare module "*.rs";
