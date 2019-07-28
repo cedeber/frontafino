@@ -20,7 +20,6 @@
     "noUnusedParameters": true,
     "noImplicitThis": true,
     "removeComments": true,
-    "sourceMap": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": false,
     "target": "es2017"
