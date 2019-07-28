@@ -1,7 +1,12 @@
 .loading {
     color: hotpink;
+
+    & span {
+        color: dodgerblue;
+    }
 }
 
 .alert--message {
     color: crimson;
+    background: lightgrey;
 }
