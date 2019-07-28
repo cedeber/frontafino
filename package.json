@@ -6,10 +6,8 @@
   "scripts": {
     "test": "ts-jest",
     "build": "parcel build src/index.html --experimental-scope-hoisting --no-source-maps --no-cache",
-    "dev": "parcel src/index.html --port 8888",
-    "css:ts": "tcm --camelCase --watch src/styles/",
-    "start": "electron .",
-    "ssr:web": "node server.js"
+    "dev": "cross-env NODE_ENV=development concurrently -n parcel,css,electron 'parcel src/index.html --port 8888' 'tcm --camelCase --watch src/styles/' 'electron --inspect .'",
+    "start": "electron ."
   },
   "browserslist": [
     "last 1 year and > 0.3% or last 2 firefox versions or unreleased versions"
@@ -45,8 +43,9 @@
     "@types/react-router-dom": "^4.3.4",
     "@typescript-eslint/eslint-plugin": "^1.12.0",
     "@typescript-eslint/parser": "^1.12.0",
-    "autoprefixer": "^9.6.1",
+    "concurrently": "^4.1.1",
     "core-js": "^3.1.4",
+    "cross-env": "^5.2.0",
     "electron": "^5.0.8",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
@@ -58,7 +57,9 @@
     "jest": "^24.8.0",
     "parcel-bundler": "^1.12.3",
     "postcss-modules": "^1.4.1",
+    "postcss-preset-env": "^6.7.0",
     "react-hot-loader": "^4.12.8",
+    "rimraf": "^2.6.3",
     "typed-css-modules": "^0.6.0",
     "typescript": "^3.5.3"
   }
