@@ -4,7 +4,7 @@ import { cacheFirst, networkFirst } from "./utils/service-worker";
 /* --- Configuration --- */
 
 const appCacheName = "cache-v1";
-const preCacheFiles = [];
+const preCacheFiles: string[] = [];
 
 
 /* --- Manage requests --- */
