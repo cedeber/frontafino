@@ -1,6 +1,9 @@
 import { app, BrowserWindow } from "electron";
+import { fork, ChildProcess } from "child_process";
 
+let serverProcess: null | ChildProcess = null;;
 let win: null | BrowserWindow = null;
+let serverRunning = false;
 
 function createWindow() {
     // Cree la fenetre du navigateur.
@@ -14,7 +17,30 @@ function createWindow() {
 
     // and load the index.html of the app.
     // win.loadFile("index.html");
-    win.loadURL(`http://localhost:8888`);
+    if (process.env.NODE_ENV === "development") {
+        win.loadURL("http://localhost:8888");
+    }
+    else if (serverRunning) {
+        win.loadURL(`http://localhost:${process.env.PORT || 5677}`);
+    } else {
+        serverProcess = fork("./server.js");
+        serverProcess.on("message", m => {
+            if (m === "started" && win) {
+                serverRunning = true;
+                win.loadURL(`http://localhost:${process.env.PORT || 5677}`);
+            }
+        });
+    }
+
+    // const openExternalLinksInOSBrowser = (event: any, url: string) => {
+    //     if (url.match(/.*localhost.*/gi) === null && (url.startsWith("http:") || url.startsWith("https:"))) {
+    //         event.preventDefault();
+    //         shell.openExternal(url);
+    //     }
+    // };
+    //
+    // mainWindow.webContents.on("new-window", openExternalLinksInOSBrowser);
+    // mainWindow.webContents.on("will-navigate", openExternalLinksInOSBrowser);
 
     // Émit lorsque la fenêtre est fermée.
     win.on("closed", () => {
@@ -44,5 +70,11 @@ app.on("activate", () => {
     // l'icône du dock est cliquée et qu'il n'y a pas d'autres fenêtres d'ouvertes.
     if (win === null) {
         createWindow();
+    }
+});
+
+app.on("will-quit", () => {
+    if (process.env.NODE_ENV === "production" && serverProcess) {
+        serverProcess.kill();
     }
 });
