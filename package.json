@@ -8,7 +8,8 @@
     "clean": "rimraf .cache dist",
     "build:full": "parcel build src/index.html --experimental-scope-hoisting --no-source-map --no-cache",
     "build": "parcel build src/index.html --no-cache",
-    "dev": "cross-env NODE_ENV=development concurrently -n parcel,css,electron 'parcel src/index.html --port 8888' 'tcm --camelCase --watch src/nodestyles/' 'electron --inspect .'",
+    "dev": "cross-env NODE_ENV=development concurrently -n parcel,css 'parcel src/index.html --port 8888' 'tcm --camelCase --watch src/nodestyles/'",
+    "dev:electron": "cross-env NODE_ENV=development electron --inspect .",
     "serve": "node server.js",
     "start": "electron ."
   },
