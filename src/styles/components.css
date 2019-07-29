@@ -1,5 +1,6 @@
 .loading {
     color: hotpink;
+    padding: calc(1px + 1px);
 
     & span {
         color: dodgerblue;
