@@ -1,8 +1,11 @@
 import { hot } from "react-hot-loader";
 import React, { Suspense, lazy } from "react";
+import { Provider } from "react-redux";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Global, css } from "@emotion/core";
 import styled from "@emotion/styled";
+
+import store from "./redux/store";
 
 import Home from "./pages/Home";
 const About = lazy(() => import("./pages/About"));
@@ -17,7 +20,7 @@ const Main = styled.main`
 
 function App() {
     return (
-        <>
+        <Provider store={store}>
             <BrowserRouter>
                 <header>
                     <NavigationBar />
@@ -40,7 +43,7 @@ function App() {
                     line-height: 1.5;
                 }
             `} />
-        </>
+        </Provider>
     );
 }
 

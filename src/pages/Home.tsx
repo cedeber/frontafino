@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "@emotion/styled";
+import { useDispatch, useSelector } from "react-redux";
 
 import { uid } from "../utils/tiny-tools";
+import { Store } from "../redux/reducers";
+import { increment, decrement } from "../redux/actions";
 
 const T = styled.span`
     color: red;
@@ -9,10 +12,15 @@ const T = styled.span`
 
 export default function Home() {
     console.log("Home");
-    let timeoutID = React.useRef(0);
-    let [text, setText] = React.useState("Hello, world!");
+    let timeoutID = useRef(0);
+    let [text, setText] = useState("Hello, world!");
 
-    React.useEffect(() => {
+    const dispatch = useDispatch();
+    const incrementCounter = useCallback(() => dispatch(increment()), [dispatch]);
+    const decrementCounter = useCallback(() => dispatch(decrement()), [dispatch]);
+    const counterValueRedux = useSelector((state: Store) => state.value);
+
+    useEffect(() => {
         console.log("Home's effect");
 
         const worker = new Worker("../workers/ping.ts");
@@ -41,6 +49,9 @@ export default function Home() {
     return (
         <div>
             <T onClick={handleClick}>{text}</T>
+            <div>Redux Store: {counterValueRedux}</div>
+            <button onClick={incrementCounter}>+</button>
+            <button onClick={decrementCounter}>-</button>
         </div>
     );
 
