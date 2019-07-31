@@ -1,3 +1,4 @@
+import "core-js";
 import "regenerator-runtime/runtime";
 import { cacheFirst, networkFirst } from "./utils/service-worker";
 
