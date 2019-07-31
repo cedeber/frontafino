@@ -1,15 +1,11 @@
-import { readCookie, writeCookie } from './cookie-portal.js';
+import { readCookie, writeCookie } from './cookie-portal';
 
 export const storage = getProxy(localStorage);
 export const session = getProxy(sessionStorage);
 
 export default storage;
 
-/**
- * @param {Storage} webStorage
- * @returns {object}
- */
-function getProxy(webStorage) {
+function getProxy(webStorage: Storage): ProxyHandler<any> {
     const hasStorage = hasStorageSupport(webStorage);
 
     return new Proxy(
@@ -43,10 +39,8 @@ function getProxy(webStorage) {
 
 /**
  * Whether the current browser supports local storage as a way of storing data
- * @param {Storage} webStorage
- * @returns {boolean}
  */
-function hasStorageSupport(webStorage) {
+function hasStorageSupport(webStorage: Storage): boolean {
     try {
         webStorage.setItem('__storage__', 'foo');
         webStorage.removeItem('__storage__');
