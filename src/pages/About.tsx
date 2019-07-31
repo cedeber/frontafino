@@ -9,7 +9,7 @@ export default function Async() {
     </div>
 }
 
-function timeoutPromise(fn, delay) {
+function timeoutPromise(fn: Function, delay: number) {
     console.log("call me maybe");
 
     if (done) {
