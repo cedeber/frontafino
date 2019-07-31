@@ -166,7 +166,7 @@ export function extension(path: string): string {
 /**
  * Deep clone
  */
-export function deepClone(obj: any): {} {
+export function deepClone(obj: any): any {
     let copy: { [key: string]: any };
 
     // Handle the 3 simple types, and null or undefined

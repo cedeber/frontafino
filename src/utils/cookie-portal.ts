@@ -1,13 +1,13 @@
 /** @see Based on https://github.com/js-cookie/js-cookie */
 
-import { deepClone } from './tiny-tools.js';
+import { deepClone } from './tiny-tools';
 
 /**
- * @param {string} [name] The name of the property to read from this document's cookies
- * @returns {string|{}} The specified cookie property's value (or all if it has not been set)
+ * @param [name] The name of the property to read from this document's cookies
+ * @returns The specified cookie property's value (or all if it has not been set)
  */
-export function readCookie(name) {
-    const jar = {};
+export function readCookie(name: string): string | {} {
+    const jar: {[key: string]: any} = {};
     const cookies = document.cookie ? document.cookie.split('; ') : [];
 
     for (const c of cookies) {
@@ -42,12 +42,12 @@ export function readCookie(name) {
 }
 
 /**
- * @param {string} name The name of the property to set by writing to a cookie
- * @param {string|number|object} value The value to use when setting the specified property
- * @param {object} [attributes = {}]
+ * @param name The name of the property to set by writing to a cookie
+ * @param value The value to use when setting the specified property
+ * @param [attributes = {}]
  */
-export function writeCookie(name, value, attributes = {}) {
-    const clonedAttributes = Object.assign({ path: '/' }, deepClone(attributes));
+export function writeCookie(name: string, value: string | number | {}, attributes = {}) {
+    const clonedAttributes: {[key: string]: any} = Object.assign({ path: '/' }, deepClone(attributes));
     let clonedValue = deepClone(value);
 
     if (typeof clonedAttributes.expires === 'number') {
@@ -65,7 +65,7 @@ export function writeCookie(name, value, attributes = {}) {
         try {
             const result = JSON.stringify(clonedValue);
 
-            if (/^[\{\[]/.test(result)) {
+            if (/^[{[]/.test(result)) {
                 clonedValue = result;
             }
         } catch (e) {
@@ -80,7 +80,7 @@ export function writeCookie(name, value, attributes = {}) {
 
     name = encodeURIComponent(String(name))
         .replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)
-        .replace(/[\(\)]/g, escape);
+        .replace(/[()]/g, escape);
 
     let stringifiedAttributes = '';
 
@@ -106,10 +106,10 @@ export function writeCookie(name, value, attributes = {}) {
     return (document.cookie = name + '=' + clonedValue + stringifiedAttributes);
 }
 
-export function deleteCookie(name, attributes = {}) {
+export function deleteCookie(name: string, attributes = {}) {
     return writeCookie(name, '', Object.assign(attributes, { expires: -1 }));
 }
 
-function decode(s) {
+function decode(s: string) {
     return s.replace(/(%[0-9A-Z]{2})+/g, decodeURIComponent);
 }
