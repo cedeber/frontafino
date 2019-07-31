@@ -1,9 +1,9 @@
 import React from "react";
-import { loading } from "../styles/components.css";
+import { loading, span } from "../styles/components/loading.css";
 
 export default function Loading() {
     return <div className={loading}>
         Loading
-        <span>...</span>
+        <span className={span}>...</span>
     </div>;
 }
