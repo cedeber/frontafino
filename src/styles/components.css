@@ -7,7 +7,32 @@
     }
 }
 
-.alert--message {
-    color: crimson;
-    background: lightgrey;
+.navigation-bar {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 44px;
+    padding: 0 3px;
+    width: calc(100% - 6px);
+    overflow: hidden;
+
+    & ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        list-style: none;
+        padding: 0;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+.navigation-bar__link {
+    text-decoration: none;
+    display: inline-block;
+    padding: 11px 17px;
+    color: white;
+    font-size: 14px;
 }

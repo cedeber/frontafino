@@ -1,6 +1,9 @@
 module.exports = {
     modules: true,
     plugins: {
+        "postcss-modules": {
+            camelCase: true,
+        },
         "postcss-preset-env": {
             stage: 2,
             features: {
