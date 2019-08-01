@@ -15,7 +15,7 @@ if ("serviceWorker" in navigator) {
 
             fetch("/.ping/whatever")
                 .then(response => response.text())
-                .then(data => alert(data));
+                .then(data => console.log("sw", data));
         },
         function(err) {
             // registration failed :(
