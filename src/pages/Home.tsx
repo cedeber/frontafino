@@ -1,14 +1,11 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import styled from "@emotion/styled";
 import { useDispatch, useSelector } from "react-redux";
 
 import { uid } from "../utils/tiny-tools";
 import { Store } from "../redux/reducers";
 import { increment, decrement } from "../redux/actions";
 
-const T = styled.span`
-    color: red;
-`;
+import { red } from "../styles/pages/home.css";
 
 export default function Home() {
     console.log("Home");
@@ -48,7 +45,7 @@ export default function Home() {
 
     return (
         <div>
-            <T onClick={handleClick}>{text}</T>
+            <button className={red} onClick={handleClick}>{text}</button>
             <div>Redux Store: {counterValueRedux}</div>
             <button onClick={incrementCounter}>+</button>
             <button onClick={decrementCounter}>-</button>
