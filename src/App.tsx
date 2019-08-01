@@ -1,7 +1,8 @@
 import { hot } from "react-hot-loader";
 import React, { Suspense, lazy } from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from "wouter";
+
 import { Global, css } from "@emotion/core";
 import styled from "@emotion/styled";
 
@@ -21,20 +22,20 @@ const Main = styled.main`
 function App() {
     return (
         <Provider store={store}>
-            <BrowserRouter>
+            <Router>
                 <header>
                     <NavigationBar />
                 </header>
                 <Main>
                     <Suspense fallback={<Loading />}>
                         <Switch>
-                            <Route path="/about" exact component={About} />
-                            <Route path="/" exact component={Home} />
-                            <Route component={NotFound} />
+                            <Route path="/about" component={About} />
+                            <Route path="/" component={Home} />
+                            <Route path="/:rest*" component={NotFound} />
                         </Switch>
                     </Suspense>
                 </Main>
-            </BrowserRouter>
+            </Router>
             <Global styles={css`
                 body {
                     margin: 0;

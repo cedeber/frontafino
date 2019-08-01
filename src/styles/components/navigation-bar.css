@@ -27,3 +27,8 @@
     color: white;
     font-size: 14px;
 }
+
+.link__active {
+    composes: link;
+    color: crimson;
+}

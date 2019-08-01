@@ -1,29 +1,24 @@
 import React from "react";
-import { RouteChildrenProps } from "react-router";
-import { Link, withRouter } from "react-router-dom";
+import ActiveLink from "../components/ActiveLink";
+import { navigation, list, link, linkActive } from "../styles/components/navigation-bar.css";
 
-import { navigation, list, link } from "../styles/components/navigation-bar.css";
-
-function NavigationBar(props: RouteChildrenProps) {
-    console.log(props);
+export default function NavigationBar() {
     // TODO: Which one is active ?
 
     return (
         <nav className={navigation}>
             <ul className={list}>
                 <li>
-                    <Link to="/" className={link}>
+                    <ActiveLink href="/" className={link} classActive={linkActive}>
                         Home
-                    </Link>
+                    </ActiveLink>
                 </li>
                 <li>
-                    <Link to="/about" className={link}>
+                    <ActiveLink href="/about" className={link} classActive={linkActive}>
                         About
-                    </Link>
+                    </ActiveLink>
                 </li>
             </ul>
         </nav>
     );
 }
-
-export default withRouter(NavigationBar);
