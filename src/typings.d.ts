@@ -1,3 +1,7 @@
+declare interface Window {
+    __REDUX_DEVTOOLS_EXTENSION__: any;
+}
+
 // Images
 declare module "*.svg" {
   const svg: any;
