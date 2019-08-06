@@ -1,8 +1,15 @@
 import React from "react";
 
 /** @todo the result of a fetch should be saved in cache (lru-cache) or Storage */
-let done = false;
+// let done = false;
 
+export default function Async() {
+    return <div>
+        <p>I am a lazy loaded About page with async content!</p>
+    </div>
+}
+
+/*
 export default function Async() {
     return <div>
         {timeoutPromise(() => <p>I am a lazy loaded About page with async content!</p>, 2000)}
@@ -10,7 +17,7 @@ export default function Async() {
 }
 
 function timeoutPromise(fn: Function, delay: number) {
-    console.log("call me maybe");
+    console.log("call me later");
 
     if (done) {
         return fn();
@@ -20,3 +27,4 @@ function timeoutPromise(fn: Function, delay: number) {
         setTimeout(() => {done = true; resolve()}, delay);
     });
 }
+*/
