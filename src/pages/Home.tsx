@@ -8,7 +8,6 @@ import { increment, decrement } from "../redux/actions";
 import { red } from "../styles/pages/home.css";
 
 export default function Home() {
-    console.log("Home");
     let timeoutID = useRef(0);
     let [text, setText] = useState("Hello, world!");
 
@@ -18,12 +17,9 @@ export default function Home() {
     const counterValueRedux = useSelector((state: Store) => state.value);
 
     useEffect(() => {
-        console.log("Home's effect");
-
         const worker = new Worker("../workers/ping.ts");
 
         worker.onmessage = event => {
-            console.log("Home's worker");
             const { message } = event.data;
             setText(message);
         };
@@ -32,14 +28,13 @@ export default function Home() {
 
         // @ts-ignore
         timeoutID.current = setTimeout(() => {
-            console.log("Home's timeout");
             setText(`Hello, ${uid()}!`);
         }, 2000);
 
         return function cleanup() {
             console.log("Home's cleanup");
             clearTimeout(timeoutID.current as any);
-            // worker.terminate();
+            worker.terminate();
         };
     }, []);
 
