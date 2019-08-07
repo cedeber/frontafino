@@ -5,7 +5,7 @@ import { uid } from "../utils/tiny-tools";
 import { Store } from "../redux/reducers";
 import { increment, decrement } from "../redux/actions";
 
-import { red } from "../styles/pages/home.css";
+import styles from "../styles/pages/home.scss";
 
 export default function Home() {
     let timeoutID = useRef(0);
@@ -40,7 +40,7 @@ export default function Home() {
 
     return (
         <div>
-            <button className={red} onClick={handleClick}>{text}</button>
+            <button className={styles.red} onClick={handleClick}>{text}</button>
             <div>Redux Store: {counterValueRedux}</div>
             <button onClick={incrementCounter}>+</button>
             <button onClick={decrementCounter}>-</button>

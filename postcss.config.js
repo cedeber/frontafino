@@ -4,6 +4,10 @@ module.exports = {
         "postcss-modules": {
             camelCase: true,
         },
+        autoprefixer: {
+            grid: true,
+        },
+        /*
         "postcss-preset-env": {
             stage: 2,
             features: {
@@ -17,5 +21,6 @@ module.exports = {
                 grid: true,
             },
         },
+         */
     },
 };

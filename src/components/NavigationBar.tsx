@@ -1,23 +1,22 @@
 import React from "react";
-import { RouteChildrenProps } from "react-router";
-import { Link, withRouter } from "react-router-dom";
+import { Link, withRouter, RouteComponentProps } from "react-router-dom";
 
-import { navigation, list, link } from "../styles/components/navigation-bar.css";
+import styles from "../styles/components/navigation-bar.scss";
 
-function NavigationBar(props: RouteChildrenProps) {
+function NavigationBar(props: RouteComponentProps) {
     console.log(props);
     // TODO: Which one is active ?
 
     return (
-        <nav className={navigation}>
-            <ul className={list}>
+        <nav className={styles.navigation}>
+            <ul className={styles.list}>
                 <li>
-                    <Link to="/" className={link}>
+                    <Link to="/" className={styles.link}>
                         Home
                     </Link>
                 </li>
                 <li>
-                    <Link to="/about" className={link}>
+                    <Link to="/about" className={styles.link}>
                         About
                     </Link>
                 </li>
