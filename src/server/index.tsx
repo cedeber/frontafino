@@ -7,7 +7,7 @@ import fs from "fs";
 // import { ServerLocation } from "@reach/router";
 // import App from "../App";
 
-const port = process.env.PORT || 5677;
+const port = process.env.PORT || 3000;
 const app = express();
 // const htmlParts = fs.readFileSync("./dist/index.html").toString().split("<!-- ssr -->");
 
