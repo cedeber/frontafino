@@ -2,7 +2,9 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
     "incremental": true,
+    "importHelpers": true,
     "jsx": "react",
     "lib": [
       "dom",
