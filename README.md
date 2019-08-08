@@ -3,7 +3,7 @@
 | | Technologies |
 | --- | --- |
 | 📱 | Progressive Web Application |
-| ⚙️ | Web Workers ans Service Worker |
+| ⚙️ | Web Workers and Service Worker |
 | 🧬 | Web Assembly |
 
 Currently it doesn't support Server Side Rendering.
