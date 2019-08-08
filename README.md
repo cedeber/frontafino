@@ -1,10 +1,10 @@
 # React-like Web Application boilerplate
 
-| Technologies |
-| --- |
-| 📱 Progressive Web Application |
-| ⚙️ Web Workers ans Service Worker |
-| 🧬 Web Assembly |
+| | Technologies |
+| --- | --- |
+| 📱 | Progressive Web Application |
+| ⚙️ | Web Workers ans Service Worker |
+| 🧬 | Web Assembly |
 
 Currently it doesn't support Server Side Rendering.
 
@@ -22,11 +22,11 @@ Currently it doesn't support Server Side Rendering.
 | 🎊 | [CSS Modules](https://github.com/css-modules/css-modules) | better than CSS-in-JS |
 
 ## Languages
-| | Name |
-| :---: | --- |
-| 📜 | [TypeScript](https://www.typescriptlang.org/) |
-| 💎 | [SCSS](https://sass-lang.com/) |
-| 🧬 | [Rust](https://www.rust-lang.org/) |
+| | Name | Description |
+| :---: | --- | --- |
+| 📜 | [TypeScript](https://www.typescriptlang.org/) | |
+| 💎 | [SCSS](https://sass-lang.com/) | |
+| 🧬 | [Rust](https://www.rust-lang.org/) | |
 
 ## Linters
 | | Name | Description |
