@@ -10,7 +10,10 @@
     "build": "parcel build src/index.html --no-source-maps --no-cache --log-level 4 --detailed-report 30"
   },
   "browserslist": [
-    "last 1 year and > 0.3% or last 2 firefox versions or unreleased versions"
+    "last 3 years and > 0.2%",
+    "> 0.5%",
+    "Firefox ESR",
+    "not dead"
   ],
   "alias": {
     "react": "preact/compat",
