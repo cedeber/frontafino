@@ -1,28 +1,23 @@
 import React from "react";
-import { Link, withRouter, RouteComponentProps } from "react-router-dom";
 
 import styles from "../styles/components/navigation-bar.scss";
+import ActiveLink from "./ActiveLink";
 
-function NavigationBar(props: RouteComponentProps) {
-    console.log(props);
-    // TODO: Which one is active ?
-
+export default function NavigationBar() {
     return (
         <nav className={styles.navigation}>
             <ul className={styles.list}>
                 <li>
-                    <Link to="/" className={styles.link}>
+                    <ActiveLink href="/" css={styles.link}>
                         Home
-                    </Link>
+                    </ActiveLink>
                 </li>
                 <li>
-                    <Link to="/about" className={styles.link}>
+                    <ActiveLink href="/about" css={styles.link}>
                         About
-                    </Link>
+                    </ActiveLink>
                 </li>
             </ul>
         </nav>
     );
 }
-
-export default withRouter(NavigationBar);

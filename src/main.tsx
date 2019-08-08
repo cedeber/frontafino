@@ -1,6 +1,3 @@
-import "core-js";
-import "regenerator-runtime/runtime";
-
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -29,10 +26,4 @@ import { add } from './assembly/math.rs'
 
 console.log(add(4, 1));
 
-/* use hydrate instead of render for SSR */
-if (process.env.NODE_ENV === "production") {
-    ReactDOM.hydrate(<App />, document.querySelector("#app"));
-} else {
-    ReactDOM.render(<App />, document.querySelector("#app"));
-    (module as any).hot.accept();
-}
+ReactDOM.render(<App />, document.querySelector("#app"));

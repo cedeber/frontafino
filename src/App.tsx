@@ -1,9 +1,6 @@
-import { hot } from "react-hot-loader";
 import React, { Suspense, lazy } from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { Global, css } from "@emotion/core";
-import styled from "@emotion/styled";
+import { Switch, Route, useLocation } from "wouter";
 
 import store from "./redux/store";
 
@@ -14,43 +11,27 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 import NavigationBar from "./components/NavigationBar";
 import Loading from "./components/Loading";
 
-const Main = styled.main`
-    margin-top: 44px;
-`;
+import "./styles/global.scss";
+import styles from "./styles/app.scss";
 
-function App() {
+export default function App() {
+    const [location] = useLocation();
+
     return (
         <Provider store={store}>
-            <BrowserRouter>
-                <header>
-                    <NavigationBar />
-                </header>
-                <Main>
-                    <Suspense fallback={<Loading />}>
-                        <Switch>
-                            <Route path="/about" exact component={About} />
-                            <Route path="/" exact component={Home} />
-                            <Route component={NotFound} />
-                        </Switch>
-                    </Suspense>
-                </Main>
-            </BrowserRouter>
-            <Global styles={css`
-                body {
-                    margin: 0;
-                    font-family: -apple-system, system-ui, sans-serif;
-                    color: #444;
-                    line-height: 1.5;
-                }
-            `} />
+            <header>
+                <NavigationBar />
+            </header>
+            <main className={styles.main}>
+                <p>Current location: {location}</p>
+                <Suspense fallback={<Loading />}>
+                    <Switch>
+                        <Route path="/about" component={About} />
+                        <Route path="/" component={Home} />
+                        <Route path="/:rest*" component={NotFound} />
+                  </Switch>
+                </Suspense>
+            </main>
         </Provider>
     );
 }
-
-let exportedApp = App;
-
-if (process.env.NODE_ENV === "development") {
-    exportedApp = hot(module)(App);
-}
-
-export default exportedApp;
