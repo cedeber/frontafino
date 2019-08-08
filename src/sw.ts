@@ -1,6 +1,3 @@
-import "core-js";
-import "regenerator-runtime/runtime";
-
 import { cacheFirst, networkFirst } from "./utils/service-worker";
 
 /* --- Configuration --- */
@@ -11,7 +8,7 @@ const preCacheFiles: string[] = [];
 
 /* --- Manage requests --- */
 
-self.addEventListener("fetch", fetchEvent => {
+self.addEventListener("fetch", (fetchEvent: FetchEvent) => {
     const requestUrl = new URL(fetchEvent.request.url);
 
     // Apply SW strategies here
@@ -31,7 +28,7 @@ self.addEventListener("fetch", fetchEvent => {
 
 /* --- Pre-cache some files --- */
 
-self.addEventListener("install", extandableEvent => {
+self.addEventListener("install", (extandableEvent: ExtendableEvent) => {
     extandableEvent.waitUntil(
         caches.open(appCacheName)
             .then(cache => cache.addAll(preCacheFiles),
@@ -42,7 +39,7 @@ self.addEventListener("install", extandableEvent => {
 
 /* --- Clear all unused caches --- */
 
-self.addEventListener("activate", extandableEvent => {
+self.addEventListener("activate", (extandableEvent: ExtendableEvent) => {
     extandableEvent.waitUntil(
         caches
             .keys()
