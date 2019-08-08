@@ -1,19 +1,41 @@
 # React-like Web Application boilerplate
 
-## Bundler
-- [Parcel](https://parceljs.org/) (zero configuration)
+| Technologies |
+| --- |
+| 📱 Progressive Web Application |
+| ⚙️ Web Workers ans Service Worker |
+| 🧬 Web Assembly |
 
-## Libraries
-- [Preact X](https://preactjs.com/) (lighter than React + Hooks)
-- [Redux](https://redux.js.org/) (`react-redux with Hooks)
-- [Wouter](https://github.com/molefrog/wouter) (router with Hooks)
-- [CSS Modules](https://github.com/css-modules/css-modules)
+Currently it doesn't support Server Side Rendering.
+
+## Bundler
+| | Name | Description |
+| :---: | --- | --- |
+| 📦 | [Parcel](https://parceljs.org/) | Zero configuration |
+
+## Libraries and Tools
+| | Name | Description |
+| :---: | --- | --- |
+| 📺 | [Preact X](https://preactjs.com/) | lighter than React + Hooks |
+| 📑 | [Redux](https://redux.js.org/) | `react-redux` with Hooks |
+| 🛤 | [Wouter](https://github.com/molefrog/wouter) | router with Hooks |
+| 🎊 | [CSS Modules](https://github.com/css-modules/css-modules) | better than CSS-in-JS |
 
 ## Languages
-- [TypeScript](https://www.typescriptlang.org/)
-- [SCSS](https://sass-lang.com/)
-- [Rust](https://www.rust-lang.org/)
+| | Name |
+| :---: | --- |
+| 📜 | [TypeScript](https://www.typescriptlang.org/) |
+| 💎 | [SCSS](https://sass-lang.com/) |
+| 🧬 | [Rust](https://www.rust-lang.org/) |
 
 ## Linters
-- [ESLint](https://eslint.org/) (with TypeScript, React, Hooks, A11y, Compat, GraphQL, Prettier)
-- [Stylelint](https://stylelint.io/) (with recommanded rules for SCSS, Prettier)
+| | Name | Description |
+| :---: | --- | --- |
+| 🧽 | [ESLint](https://eslint.org/) | with TypeScript, React, Hooks, A11y, Compat, GraphQL, Prettier |
+| 🧽 | [Stylelint](https://stylelint.io/) | with recommended rules for SCSS, Prettier |
+
+# Electron
+[Electron](https://electronjs.org/) is currently not included in this boilerplate, but it shouldn't be challenging
+to migrate to it. Currently Wouter is not able to navigate without the History API. You could use the
+`MemoryRouter` from [React Router](https://reacttraining.com/react-router/) so that you don't need a web server
+to redirect the route to `index.html`.
