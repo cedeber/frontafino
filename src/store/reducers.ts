@@ -4,11 +4,11 @@ export interface Store {
     value: number;
 }
 
-const initialState: Store = {
+export const initialState: Store = {
     value: 0,
 };
 
-export default function appReducer(previousState = initialState, action: any) {
+export function reducer(previousState: Store, action: any) {
     if (action.type === INCREMENT) {
         return {value: previousState.value + 1};
     }
@@ -17,5 +17,5 @@ export default function appReducer(previousState = initialState, action: any) {
         return {value: previousState.value - 1};
     }
 
-    return previousState;
+    throw new Error();
 }
