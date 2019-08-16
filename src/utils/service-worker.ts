@@ -1,3 +1,5 @@
+import "regenerator-runtime/runtime";
+
 /* --- Strategies --- */
 
 //=> network ? save : cache
