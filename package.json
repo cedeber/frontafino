@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Web client boilerplate",
   "scripts": {
-    "clean": "rimraf .cache dist",
+    "clean": "rimraf .cache .parcel-cache dist",
     "dev": "parcel src/index.html",
     "test": "ts-jest",
     "build": "parcel build src/index.html --no-source-maps --no-cache --log-level 4 --detailed-report 30"
@@ -28,8 +28,6 @@
     "graphql": "^14.4.2",
     "office-ui-fabric-react": "^7.25.0",
     "preact": "^10.0.0-rc.1",
-    "react-redux": "^7.1.0",
-    "redux": "^4.0.4",
     "use-subscription": "^1.0.0",
     "wouter": "^2.2.0"
   },
@@ -52,7 +50,7 @@
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-react-hooks": "^1.7.0",
     "jest": "^24.9.0",
-    "parcel-bundler": "^1.12.3",
+    "parcel": "^1.12.3",
     "postcss-modules": "^1.4.1",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.18.2",
