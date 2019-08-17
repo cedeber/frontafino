@@ -22,11 +22,10 @@
     "react-dom": "preact/compat"
   },
   "dependencies": {
-    "@uifabric/fluent-theme": "^7.1.1",
-    "@uifabric/styling": "^7.5.0",
+    "@blueprintjs/core": "^3.18.0",
+    "@blueprintjs/icons": "^3.10.0",
     "classnames": "^2.2.6",
     "graphql": "^14.4.2",
-    "office-ui-fabric-react": "^7.25.0",
     "preact": "^10.0.0-rc.1",
     "use-subscription": "^1.0.0",
     "wouter": "^2.2.0"

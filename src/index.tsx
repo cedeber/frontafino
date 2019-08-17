@@ -5,17 +5,11 @@ if (process.env.NODE_ENV === "development") {
 import React from "react";
 import ReactDOM from "react-dom";
 
-// import { Customizer } from 'office-ui-fabric-react/lib/Utilities'
-// import { FluentCustomizations } from '@uifabric/fluent-theme/lib/FluentCustomizations'
-// import { loadTheme } from "office-ui-fabric-react/lib/Styling";
-import { Fabric } from "office-ui-fabric-react/lib/Fabric";
-
-import { initializeIcons } from "@uifabric/icons";
-initializeIcons();
-
 import { MainPage } from "./app/views";
-
 import "./boilerplate/styles/global.scss";
+
+import { FocusStyleManager } from "@blueprintjs/core";
+FocusStyleManager.onlyShowFocusOnTabs();
 
 // Service Worker
 if ("serviceWorker" in navigator) {
@@ -35,9 +29,4 @@ if ("serviceWorker" in navigator) {
     );
 }
 
-ReactDOM.render(
-    <Fabric>
-        <MainPage />
-    </Fabric>,
-    document.querySelector("#app"),
-);
+ReactDOM.render(<MainPage />, document.querySelector("#app"));
