@@ -1,10 +1,9 @@
-import { cacheFirst, networkFirst } from "./utils/service-worker";
+import { cacheFirst, networkFirst } from "./boilerplate/utils/service-worker";
 
 /* --- Configuration --- */
 
 const appCacheName = "cache-v1";
 const preCacheFiles: string[] = [];
-
 
 /* --- Manage requests --- */
 
@@ -25,17 +24,11 @@ self.addEventListener("fetch", (fetchEvent: FetchEvent) => {
     fetchEvent.respondWith(networkFirst(appCacheName, fetchEvent));
 });
 
-
 /* --- Pre-cache some files --- */
 
 self.addEventListener("install", (extandableEvent: ExtendableEvent) => {
-    extandableEvent.waitUntil(
-        caches.open(appCacheName)
-            .then(cache => cache.addAll(preCacheFiles),
-            ),
-    );
+    extandableEvent.waitUntil(caches.open(appCacheName).then(cache => cache.addAll(preCacheFiles)));
 });
-
 
 /* --- Clear all unused caches --- */
 
@@ -44,9 +37,7 @@ self.addEventListener("activate", (extandableEvent: ExtendableEvent) => {
         caches
             .keys()
             .then(cacheNames =>
-                cacheNames
-                    .filter(cacheName => cacheName !== appCacheName)
-                    .map(cacheName => caches.delete(cacheName)),
+                cacheNames.filter(cacheName => cacheName !== appCacheName).map(cacheName => caches.delete(cacheName)),
             ),
     );
 });

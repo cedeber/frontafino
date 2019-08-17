@@ -1,3 +1,29 @@
+.main {
+    margin-top: 44px;
+}
+
+.link-inactive {
+    opacity: 1;
+
+    :hover {
+        transition: opacity 200ms;
+        opacity: 0.65;
+    }
+}
+
+.link-active {
+    opacity: 0.65;
+}
+
+.loading {
+    color: hotpink;
+    padding: calc(1px + 1px);
+}
+
+.loading-span {
+    color: dodgerblue;
+}
+
 .navigation {
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: saturate(180%) blur(20px);
@@ -10,7 +36,7 @@
     overflow: hidden;
 }
 
-.list {
+.navigation-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -20,7 +46,7 @@
     margin: 0 auto;
 }
 
-.link {
+.navigation-link {
     text-decoration: none;
     display: inline-block;
     padding: 11px 17px;
