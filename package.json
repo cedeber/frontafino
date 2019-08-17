@@ -7,7 +7,7 @@
     "clean": "rimraf .cache .parcel-cache dist",
     "dev": "parcel src/index.html",
     "test": "ts-jest",
-    "build": "parcel build src/index.html --no-source-maps --no-cache --log-level 4 --detailed-report 30"
+    "build": "parcel build src/index.html --no-source-maps --no-cache --log-level 4 --detailed-report 30 --experimental-scope-hoisting"
   },
   "browserslist": [
     "last 3 years and > 0.2%",
@@ -26,6 +26,7 @@
     "@blueprintjs/icons": "^3.10.0",
     "classnames": "^2.2.6",
     "graphql": "^14.4.2",
+    "normalize.css": "^8.0.1",
     "preact": "^10.0.0-rc.1",
     "use-subscription": "^1.0.0",
     "wouter": "^2.2.0"

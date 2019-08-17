@@ -4,25 +4,19 @@ import { uid } from "../boilerplate/utils/tiny-tools";
 import GlobalContext, { increment, decrement } from "../app/stores";
 import LocalContext, { initialState, reducer, say } from "./stores";
 
-import { Stack } from "office-ui-fabric-react/lib/Stack";
-import { DefaultButton, PrimaryButton } from "office-ui-fabric-react/lib/Button";
-import { Label } from "office-ui-fabric-react/lib/Label";
-import { Text } from "office-ui-fabric-react/lib/Text";
-import { TextField } from "office-ui-fabric-react/lib/TextField";
-import { Dialog, DialogFooter, DialogType } from "office-ui-fabric-react/lib/Dialog";
-import { getId } from "office-ui-fabric-react/lib/Utilities";
-
+import { H1, Button, ButtonGroup, Callout } from "@blueprintjs/core/lib/esnext";
 import styles from "./styles.scss";
+import { Classes, Dialog, InputGroup, Intent, Label, Tooltip } from "@blueprintjs/core";
 
 // === PAGES === //
 /* --- Home Page --- */
 export function HomePage() {
     return (
-        <Stack horizontal={false}>
+        <>
             <TextWorker />
-            <DialogButton />
             <Counter />
-        </Stack>
+            <DialogButton />
+        </>
     );
 }
 
@@ -32,19 +26,14 @@ export function ContextPage() {
 
     return (
         <LocalContext.Provider value={{ state, dispatch }}>
-            <Stack horizontal={false} tokens={{ childrenGap: 15 }} styles={{ root: { width: 650 } }}>
-                <Text>
-                    <h1>Hello</h1>
-                    <h2>Context</h2>
-                    <p>
-                        The input and the label are separated components, inside of this page context. The value is not
-                        pass via the props, theses components are tweens anyways, but through the local context of this
-                        page to all children. The context value is going to be lost once the page will change.
-                    </p>
-                </Text>
-                <Input />
-                <Print />
-            </Stack>
+            <H1>Context</H1>
+            <Callout title={"Local context"}>
+                The input and the label are separated components, inside of this page context. The value is not pass via
+                the props, theses components are tweens anyways, but through the local context of this page to all
+                children. The context value is going to be lost once the page will change.
+            </Callout>
+            <Input />
+            <Print />
         </LocalContext.Provider>
     );
 }
@@ -58,11 +47,17 @@ export function Counter() {
 
     return (
         <div>
-            <Label>
+            <p>
                 Global Store (Math done by WASM/Rust): <span className={styles.red}>{state.value}</span>
-            </Label>
-            <DefaultButton onClick={incrementCounter}>+</DefaultButton>
-            <DefaultButton onClick={decrementCounter}>-</DefaultButton>
+            </p>
+            <ButtonGroup>
+                <Button icon="add" onClick={incrementCounter}>
+                    Increment
+                </Button>
+                <Button icon="remove" onClick={decrementCounter}>
+                    Decrement
+                </Button>
+            </ButtonGroup>
         </div>
     );
 }
@@ -73,27 +68,34 @@ export function DialogButton() {
 
     return (
         <div>
-            <DefaultButton onClick={() => setDialogHidden(false)}>Open Dialog</DefaultButton>
+            <Button onClick={() => setDialogHidden(false)}>Open Dialog</Button>
             <Dialog
-                hidden={isDialogHidden}
-                onDismiss={() => setDialogHidden(true)}
-                dialogContentProps={{
-                    type: DialogType.normal,
-                    title: "All emails together",
-                    subText:
-                        "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
-                }}
-                modalProps={{
-                    titleAriaId: getId("dialogLabel"),
-                    subtitleAriaId: getId("subTextLabel"),
-                    isBlocking: false,
-                    styles: { main: { maxWidth: 450 } },
-                }}
+                icon="inbox"
+                onClose={() => setDialogHidden(true)}
+                title="All emails together"
+                autoFocus={true}
+                canEscapeKeyClose={true}
+                canOutsideClickClose={true}
+                enforceFocus={true}
+                isOpen={!isDialogHidden}
+                usePortal={true}
             >
-                <DialogFooter>
-                    <PrimaryButton onClick={() => setDialogHidden(true)} text="Save" />
-                    <DefaultButton onClick={() => setDialogHidden(true)} text="Cancel" />
-                </DialogFooter>
+                <div className={Classes.DIALOG_BODY}>
+                    <p>
+                        Your Inbox has changed. No longer does it include favorites, it is a singular destination for
+                        your emails.
+                    </p>
+                </div>
+                <div className={Classes.DIALOG_FOOTER}>
+                    <div className={Classes.DIALOG_FOOTER_ACTIONS}>
+                        <Tooltip content="This button is hooked up to close the dialog.">
+                            <Button onClick={() => setDialogHidden(true)}>Cancel</Button>
+                        </Tooltip>
+                        <Button intent={Intent.PRIMARY} onClick={() => setDialogHidden(true)}>
+                            Save
+                        </Button>
+                    </div>
+                </div>
             </Dialog>
         </div>
     );
@@ -126,11 +128,7 @@ export function TextWorker() {
         };
     }, []);
 
-    return (
-        <div>
-            <Text>{text}</Text>
-        </div>
-    );
+    return <p>{text}</p>;
 }
 
 /* --- * --- */
@@ -139,18 +137,21 @@ export function Print() {
 
     return (
         <p>
-            I am the Print Component. The local context value is: <Label>{state.text}</Label>
+            I am the Print Component. The local context value is: {state.text}
         </p>
     );
 }
 
 export function Input() {
     const { state, dispatch } = useContext(LocalContext);
-    const sayText = useCallback((_e, val) => dispatch(say(val || "")), [dispatch]);
+    const sayText = useCallback((e) => dispatch(say(e.target.value || "")), [dispatch]);
 
     return (
         <div>
-            <TextField label="Set the context value" defaultValue={state.text} onChange={sayText} />
+            <Label>
+                Set the context value
+                <InputGroup value={state.text} onChange={sayText} />
+            </Label>
         </div>
     );
 }
