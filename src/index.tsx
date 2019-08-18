@@ -11,6 +11,9 @@ import "./boilerplate/styles/global.scss";
 import { FocusStyleManager } from "@blueprintjs/core";
 FocusStyleManager.onlyShowFocusOnTabs();
 
+import { Hello } from "./web_components/views";
+customElements.define("hello-you", Hello);
+
 // Service Worker
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("./service_worker.ts").then(
