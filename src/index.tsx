@@ -1,3 +1,5 @@
+import connect from "./boilerplate/utils/connect";
+
 if (process.env.NODE_ENV === "development") {
     // require("preact/debug");
 }
@@ -12,7 +14,7 @@ import { FocusStyleManager } from "@blueprintjs/core";
 FocusStyleManager.onlyShowFocusOnTabs();
 
 import { Hello } from "./web_components/views";
-customElements.define("hello-you", Hello);
+connect("hello-you", Hello, ["who"]);
 
 // Service Worker
 if ("serviceWorker" in navigator) {
