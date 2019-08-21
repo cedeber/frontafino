@@ -23,7 +23,7 @@ Currently it doesn't support Server Side Rendering.
 ### Optional
 | | Name | Description |
 | :---: | --- | --- |
-| 📑 | [Redux](https://redux.js.org/) | `react-redux` with Hooks |
+| 📑 | [Redux](https://redux.js.org/) | `react-redux` with Hooks. The `useReducer` hook is used instead. |
 
 ## Languages
 | | Name | Description |
