@@ -17,9 +17,13 @@ Currently it doesn't support Server Side Rendering.
 | | Name | Description |
 | :---: | --- | --- |
 | 📺 | [Preact X](https://preactjs.com/) | lighter than React + Hooks |
-| 📑 | [Redux](https://redux.js.org/) | `react-redux` with Hooks |
 | 🛤 | [Wouter](https://github.com/molefrog/wouter) | router with Hooks |
 | 🎊 | [CSS Modules](https://github.com/css-modules/css-modules) | better than CSS-in-JS |
+
+### Optional
+| | Name | Description |
+| :---: | --- | --- |
+| 📑 | [Redux](https://redux.js.org/) | `react-redux` with Hooks |
 
 ## Languages
 | | Name | Description |
