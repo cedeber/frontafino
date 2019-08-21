@@ -2,7 +2,6 @@ import React, { useCallback } from "react";
 import { Button } from "@blueprintjs/core";
 
 interface Props {
-    // [key: string]: string;
     who: string;
 }
 
