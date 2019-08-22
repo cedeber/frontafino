@@ -5,9 +5,9 @@
   "description": "Web client boilerplate",
   "scripts": {
     "clean": "rimraf .cache .parcel-cache dist",
-    "dev": "parcel src/index.html",
+    "dev": "parcel my_project/index.html",
     "test": "ts-jest",
-    "build": "parcel build src/index.html --no-source-maps --no-cache --log-level 4 --detailed-report 30 --experimental-scope-hoisting"
+    "build": "parcel build my_project/index.html --no-source-maps --no-cache --log-level 4 --detailed-report 30 --experimental-scope-hoisting"
   },
   "browserslist": [
     "last 3 years and > 0.2%",

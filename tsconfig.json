@@ -26,6 +26,11 @@
     "strictPropertyInitialization": false,
     "target": "es2017"
   },
-  "include": ["src/**/*"],
+  "include": [
+    "editorial_app/**/*",
+    "my_project/**/*",
+    "shell_app/**/*",
+    "web_components_app/**/*"
+  ],
   "exclude": ["node_modules"]
 }

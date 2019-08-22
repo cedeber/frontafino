@@ -1,4 +1,4 @@
-import { cacheFirst, networkFirst } from "./boilerplate/utils/service-worker";
+import { cacheFirst, networkFirst } from "./utils/service-worker";
 
 /* --- Configuration --- */
 

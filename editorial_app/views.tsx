@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useEffect, useRef, useState, useReducer } from "react";
-import { uid } from "../boilerplate/utils/tiny-tools";
+import { uid } from "../my_project/utils/tiny-tools";
 
-import GlobalContext, { increment, decrement } from "../app/stores";
+import GlobalContext, { increment, decrement } from "../shell_app/stores";
 import LocalContext, { initialState, reducer, say } from "./stores";
 
 import { H1, Button, ButtonGroup, Callout } from "@blueprintjs/core/lib/esnext";
