@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === "development") {
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { MainPage } from "../shell_app/views";
+import { PagesShell } from "../shell_app/views";
 import "./styles/global.scss";
 
 import { FocusStyleManager } from "@blueprintjs/core";
@@ -34,4 +34,4 @@ if ("serviceWorker" in navigator) {
     );
 }
 
-ReactDOM.render(<MainPage />, document.querySelector("#app"));
+ReactDOM.render(<PagesShell />, document.querySelector("#app"));

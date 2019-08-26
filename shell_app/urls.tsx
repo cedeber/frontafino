@@ -1,7 +1,7 @@
 import React, { lazy } from "react";
 import { Route, Switch } from "wouter";
 
-import { ContextPage, HomePage } from "../editorial_app/views";
+import { ContextPage, HomePage } from "../pages_app/views";
 
 const NotFoundPage = lazy(() => import("./async/not_found"));
 

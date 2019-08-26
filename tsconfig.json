@@ -27,7 +27,8 @@
     "target": "es2017"
   },
   "include": [
-    "editorial_app/**/*",
+    "typings.d.ts",
+    "pages_app/**/*",
     "my_project/**/*",
     "shell_app/**/*",
     "web_components_app/**/*"
