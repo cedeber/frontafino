@@ -6,11 +6,15 @@ import LocalContext, { initialState, reducer, say } from "./stores";
 
 import { H1, Button, ButtonGroup, Callout } from "@blueprintjs/core/lib/esnext";
 import styles from "./styles.scss";
-import { Classes, Dialog, InputGroup, Intent, Label, Tooltip } from "@blueprintjs/core";
+import { Classes, Dialog, H2, InputGroup, Intent, Label, Tooltip } from "@blueprintjs/core";
+import { useDocumentTitle } from "../my_project/utils/hooks";
+import { PROJECT_NAME } from "../my_project/settings";
 
 // === PAGES === //
 /* --- Home Page --- */
 export function HomePage() {
+    useDocumentTitle(PROJECT_NAME);
+
     return (
         <>
             <TextWorker />
