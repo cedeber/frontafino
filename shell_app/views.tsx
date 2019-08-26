@@ -24,13 +24,13 @@ import {
     Menu,
     MenuItem,
     MenuDivider,
-    Position
+    Position,
 } from "@blueprintjs/core";
 import styles from "./styles.scss";
 
 // === PAGES === //
 /* --- Main Page --- */
-export function MainPage() {
+export function PagesShell() {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
@@ -70,6 +70,15 @@ export function NavigationBar() {
     );
 
     const searchSpinner = <Spinner size={Icon.SIZE_STANDARD} />;
+    const navBarMenu = (
+        <Menu className={Classes.ELEVATION_1}>
+            <MenuItem icon="new-text-box" text="New text box" />
+            <MenuItem icon="new-object" text="New object" />
+            <MenuItem icon="new-link" text="New link" />
+            <MenuDivider />
+            <MenuItem icon="cog" labelElement={<Icon icon="share" />} text="Settings..." />
+        </Menu>
+    );
 
     return (
         <Navbar className={Classes.DARK}>
@@ -90,18 +99,7 @@ export function NavigationBar() {
                 <InputGroup type="search" leftIcon="search" placeholder="Search..." rightElement={searchSpinner} />
                 <NavbarDivider />
                 <ButtonGroup minimal={true}>
-                    <Popover
-                        content={
-                            <Menu className={Classes.ELEVATION_1}>
-                                <MenuItem icon="new-text-box" text="New text box" />
-                                <MenuItem icon="new-object" text="New object" />
-                                <MenuItem icon="new-link" text="New link" />
-                                <MenuDivider />
-                                <MenuItem icon="cog" labelElement={<Icon icon="share" />} text="Settings..." />
-                            </Menu>
-                        }
-                        position={Position.BOTTOM_RIGHT}
-                    >
+                    <Popover content={navBarMenu} position={Position.BOTTOM_RIGHT}>
                         <Button icon="settings" />
                     </Popover>
                 </ButtonGroup>
