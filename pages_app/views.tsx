@@ -22,7 +22,7 @@ export function HomePage() {
             <DialogButton />
             <H2>I am a web Component</H2>
             <p>I am rendered by React but this is another instance</p>
-            <hello-you who="World">Hello, native Web Component!</hello-you>
+            <hello-you who="World" />
         </>
     );
 }
