@@ -91,6 +91,13 @@ CSS Modules rocks. Mixed with SASS.
 ### Workers, Web assembly, Assets...
 Simply create `workers`, `assembly`, `assets`... folders as you need. No limitations.
 
+# Publish to Heroku
+
+```bash
+heroku buildpacks:add --index 1 emk/rust
+heroku buildpacks:add --index 2 heroku/nodejs
+```
+
 # Electron
 [Electron](https://electronjs.org/) is currently not included in this boilerplate, but it shouldn't be challenging
 to migrate to it. Currently Wouter is not able to navigate without the History API. You could use the
