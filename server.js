@@ -2,6 +2,8 @@ const http = require("http");
 const micro = require("micro");
 const handler = require("serve-handler");
 
+const PORT = process.env.PORT || 3000;
+
 const server = http.createServer(
     micro(async (request, response) => {
         return await handler(request, response, {
@@ -11,4 +13,5 @@ const server = http.createServer(
     }),
 );
 
-server.listen(process.env.PORT || 3000);
+console.log("Listening on port:", PORT);
+server.listen(PORT);
