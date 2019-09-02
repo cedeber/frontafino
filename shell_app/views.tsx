@@ -92,7 +92,7 @@ export function NavigationBar() {
                 <NavbarDivider />
                 <Tabs animate={true} id="navBar" large={true} onChange={goto} selectedTabId={location}>
                     <Tab id="/" title="Home" />
-                    <Tab id="/context" title="Context" />
+                    <Tab id="/app/context" title="Context" />
                 </Tabs>
             </NavbarGroup>
             <NavbarGroup align={Alignment.RIGHT}>
