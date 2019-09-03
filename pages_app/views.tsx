@@ -10,10 +10,38 @@ import { Classes, Dialog, H2, InputGroup, Intent, Label, Tooltip } from "@bluepr
 import { useDocumentTitle } from "../my_project/utils/hooks";
 import { PROJECT_NAME } from "../my_project/settings";
 
+import { Loading } from "../shell_app/views";
+
+import gql from "graphql-tag";
+import { useQuery } from "@apollo/react-hooks";
+
 // === PAGES === //
 /* --- Home Page --- */
 export function HomePage() {
+    const { data, loading, error } = useQuery(
+        gql`
+            query products {
+                sku
+                link
+                title
+                prices {
+                    currency
+                    value
+                }
+                image {
+                    url
+                    width
+                    height
+                }
+                weight
+            }
+        `,
+    );
     useDocumentTitle(PROJECT_NAME);
+
+    if (error) {
+        return <p>{error.message}</p>;
+    }
 
     return (
         <>
@@ -23,6 +51,8 @@ export function HomePage() {
             <H2>I am a web Component</H2>
             <p>I am rendered by React but this is another instance</p>
             <hello-you who="World" />
+            <H2>GraphQL</H2>
+            {loading ? <Loading /> : "done"}
         </>
     );
 }
@@ -144,16 +174,12 @@ export function TextWorker() {
 export function Print() {
     const { state } = useContext(LocalContext);
 
-    return (
-        <p>
-            I am the Print Component. The local context value is: {state.text}
-        </p>
-    );
+    return <p>I am the Print Component. The local context value is: {state.text}</p>;
 }
 
 export function Input() {
     const { state, dispatch } = useContext(LocalContext);
-    const sayText = useCallback((e) => dispatch(say(e.target.value || "")), [dispatch]);
+    const sayText = useCallback(e => dispatch(say(e.target.value || "")), [dispatch]);
 
     return (
         <div>

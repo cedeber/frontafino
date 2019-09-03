@@ -1,4 +1,4 @@
-import React, { Suspense, useCallback, useReducer } from "react";
+import React, { Suspense, useCallback, useMemo, useReducer } from "react";
 import { useLocation } from "wouter";
 import classNames from "classnames";
 
@@ -28,21 +28,38 @@ import {
 } from "@blueprintjs/core";
 import styles from "./styles.scss";
 
+import { ApolloProvider } from "@apollo/react-hooks";
+import ApolloClient from "apollo-client";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import { HttpLink } from "apollo-link-http";
+
 // === PAGES === //
 /* --- Main Page --- */
 export function PagesShell() {
     const [state, dispatch] = useReducer(reducer, initialState);
+    const client = useMemo(
+        () =>
+            new ApolloClient({
+                cache: new InMemoryCache(),
+                link: new HttpLink({
+                    uri: "https://www.ma-cuvee.fr/api/shop/",
+                }),
+            }),
+        [],
+    );
 
     return (
         <Context.Provider value={{ state, dispatch }}>
-            <header>
-                <NavigationBar />
-            </header>
-            <main className={styles.main}>
-                <Suspense fallback={<Loading />}>
-                    <Routes />
-                </Suspense>
-            </main>
+            <ApolloProvider client={client}>
+                <header>
+                    <NavigationBar />
+                </header>
+                <main className={styles.main}>
+                    <Suspense fallback={<Loading />}>
+                        <Routes />
+                    </Suspense>
+                </main>
+            </ApolloProvider>
         </Context.Provider>
     );
 }
