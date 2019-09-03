@@ -43,6 +43,9 @@ export function PagesShell() {
                 cache: new InMemoryCache(),
                 link: new HttpLink({
                     uri: "https://www.ma-cuvee.fr/api/shop/",
+                    headers: {
+                        "Access-Control-Allow-Origin": "*",
+                    }
                 }),
             }),
         [],
