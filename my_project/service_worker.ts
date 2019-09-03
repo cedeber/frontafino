@@ -1,4 +1,4 @@
-import { cacheFirst, networkFirst } from "./utils/service-worker";
+import { cacheFirst, networkFirst, networkOnly } from "./utils/service-worker";
 
 /* --- Configuration --- */
 
@@ -9,6 +9,10 @@ const preCacheFiles: string[] = [];
 
 self.addEventListener("fetch", (fetchEvent: FetchEvent) => {
     const requestUrl = new URL(fetchEvent.request.url);
+
+    if (fetchEvent.request.method === "POST") {
+        fetchEvent.respondWith(networkOnly(fetchEvent));
+    }
 
     // Apply SW strategies here
     if (/(.+)\.cache\.(.+)/.test(requestUrl.pathname)) {
