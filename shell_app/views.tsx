@@ -42,9 +42,9 @@ export function PagesShell() {
             new ApolloClient({
                 cache: new InMemoryCache(),
                 link: new HttpLink({
-                    uri: "https://www.ma-cuvee.fr/api/shop/",
+                    uri: "https://api.github.com/graphql",
                     headers: {
-                        "Access-Control-Allow-Origin": "*",
+                        "Authorization": "Bearer 2c904349db812195dcf3e361192360d87cb1dfb5",
                     }
                 }),
             }),

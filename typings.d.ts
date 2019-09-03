@@ -41,3 +41,6 @@ declare module "*.sass" {
     const styles: { [key: string]: any };
     export default styles;
 }
+
+// GraphQL
+declare module "*.graphql";

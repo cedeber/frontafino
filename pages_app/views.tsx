@@ -12,36 +12,15 @@ import { PROJECT_NAME } from "../my_project/settings";
 
 import { Loading } from "../shell_app/views";
 
-import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
+import stargazersQuery from "./queries/stargazers.graphql"
 
 // === PAGES === //
 /* --- Home Page --- */
 export function HomePage() {
-    const { data, loading, error } = useQuery(
-        gql`
-            query products {
-                sku
-                link
-                title
-                prices {
-                    currency
-                    value
-                }
-                image {
-                    url
-                    width
-                    height
-                }
-                weight
-            }
-        `,
-    );
-    useDocumentTitle(PROJECT_NAME);
+    const { data, loading } = useQuery(stargazersQuery);
 
-    if (error) {
-        return <p>{error.message}</p>;
-    }
+    useDocumentTitle(PROJECT_NAME);
 
     return (
         <>
@@ -52,7 +31,7 @@ export function HomePage() {
             <p>I am rendered by React but this is another instance</p>
             <hello-you who="World" />
             <H2>GraphQL</H2>
-            {loading ? <Loading /> : "done"}
+            {loading ? <Loading /> : <p>The current GitHub repo has {data.repository.stargazers.totalCount} stargazers</p>}
         </>
     );
 }
