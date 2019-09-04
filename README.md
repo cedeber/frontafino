@@ -18,6 +18,7 @@ Currently it doesn't support Server Side Rendering.
 | :---: | --- | --- |
 | 📺 | [Preact X](https://preactjs.com/) | lighter than React + Hooks |
 | 🛤 | [Wouter](https://github.com/molefrog/wouter) | router with Hooks |
+| 🚡 | [Apollo](https://www.apollographql.com/) | GraphQL with Hooks |
 | 🎊 | [CSS Modules](https://github.com/css-modules/css-modules) | better than CSS-in-JS |
 
 ### Optional
