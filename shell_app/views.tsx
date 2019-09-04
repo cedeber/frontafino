@@ -37,19 +37,17 @@ import { HttpLink } from "apollo-link-http";
 /* --- Main Page --- */
 export function PagesShell() {
     const [state, dispatch] = useReducer(reducer, initialState);
-    const client = useMemo(
-        () =>
-            new ApolloClient({
-                cache: new InMemoryCache(),
-                link: new HttpLink({
-                    uri: "https://api.github.com/graphql",
-                    headers: {
-                        "Authorization": "Bearer 2c904349db812195dcf3e361192360d87cb1dfb5",
-                    }
-                }),
+    const client = useMemo(() => {
+        return new ApolloClient({
+            cache: new InMemoryCache(),
+            link: new HttpLink({
+                uri: "https://api.github.com/graphql",
+                headers: {
+                    Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+                },
             }),
-        [],
-    );
+        });
+    }, []);
 
     return (
         <Context.Provider value={{ state, dispatch }}>
