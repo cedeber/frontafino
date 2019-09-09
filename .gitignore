@@ -3,11 +3,14 @@ node_modules
 package-lock.json
 yarn.lock
 
-# Application
+# Parcel
 .cache
 .parcel-cache
 dist
-*.css.d.ts
+
+# Rust
+target
+Cargo.lock
 
 # IDE
 .idea
