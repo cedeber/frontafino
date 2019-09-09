@@ -5,7 +5,7 @@ export const session = getProxy(sessionStorage);
 
 export default storage;
 
-function getProxy(webStorage: Storage): ProxyHandler<any> {
+function getProxy(webStorage: Storage): {[key: string]: any} {
     const hasStorage = hasStorageSupport(webStorage);
 
     return new Proxy(
