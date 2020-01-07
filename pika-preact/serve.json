@@ -1,0 +1,6 @@
+{
+  "public": "www",
+  "rewrites": [
+    { "source": "!/+(app|modules|assets|wasm)/**", "destination": "/index.html" }
+  ]
+}

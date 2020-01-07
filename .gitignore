@@ -2,7 +2,6 @@
 node_modules
 package-lock.json
 yarn.lock
-yarn-error.log
 
 # Parcel
 .cache
@@ -13,6 +12,9 @@ dist
 target
 Cargo.lock
 
+#TypeScript
+tsconfig.tsbuildinfo
+
 # IDE
 .idea
 .vscode
@@ -20,3 +22,6 @@ Cargo.lock
 # OS
 .DS_Store
 Thumbs.db
+
+# Other
+*.log

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "pika-preact",
+  "builds": [{ "src": "www/**/*", "use": "@now/static" }],
+  "routes": [
+    { "src": "/(app|modules|assets)/(.+)", "dest": "www/$1/$2" },
+    { "src": "/(.+(.ico|.png|.svg|.js|.json|.webmanifest))$", "dest": "www/$1" },
+    { "src": "/(.*)", "dest": "www/index.html" }
+  ]
+}

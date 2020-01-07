@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "incremental": true,
+    "jsx": "react",
+    "jsxFactory": "h",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "newLine": "lf",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitThis": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "target": "es2017",
+    "rootDir": "src",
+    "outDir": "www/app",
+    "paths": {
+      "/modules/*.js": [
+        "node_modules/@types/*",
+        "node_modules/*",
+        "www/modules/*.js"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "web_modules"
+  ]
+}

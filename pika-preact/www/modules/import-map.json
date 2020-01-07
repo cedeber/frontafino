@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "preact": "./preact.js",
+    "wouter-preact": "./wouter-preact.js",
+    "redux": "./redux.js"
+  }
+}

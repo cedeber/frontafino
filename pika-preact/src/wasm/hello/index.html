@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Simple template</title>
+</head>
+<body>
+
+<script type="module">
+    import init, {greet} from "./pkg/hello_wasm.js";
+
+    (async function () {
+        await init();
+        greet("world");
+    }());
+</script>
+</body>
+</html>
