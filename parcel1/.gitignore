@@ -13,7 +13,7 @@ target
 Cargo.lock
 
 # IDE
-.idea
+../.idea
 .vscode
 
 # OS

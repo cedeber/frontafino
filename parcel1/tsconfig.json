@@ -28,10 +28,10 @@
   },
   "include": [
     "typings.d.ts",
-    "pages_app/**/*",
-    "my_project/**/*",
-    "shell_app/**/*",
-    "web_components_app/**/*"
+    "parcel1/pages_app/**/*",
+    "parcel1/my_project/**/*",
+    "parcel1/shell_app/**/*",
+    "parcel1/web_components_app/**/*"
   ],
   "exclude": ["node_modules"]
 }
