@@ -1,0 +1,18 @@
+{
+  "name": "rust-wasm-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/cedeber/rust-wasm-template.git",
+  "author": "Cédric Eberhardt <hello+code@cedeber.fr>",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "rollup": "rollup -c",
+    "wasm": "wasm-pack build --target web --release",
+    "build": "yarn wasm && yarn rollup",
+    "serve": "python3 -m http.server"
+  },
+  "devDependencies": {
+    "rollup": "^1.27.13",
+    "rollup-plugin-terser": "^5.1.3"
+  }
+}
