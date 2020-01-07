@@ -1,0 +1,3 @@
+@function linear($min, $max, $viewMin: $view-min, $viewMax: $view-max) {
+    @return calc(#{$min}px + (#{$max} - #{$min}) * (100vw - #{$viewMin}px) / (#{$viewMax} - #{$viewMin}));
+}
