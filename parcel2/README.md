@@ -1,3 +1,5 @@
+Rewrite with Parcel2. Currently ongoing...
+
 # React-like Web Application boilerplate
 
 | | Technologies |
@@ -77,7 +79,7 @@ sub-routes are configured between the "apps".
 The store pattern introduced by Redux is good. Let's keep it like it is, but per "app". Which means you can have an "app"
 called `main` or `central`, responsible of managing the whole application, like user preferences, theme or whatever else,
  which can have a store shared between the other "apps".
- 
+
 In this boilerplate, the React `useReducer` hook is used in place of Redux. The patterns are nearly the same.
 Up to you to choose the tool you prefer.
 
