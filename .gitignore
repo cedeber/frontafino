@@ -12,6 +12,9 @@ dist
 target
 Cargo.lock
 
+# Sapper / Svelte
+__sapper__
+
 #TypeScript
 tsconfig.tsbuildinfo
 
