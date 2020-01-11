@@ -27,11 +27,7 @@
     "target": "es2017"
   },
   "include": [
-    "typings.d.ts",
-    "parcel2/pages_app/**/*",
-    "parcel2/my_project/**/*",
-    "parcel2/shell_app/**/*",
-    "parcel2/web_components_app/**/*"
+    "typings.d.ts"
   ],
   "exclude": ["node_modules"]
 }

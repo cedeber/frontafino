@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Web client boilerplate",
   "scripts": {
-    "clean": "rimraf .cache .parcel-cache dist",
+    "clean": "rimraf .cache dist",
     "dev": "parcel my_project/index.html",
     "test": "ts-jest",
     "build": "parcel build my_project/index.html --no-source-maps --no-cache --log-level 4 --detailed-report 30"

@@ -77,7 +77,7 @@ sub-routes are configured between the "apps".
 The store pattern introduced by Redux is good. Let's keep it like it is, but per "app". Which means you can have an "app"
 called `main` or `central`, responsible of managing the whole application, like user preferences, theme or whatever else,
  which can have a store shared between the other "apps".
- 
+
 In this boilerplate, the React `useReducer` hook is used in place of Redux. The patterns are nearly the same.
 Up to you to choose the tool you prefer.
 
@@ -98,6 +98,8 @@ Simply create `workers`, `assembly`, `assets`... folders as you need. No limitat
 heroku buildpacks:add --index 1 emk/rust
 heroku buildpacks:add --index 2 heroku/nodejs
 ```
+
+Create a file named RustConfig with `RUST_SKIP_BUILD=1`
 
 # Electron
 [Electron](https://electronjs.org/) is currently not included in this boilerplate, but it shouldn't be challenging
