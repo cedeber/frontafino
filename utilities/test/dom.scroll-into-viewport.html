@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Scroll Into Viewport</title>
+    <style media="screen">
+        body {
+            background: #2d2d2d;
+            font-family: system-ui, sans-serif;
+            font-weight: 300;
+            color: #e8e6df;
+            margin: 0;
+        }
+
+        /* --- APP --- */
+        #app {
+            width: 85vw;
+            max-width: 768px;
+            margin: 20px auto;
+            font-size: 16px;
+        }
+
+        .active {
+            border-top: solid 1px #6699cc;
+            border-bottom: solid 1px #6699cc;
+            color: #6699cc;
+            padding: 10px 0;
+        }
+
+        #scrollButton {
+            cursor: pointer;
+            background: #F00B42;
+            color: white;
+            padding: 8px 14px;
+            position: fixed;
+            z-index: 10;
+            bottom: 48px;
+            left: 50%;
+            border-radius: 3px;
+            box-sizing: border-box;
+            transform: translateX(-50%);
+            width: 240px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <vs-box></vs-box>
+    <div id="app"></div>
+    <div id="scrollButton" role="button">Scroll</div>
+
+    <script type="module">
+        import lipsum, { toSentence } from "../build/utils/lorem-ipsum.js";
+        import dom from "../build/dom/tagged-dom.js";
+        import scrolIntoViewport from "../src/dom/scroll-into-viewport.js";
+
+        const paragraph = toSentence(lipsum);
+        const app = document.getElementById("app");
+        const button = document.getElementById("scrollButton");
+
+        (async function () {
+            const elements = [];
+
+            for (let i = 0; i < 12; i += 1) { elements.push(`<p>${paragraph(5, 10)(10, 50)}</p>`); }
+            elements.push(`<p class="active">${paragraph(5, 10)(10, 50)}</p>`);
+            for (let i = 0; i < 2; i += 1) { elements.push(`<p>${paragraph(5, 10)(10, 50)}</p>`); }
+
+            const html = dom`${elements.map(v => v)}`;
+            const active = html.fragment.querySelector(".active");
+
+            await html.render(app);
+
+            if (active) {
+                button.addEventListener("click", () =>
+                    scrolIntoViewport()(active)
+                        .then(s => console.log(
+                            s
+                                ? "scrolled to destination"
+                                : "already at destination"
+                        ))
+                        .catch(() => console.log(
+                            "scroll cancelled"
+                        ))
+                );
+            }
+        })();
+    </script>
+</body>
+
+</html>

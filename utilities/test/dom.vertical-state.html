@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Vertical State</title>
+    <style media="screen">
+        body {
+            background: #2d2d2d;
+            font-family: system-ui, sans-serif;
+            font-weight: 300;
+            color: #e8e6df;
+            margin: 0;
+        }
+
+        /* --- APP --- */
+        #app {
+            width: 85vw;
+            max-width: 768px;
+            margin: 20px auto;
+            font-size: 16px;
+        }
+
+        .active {
+            border-top: solid 1px #6699cc;
+            border-bottom: solid 1px #6699cc;
+            color: #6699cc;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<vs-box></vs-box>
+<div id="app"></div>
+
+<script type="module">
+    import lipsum, { toSentence } from "../build/utils/lorem-ipsum.js";
+    import verticalState from "../src/dom/vertical-state.js";
+    import { throttle } from '../src/utils/tiny-tools.js';
+    import dom from "../build/dom/tagged-dom.js";
+
+    const paragraph = toSentence(lipsum);
+    const app = document.getElementById("app");
+    let activeElement;
+    let getVerticalState;
+
+    class Box extends HTMLElement {
+        constructor() {
+            super();
+            this.shadow = this.attachShadow({ mode: "open" });
+            this.proxy = null;
+        }
+
+        async connectedCallback() {
+            const component = dom`
+                <style>
+                    .box {
+                        background: #F00B42;
+                        color: white;
+                        padding: 0 10px;
+                        position: fixed;
+                        z-index: 10;
+                        top: 3px;
+                        right: 3px;
+                        border-radius: 3px;
+                        min-width: 192px;
+                        box-sizing: border-box;
+                        transform: translateZ(0);
+                    }
+
+                    .status span { opacity: 0.65; will-change: opacity; }
+                    .status span.is-active { font-weight: 500; opacity: 1; }
+                </style>
+                <div class="box" :proxy="details">
+                    ${Promise.resolve("")}
+                </div>
+            `;
+
+            component.render(this.shadow).then(proxy => {
+                this.proxy = proxy;
+                this.render();
+
+                document.addEventListener(
+                    "scroll",
+                    throttle(this.render.bind(this), 42),
+                    { passive: true },
+                );
+            });
+        }
+
+        render() {
+            const {
+                topPosition,
+                topProgress,
+                bottomProgress,
+                ahead,
+                entering,
+                contained,
+                exiting,
+                behind
+            } = getVerticalState(activeElement);
+
+            const detailsBox = dom`
+                <p>topPosition: ${topPosition}px</p>
+                <p>
+                    topProgress: ${Math.floor(topProgress * 100) / 100}<br>
+                    bottomProgress: ${Math.floor(bottomProgress * 100) / 100}
+                </p>
+                <p class="status">
+                    <span class="${ahead ? 'is-active' : ''}">ahead</span><br>
+                    <span class="${entering ? 'is-active' : ''}">entering</span><br>
+                    <span class="${contained ? 'is-active' : ''}">contained</span><br>
+                    <span class="${exiting ? 'is-active' : ''}">exiting</span><br>
+                    <span class="${behind ? 'is-active' : ''}">behind</span>
+                </p>
+            `;
+
+            this.proxy.details = detailsBox;
+        }
+    }
+
+    (async function() {
+        const elements = [];
+
+        for (let i = 0; i < 5; i += 1) { elements.push(`<p>${paragraph(5, 10)(10, 50)}</p>`); }
+        elements.push(`<p class="active">${paragraph(5, 10)(10, 50)}</p>`);
+        for (let i = 0; i < 5; i += 1) { elements.push(`<p>${paragraph(5, 10)(10, 50)}</p>`); }
+
+        const html = dom`${elements.map(v => v)}`;
+
+        await html.render(app);
+        activeElement = app.querySelector(".active");
+        getVerticalState = verticalState();
+
+        if ("customElements" in window) {
+            customElements.define("vs-box", Box);
+        }
+    })();
+</script>
+</body>
+</html>

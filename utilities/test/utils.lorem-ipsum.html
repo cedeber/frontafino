@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Lorem Ipsum</title>
+    <style media="screen">
+        body {
+            background: #2d2d2d;
+            font-family: system-ui, sans-serif;
+            color: #e8e6df;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        #app {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 85vw;
+            max-width: 1000px;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="app"></div>
+<script type="module">
+    import lipsum, { toSentence } from "../src/utils/lorem-ipsum.js";
+
+    const paragraph = toSentence(lipsum);
+    const app = document.getElementById("app");
+
+    if (app) {
+        app.innerText = paragraph(3, 5)(10, 20);
+    }
+</script>
+</body>
+</html>

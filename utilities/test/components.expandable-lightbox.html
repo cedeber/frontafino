@@ -1,0 +1,31 @@
+<html>
+<head>
+<style>
+    expandable-lightbox {
+        background: crimson;
+        position: relative;
+        display: inline-flex;
+    }
+
+    expandable-lightbox:not(.is-expanded) .on-expand {
+        display: none;
+    }
+
+</style>
+</head>
+<body>
+<expandable-lightbox>
+    <div slot="content">
+        Hello, world!
+        <p class="on-expand">I am the Expandable Lightbox!</p>
+    </div>
+    <div slot="close" class="on-expand">close</div>
+</expandable-lightbox>
+
+<script type="module">
+    import ExpandableLightbox from "../build/components/expandable-lightbox.js";
+
+    customElements.define("expandable-lightbox", ExpandableLightbox);
+</script>
+</body>
+</html>

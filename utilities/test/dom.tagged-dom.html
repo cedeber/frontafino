@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tagged DOM</title>
+    <style media="screen">
+        body {
+            background: #2d2d2d;
+            font-family: system-ui, -apple-system, sans-serif;
+            color: #e8e6df;
+            margin: 0;
+        }
+
+        /* --- APP --- */
+        #app {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 85vw;
+            max-width: 1000px;
+            transform: translate(-50%, -50%);
+            font-size: calc(28px + (50 - 28) * (100vw - 320px) / (1440 - 320));
+            font-weight: 100;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="module">
+        import dom from "../build/dom/tagged-dom.js";
+
+        const app = document.getElementById("app");
+
+        let salutation = "Hello";
+        let who = [
+            new Promise(resolve => setTimeout(() => resolve("world"), 250)),
+            () => new Promise(resolve => setTimeout(() => resolve("!"), 800)),
+        ];
+
+        const partial =
+            dom`<p :proxy="woohoo">${salutation}, ${who}</p>`
+
+        if (app) {
+            partial.render(app, true)
+                .then(proxy => {
+                    const happyPartial = dom`
+                        <span style="color:hotpink">
+                            Woohoo<span :proxy="rocks">${Promise.resolve("")}</span>!
+                        </span>
+                    `;
+
+                    happyPartial.render().then(proxy => setTimeout(() => {
+                        proxy.rocks =
+                            ", <strong>Proxy rocks</strong>";
+                    }, 2500));
+
+                    setTimeout(() => {
+                        proxy.woohoo = happyPartial;
+                    }, 1500);
+                });
+        }
+    </script>
+</body>
+</html>

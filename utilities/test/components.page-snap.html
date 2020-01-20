@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Page Snap</title>
+    <style>
+        body {
+            background: #2d2d2d;
+            font-family: system-ui, sans-serif;
+            color: #e8e6df;
+            margin: 0;
+        }
+
+        .slide {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .middle {
+            font-size: calc(98px + (120 - 98) * (100vw - 320px) / (1440 - 320));
+            font-weight: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-1 { background: #f2777a; }
+        .slide-2 { background: #6699cc; }
+        .slide-3 { background: #cc99cc; }
+        .slide-4 { background: #d27b53; }
+    </style>
+</head>
+<body>
+<div class="middle" style="height: 150vh;">&DownArrow;</div>
+<page-snap>
+    <div class="slide middle slide-1">1</div>
+    <div class="slide middle slide-2">2</div>
+    <div class="slide middle slide-3">3</div>
+    <div class="slide middle slide-4">4</div>
+</page-snap>
+<div style="height: 70vh;"></div>
+
+<script type="module">
+    import Snap from "../build/components/page-snap.js";
+
+    if ("customElements" in window) {
+        customElements.define("page-snap", Snap);
+    }
+</script>
+</body>
+</html>

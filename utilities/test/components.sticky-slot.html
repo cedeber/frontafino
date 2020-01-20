@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sticky Slot</title>
+    <style media="screen">
+        body {
+            background: #2d2d2d;
+            font-family: system-ui, sans-serif;
+            color: #e8e6df;
+            margin: 0;
+        }
+
+        sticky-slot {
+            background: #393939;
+        }
+    </style>
+</head>
+<body>
+<div style="height: 50vh;"></div>
+<sticky-slot data-margin-top="50">
+    <p style="text-align: center; width: 100%;">Hello, World!</p>
+</sticky-slot>
+<div style="height: 150vh;"></div>
+
+<script type="module">
+    import StickySlot from "../build/components/sticky-slot.js";
+
+    if ("customElements" in window) {
+        customElements.define("sticky-slot", StickySlot);
+    }
+</script>
+</body>
+</html>
