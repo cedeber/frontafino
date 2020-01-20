@@ -3,10 +3,10 @@ const production = !process.env.ROLLUP_WATCH;
 module.exports = {
     plugins: [
         require("postcss-import")(),
-        // require("tailwindcss"),
+        require("tailwindcss"),
         require("autoprefixer"),
         production && require("@fullhuman/postcss-purgecss")({
-            content: ["./**/*.html", "./**/*.svelte"],
+            content: ["./static/**/*.html", "./src/**/*.svelte"],
             defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
         }),
         production && require('cssnano')({

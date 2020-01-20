@@ -9,8 +9,6 @@
     "prepare": "snowpack"
   },
   "dependencies": {
-    "carbon-components-svelte": "^0.2.1",
-    "carbon-icons-svelte": "^10.8.2",
     "page": "^1.11.5",
     "tailwindcss": "^1.1.4"
   },
