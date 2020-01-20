@@ -1,0 +1,17 @@
+MyFonts Webfont Build ID 3731397, 2019-03-10T12:31:08-0400
+
+The fonts listed in this notice are subject to the End User License
+Agreement(s) entered into by the website owner. All other parties are
+explicitly restricted from using the Licensed Webfonts(s).
+
+You may obtain a valid license at the URLs below.
+
+Webfont: EssentialPragmataPro by FSD
+URL: https://www.myfonts.com/fonts/fsd/essential-pragmata-pro/regular/
+Copyright: Copyright (c) 2009 by Fabrizio Schiavi - http://www.fsd.it/. All rights reserved.
+Licensed pageviews: 10,000
+
+
+License: https://www.myfonts.com/viewlicense?type=web&buildid=3731397
+
+© 2019 MyFonts Inc

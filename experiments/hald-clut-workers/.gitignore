@@ -1,0 +1,10 @@
+# Project
+node_modules
+.next
+
+# IDE
+.idea
+.vscode
+
+# OS
+.DS_Store
