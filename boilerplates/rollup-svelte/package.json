@@ -1,0 +1,34 @@
+{
+  "name": "snowpack-svelte",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "prepare": "snowpack"
+  },
+  "dependencies": {
+    "carbon-components-svelte": "^0.2.1",
+    "carbon-icons-svelte": "^10.8.2",
+    "page": "^1.11.5",
+    "tailwindcss": "^1.1.4"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.0.4",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "autoprefixer": "^9.7.4",
+    "carbon-components": "^10.9.2",
+    "postcss": "^7.0.26",
+    "postcss-import": "^12.0.1",
+    "rollup": "^1.29.0",
+    "rollup-plugin-livereload": "^1.0.4",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-svelte": "^5.1.1",
+    "rollup-plugin-terser": "^5.2.0",
+    "serve": "^11.3.0",
+    "snowpack": "^1.0.5",
+    "svelte": "^3.17.1"
+  }
+}
