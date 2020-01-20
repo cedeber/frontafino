@@ -18,6 +18,7 @@
     "autoprefixer": "^9.7.4",
     "carbon-components": "^10.9.2",
     "cssnano": "^4.1.10",
+    "node-sass": "^4.13.1",
     "postcss": "^7.0.26",
     "postcss-import": "^12.0.1",
     "rollup": "^1.29.0",
