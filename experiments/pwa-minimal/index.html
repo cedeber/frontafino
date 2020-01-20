@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Web App - Minimal</title>
+    <link rel="manifest" href="minimal.webmanifest">
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <h1>Progressive Web App</h1>
+    <h2>Local Storage</h2>
+    <p>
+        The input will be saved to and retrieved from the <strong>localStorage</strong>
+        to show that the minimal PWA shares the Browser context.
+    </p>
+    <input id="local-input" type="text">
+    <h2>Session Storage</h2>
+    <p>
+        The input will be saved to and retrieved from the <strong>sessionStorage</strong>.
+        The session is not shared accros tabs/pwa instances.
+    </p>
+    <input id="session-input" type="text">
+</body>
+</html>
