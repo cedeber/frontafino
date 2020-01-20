@@ -19,6 +19,7 @@
     "@rollup/plugin-node-resolve": "^7.0.0",
     "autoprefixer": "^9.7.4",
     "carbon-components": "^10.9.2",
+    "cssnano": "^4.1.10",
     "postcss": "^7.0.26",
     "postcss-import": "^12.0.1",
     "rollup": "^1.29.0",
