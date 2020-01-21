@@ -12,17 +12,17 @@ export default {
     output: {
         sourcemap: true,
         format: "esm",
-        name: "app",
-        file: "build/bundle.js",
+        // file: "build/bundle.js",
+        dir: "build/",
     },
     plugins: [
         postcss({
-            extract: "./build/utils.css",
+            extract: true,
         }),
         svelte({
             dev: production,
             css: css => {
-                css.write("build/bundle.css");
+                css.write("build/app.css");
             },
         }),
         resolve({

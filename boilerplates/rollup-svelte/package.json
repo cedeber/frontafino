@@ -9,6 +9,7 @@
     "prepare": "snowpack"
   },
   "dependencies": {
+    "comlink": "^4.2.0",
     "page": "^1.11.5",
     "tailwindcss": "^1.1.4"
   },
