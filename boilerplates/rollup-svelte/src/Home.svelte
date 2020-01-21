@@ -1,4 +1,8 @@
 <script>
+    import init from "../wasm_modules/hello_wasm.js";
+
+    init("wasm/hello_wasm_bg.wasm");
+
     export let params;
 </script>
 
