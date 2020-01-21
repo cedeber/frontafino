@@ -10,7 +10,7 @@ let production = !process.env.ROLLUP_WATCH;
 export default [{
     input: "src/main.js",
     output: {
-        sourcemap: true,
+        sourcemap: !production,
         format: "esm",
         // file: "build/bundle.js",
         dir: "build/",
@@ -22,7 +22,7 @@ export default [{
         svelte({
             dev: production,
             css: css => {
-                css.write("build/app.css");
+                css.write("build/app.css", !production);
             },
         }),
         resolve({
@@ -43,9 +43,24 @@ export default [{
         clearScreen: false,
     },
 }, {
+    input: "src/service-worker.js",
+    output: {
+        sourcemap: !production,
+        format: "iife",
+        file: "build/service-worker.js",
+    },
+    plugins: [
+        resolve({
+            browser: true,
+        }),
+        production && terser({
+            mangle: false,
+        }),
+    ]
+}, {
     input: "src/worker.js",
     output: {
-        sourcemap: true,
+        sourcemap: !production,
         format: "iife",
         file: "build/worker.js",
     },
