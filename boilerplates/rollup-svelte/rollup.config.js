@@ -7,7 +7,7 @@ import postcss from "rollup-plugin-postcss";
 
 let production = !process.env.ROLLUP_WATCH;
 
-export default {
+export default [{
     input: "src/main.js",
     output: {
         sourcemap: true,
@@ -42,4 +42,19 @@ export default {
     watch: {
         clearScreen: false,
     },
-};
+}, {
+    input: "src/worker.js",
+    output: {
+        sourcemap: true,
+        format: "iife",
+        file: "build/worker.js",
+    },
+    plugins: [
+        resolve({
+            browser: true,
+        }),
+        production && terser({
+            mangle: false,
+        }),
+    ]
+}];

@@ -5,7 +5,7 @@
     init("/wasm/hello_wasm_bg.wasm");
 
     (async function () {
-        let worker = Comlink.wrap(new Worker("/workers/worker.js"));
+        let worker = Comlink.wrap(new Worker("/worker.js"));
         let asyncModule = await import("./async.js");
 
         alert(`Counter: ${await worker.counter}`);

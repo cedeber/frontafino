@@ -1,4 +1,4 @@
-importScripts("./comlink.js");
+import * as Comlink from "../web_modules/comlink";
 
 const obj = {
     counter: 0,
