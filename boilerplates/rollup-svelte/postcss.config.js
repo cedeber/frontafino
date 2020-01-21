@@ -6,7 +6,7 @@ module.exports = {
         require("tailwindcss"),
         require("autoprefixer"),
         production && require("@fullhuman/postcss-purgecss")({
-            content: ["./static/**/*.html", "./src/**/*.svelte"],
+            content: ["./src/**/*.svelte", "./public/**/*.html"],
             defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
         }),
         production && require('cssnano')({
