@@ -4,7 +4,6 @@ import serve from "rollup-plugin-serve";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import postcss from "rollup-plugin-postcss";
-import sass from "node-sass";
 
 let production = !process.env.ROLLUP_WATCH;
 
@@ -18,34 +17,13 @@ export default {
     },
     plugins: [
         postcss({
-            extract: true,
+            extract: "./build/utils.css",
         }),
         svelte({
             dev: production,
             css: css => {
                 css.write("build/bundle.css");
             },
-            preprocess: {
-                style: ({ content, attributes }) => {
-                    if (attributes.type !== "text/scss") return;
-
-                    return new Promise((fulfil, reject) => {
-                        sass.render({
-                            data: content,
-                            includePaths: ['src'],
-                            sourceMap: true,
-                            outFile: 'x' // this is necessary, but is ignored
-                        }, (err, result) => {
-                            if (err) return reject(err);
-
-                            fulfil({
-                                code: result.css.toString(),
-                                map: result.map.toString()
-                            });
-                        });
-                    });
-                }
-            }
         }),
         resolve({
             browser: true,
