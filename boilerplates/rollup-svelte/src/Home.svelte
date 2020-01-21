@@ -1,5 +1,5 @@
 <script>
-    import init from "../wasm_modules/hello_wasm";
+    import init from "./hello_wasm";
     import * as Comlink from "../web_modules/comlink";
 
     init("/wasm/hello_wasm_bg.wasm");
