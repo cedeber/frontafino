@@ -6,10 +6,13 @@
 
     (async function () {
         let worker = Comlink.wrap(new Worker("/workers/worker.js"));
+        let asyncModule = await import("./async.js");
 
         alert(`Counter: ${await worker.counter}`);
         await worker.inc();
         alert(`Counter: ${await worker.counter}`);
+
+        alert(asyncModule.default);
     }());
 
     export let params;
