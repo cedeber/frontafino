@@ -1,7 +1,7 @@
 Rollup + Snowpack + Svelte
 ==========================
 
-This is a Svelte App. It doesn't use Sapper, neither doesn't it supports Server Side Rendering.
+This is a Svelte App. It doesn't use Sapper, neither doesn't it support Server Side Rendering.
 
 Page.js is used as a router. See App.svelte for configuration.
 
