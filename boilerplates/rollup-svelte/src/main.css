@@ -1,5 +1,5 @@
 :root {
-    --red: crimson
+    --red: crimson;
 }
 
 @tailwind  base;

@@ -43,7 +43,7 @@ export default [{
         clearScreen: false,
     },
 }, {
-    input: "src/service-worker.js",
+    input: "src/workers/service-worker.js",
     output: {
         sourcemap: !production,
         format: "iife",
@@ -58,7 +58,7 @@ export default [{
         }),
     ]
 }, {
-    input: "src/worker.js",
+    input: "src/workers/worker.js",
     output: {
         sourcemap: !production,
         format: "iife",

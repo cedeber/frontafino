@@ -1,12 +1,12 @@
 <script>
-    import init from "./hello_wasm";
+    import init from "../wasm_modules/hello_wasm";
     import * as Comlink from "../web_modules/comlink";
 
     init("/wasm/hello_wasm_bg.wasm");
 
     (async function () {
         let worker = Comlink.wrap(new Worker("/worker.js"));
-        let asyncModule = await import("./async.js");
+        let asyncModule = await import("../components/async.js");
 
         alert(`Counter: ${await worker.counter}`);
         await worker.inc();

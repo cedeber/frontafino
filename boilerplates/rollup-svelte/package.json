@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
-    "prepare": "snowpack"
+    "prepare": "snowpack --clean --dest src/web_modules"
   },
   "dependencies": {
     "comlink": "^4.2.0",
