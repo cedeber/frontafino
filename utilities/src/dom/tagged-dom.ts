@@ -11,6 +11,7 @@ export default function dom(
     ...expressions
 ): TaggedDOM {
     // Use template instead of document.createDocumentFragment() because it needs a parentNode
+    /** @type HTMLTemplateElement */
     const template = document.createElement("template");
     const tagPromise = promiseTagger();
     const proxyProperties: Map<PropertyKey, HTMLElement> = new Map();
@@ -50,7 +51,7 @@ export default function dom(
 
     /* --- Resolve promises --- */
     const fragment = template.content;
-    const promisesMap: Map<string, Promise<any>> = tagPromise();
+    const promisesMap = tagPromise() as Map<string, Promise<any>>;;
 
     for (const [tag, promise] of promisesMap) {
         const element = fragment.querySelector(tag);
