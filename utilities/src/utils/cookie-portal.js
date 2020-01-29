@@ -52,7 +52,7 @@ export function writeCookie(name, value, attributes = {}) {
 
     if (typeof clonedAttributes.expires === 'number') {
         clonedAttributes.expires = new Date(
-            new Date() * 1 + clonedAttributes.expires * 864e5,
+            Number(new Date()) + clonedAttributes.expires * 864e5,
         );
     }
 
