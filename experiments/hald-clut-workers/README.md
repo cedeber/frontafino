@@ -1,3 +1,0 @@
-# Pimiö
-
-Analog Film Simulation
