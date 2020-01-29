@@ -1,5 +1,5 @@
-Web Client Boilerplate(s)
-=========================
+Ευκολία (Eukolía)
+=================
 
 The best the Web has to offer, probably.
 
