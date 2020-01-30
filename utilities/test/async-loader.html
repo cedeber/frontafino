@@ -7,7 +7,7 @@
 </head>
 <body>
 <script type="module">
-    import { loadCSS, loadJS } from '../src/utils/async-loader.js';
+    import { loadCSS, loadJS } from '../src/async-loader.js';
 
     loadCSS('./utils.async-loader.css', { crossOrigin: 'anonymous' });
     loadJS('./utils.async-loader.js', { crossOrigin: 'use-credentials', id: 'test', dataset: { testDash: 123 } });

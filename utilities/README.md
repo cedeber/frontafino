@@ -1,42 +1,11 @@
-# Ευκολία (Eukolía)
-A Web Frontend Library of Web Components, Tools & Workers. 
+# Eukolía utilities
 
-You need a very recent browser which support at least ES2017 Modules.
-The Web Components and Web Animation support are also sometimes mandatory.
-
-## Why Eukolía is different?
-Because I think that when an utility is longer than 200 sloc it does often too much.
-And I want to keep each tool maintainable by a single human.
-But mainly because I believe in the KISS principle: **The simpler, the better**.
-
-## Additional libraries
-A list of useful and light libraries I like to use in addition to Eukolía.
-
-| Name | Description |
-| ---  | --- |
-| [FPO](https://github.com/getify/fpo) | Functional Programming Library for JavaScript. |
-| [ligherHTML](https://github.com/WebReflection/lighterhtml) | A Fast & Light Virtual DOM Alternative. |
-| [Anime](http://animejs.com) | JavaScript Animation Engine. |
-
-
-## Table of contents
-### Components
-| Name | Description |
-| ---  | --- |
-| [Page Snap](#page-snap) | A scroll Snap that doesn't control you. |
-| [Sticky Slot](#sticky-slot) | Keep any Element sticky on the top of the page. |
-
-### DOM Utilities
 | Name | Description |
 | ---  | --- |
 | [Dynamic Styles](#dynamics-styles) | Set CSS styles to multiple elements at once. |
 | [Scroll Into Viewport](#scroll-into-viewport) | Scroll to any Element to make it visible into the viewport. |
 | [Tagged DOM](#tagged-dom) | DocumentFragment Tagged templates with Promises and Proxies. |
 | [Vertical State](#vertical-state) | Know where any Element is verticaly positionned in the page compared to the viewport. |
-
-### Utilities
-| Name | Description |
-| ---  | --- |
 | [Async Loader](#async-loader) | Load JS and CSS asynchronously. |
 | [Constant Enums](#constant-enums) | Simulate an Enum data type. |
 | [Event Emitter](#event-emitter) | A simple event handler & emitter. |
@@ -44,53 +13,9 @@ A list of useful and light libraries I like to use in addition to Eukolía.
 | Hash Router | Simple router with #. |
 | [Lorem Ipsum](#lorem-ipsum) | Lorem ipsum generator. |
 | [Proxy Storage](#proxy-storage) | Web Storage with Cookie fallback via a Proxy. |
-
-### Workers
-| Name | Description |
-| ---  | --- |
 | [Service Worker](#service-worker) | A collection of Service Worker strategies. |
 
-## Components
-### Page Snap
-A scroll Snap that doesn't control you. 
-It means the user's scroll is controlling the snap and not the contrary.
-Only when the scroll ends the snap centers itself in the middle of the viewport.
-
-```html
-<page-snap>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>...</div>
-</page-snap>
-```
-
-```javascript
-import PageSnap from "./page-snap.js";
-
-customElements.define("page-snap", PageSnap);
-```
-[[source](src/components/page-snap.ts)]
-
-### Sticky Slot
-Keep any Element sticky on the top of the page.
-
-```html
-<sticky-slot data-margin-top="50">
-    <p>Hello, World!</p>
-</sticky-slot>
-```
-The `data-margin-top` configuration is optional.
-
-```javascript
-import Sticky from "./sticky.js";
-
-customElements.define("sticky-slot", Sticky);
-```
-[[source](src/components/sticky-slot.ts)]
-
-## DOM Utilities
-### Dynamics Styles
+## Dynamics Styles
 ```javascript
 const word1 = document.getElementById("word1");
 const word2 = document.getElementById("word2");
@@ -111,9 +36,8 @@ setTimeout(() => {
     wordsStyles.clear();
 }, 3000);
 ```
-[[source](src/dom/dynamic-styles.ts)]
 
-### Scroll Into Viewport
+## Scroll Into Viewport
 Scroll to any Element to make it visible into the viewport. The scroll is not
 based on time, but on distance. The longer in distance, the longer in time.
 
@@ -132,9 +56,8 @@ scrollTo(document.body);
 // or with default values and direct call
 scrollIntoViewport()(document.body);
 ```
-[[source](src/dom/scroll-into-viewport.js)]
 
-### Tagged DOM
+## Tagged DOM
 DocumentFragment Tagged templates with Promises and Proxies.
 
 The `render` function renders the DocumentFragment into the Node and
@@ -200,9 +123,8 @@ const partial = dom`<div role="button" class="button">click here</div>`;
 
 partial.fragment.querySelector(".button").addEventListener("click", event => [..]);
 ```
-[[source](src/dom/tagged-dom.ts)]
 
-### Vertical State
+## Vertical State
 Know where any Element is verticaly positionned in the page compared to the viewport.
 
 ```javascript
@@ -221,10 +143,8 @@ const {
     behind,         // above the viewport
 } = vState(document.body.querySelector("main"));
 ```
-[[source](src/dom/vertical-state.js)]
 
-## Utilities
-### Async Loader
+## Async Loader
 Load JS and CSS asynchronously. A `script` or `link` tag is appended into the
 document head. The same url will not be loaded more than once.
 
@@ -237,9 +157,8 @@ loadCSS("https://www.cedeber.fr/a-style-file.css");
 // if you need to change the media type, you can add a second parameter
 loadCSS("https://www.cedeber.fr/print.css", "print");
 ```
-[[source](src/utils/async-loader.js)]
 
-### Constant Enums
+## Constant Enums
 Simulate an Enum data type based on `Proxy` and `Symbol`
 
 ```javascript
@@ -263,9 +182,8 @@ console.log(e3.ONE == e4.ONE); // => false (Symbol("1") !== Symbol("1"))
 console.log(e5); // => Proxy {ONE: "ONE", TWO: "TWO"}
 console.log(e6); // => Proxy {ONE: Symbol(ONE), TWO: Symbol(TWO)}
 ```
-[[source](src/utils/constant-enums.js)]
 
-### Event Emitter
+## Event Emitter
 A simple event handler & emitter
 
 ```javascript
@@ -291,9 +209,8 @@ events.emit("anotherevent", "Hello", "doe"); //=> nothing, already called once
 events.remove("myevent", myEventCallback);
 events.emit("myevent", "Hello", "world"); //=> doesn't exist anymore
 ```
-[[source](src/utils/event-emitter.js)]
 
-### Lorem Ipsum
+## Lorem Ipsum
 Generate lorem ipsum.
 
 ```javascript
@@ -310,9 +227,8 @@ sentences(10, 20); // => string[][]
 const paragraph = toSentence(lipsum);
 paragraph(3, 5)(10, 20); // => string
 ```
-[[source](src/utils/lorem-ipsum.js)]
 
-### Proxy Storage
+## Proxy Storage
 Web Storage with Cookie fallback via a Proxy.
 
 ```javascript
@@ -332,10 +248,8 @@ storage.foo ? "yes" : "no"; // => "yes"
 // equivalent to *Storage.removeItem("foo");
 delete storage.foo;
 ```
-[[source](src/utils/proxy-storage.js)]
 
-## Workers
-### Service Worker
+## Service Worker
 A collection of Service Worker strategies.
 
 ```javascript
@@ -397,30 +311,3 @@ event.respondWith(networkOnly(event));
  */
 event.respondWith(cacheOnly(appCacheName, event));
 ```
-[[source](src/workers/service-worker.js)]
-
-## Test
-The test files are HTML files.
-You have to run a webserver on the root of the library.
-On MacOS the easiest way to do it is to use Python 2 or PHP.
-```bash
-python -m SimpleHTTPServer
-php -S localhost:8000
-```
-
-And then open files, for instance `http://localhost:5000/test/dom.tagged-dom.html`
-These are basic examples how to use each utilities. Don't hesitate to modify them if needed and propose a pull request if you think one miss something.
-
-## Contributing
-Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before making
-a pull request.
-
-## Financial Contribution
-If you want to support the development of the library, you can send me some money via Buy Me A Coffee.
-
-[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg)](https://www.buymeacoffee.com/cedeber)
-
-## License
-[AGPL](LICENSE)
-
-Copyright (c) 2015-2019 Cédric Eberhardt

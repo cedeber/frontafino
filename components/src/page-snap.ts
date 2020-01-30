@@ -1,6 +1,6 @@
-import scrollIntoViewport from "../../utilities/src/dom/scroll-into-viewport.js";
-import verticalState from "../../utilities/src/dom/vertical-state.js";
-import { debounce } from '../../utilities/src/utils/tiny-tools.js';
+import scrollIntoViewport from "../../utilities/src/scroll-into-viewport.js";
+import verticalState from "../../utilities/src/vertical-state.js";
+import { debounce } from '../../utilities/src/tiny-tools.js';
 
 export default class Snap extends HTMLElement {
     marginTop = parseInt(this.dataset.marginTop || "0", 10) || 0; // top margin decal

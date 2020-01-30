@@ -68,6 +68,9 @@ Some other libraries could also have had the focus here, but I prefer some patte
 - LighterHTML_ (The big brother of lit-html, probably lighter and more performant than Lit)
 - htm_ (string literals JSX alternative, very light)
 
+License
+-------
+Copyright (c) 2015-2019 Cédric Eberhardt - MIT License
 
 .. _Vue: https://vuejs.org
 .. _LitHtml: https://lit-html.polymer-project.org
