@@ -1,5 +1,5 @@
-import verticalState from "../dom/vertical-state.js";
-import { pageLoaded } from '../utils/tiny-tools.js';
+import verticalState from "../../utilities/src/dom/vertical-state.js";
+import { pageLoaded } from '../../utilities/src/utils/tiny-tools.js';
 
 export default class Sticky extends HTMLElement {
     shadow = this.attachShadow({ mode: "open" });
