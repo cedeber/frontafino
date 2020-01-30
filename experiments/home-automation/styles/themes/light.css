@@ -1,0 +1,4 @@
+.Light.-active { background: #ffcc66aa; }
+.Light .action { background: #ffffff6e; }
+.Light .button { background: var( --base04 ); }
+.Light.-active .button { background: var( --yellow ); }

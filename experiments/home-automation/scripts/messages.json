@@ -1,0 +1,19 @@
+{
+	"light": {
+		"switch": {
+			"off": "Lights off",
+			"on": "Lights on"
+		}
+	},
+	"curtains": {
+		"switch": {
+			"off": "Curtains closed",
+			"on": "Curtains opened"
+		}
+	},
+	"temperature": {
+		"regulator": {
+			"unit": "°"
+		}
+	}
+}

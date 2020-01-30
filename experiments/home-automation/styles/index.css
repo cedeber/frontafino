@@ -1,0 +1,65 @@
+@charset "utf-8";
+/**
+ * ======= HoW tO wrItE CoDE =======
+ * | variable       : --likeThis   |
+ * | media queries  : --like-this  |
+ * | block, cmpnt.  : .Like-this   |
+ * | element        : .like-this   |
+ * | modifier       : .-like-this  |
+ * =================================
+ */
+
+
+/* Layout configuration */
+@import url(./config/reset.css);
+@import url(./config/default.css);
+@import url(./config/layout.css);
+@import url(./config/icons.css);
+
+/* Components */
+@import url(./components/switch.css);
+@import url(./components/regulator.css);
+
+/* Themes */
+@import url(./themes/light.css);
+@import url(./themes/curtains.css);
+@import url(./themes/temperature.css);
+
+
+/**
+ * Variables
+ */
+:root {
+	/* Text - default */
+	--defaultFontFamily: sans-serif;
+	--fontSize: 15px;
+	--defaultTextColor: var( --base01 );
+
+	/* Page - default, layout */
+	--pageBackground: linear-gradient( 45deg, var( --violet ), var( --magenta ) );
+	--appBackground: var( --base07 );
+	--pageWidth: calc( 320px + 2 * var( --pageGutterWidth ) );
+	--pageGutterWidth: 15px;
+	--sectionSplitterHeight: 10px;
+
+	/* Colors - Base 16 Eighties */
+	--base00: #2d2d2d;
+	--base01: #393939;
+	--base02: #515151;
+	--base03: #747369;
+	--base04: #a09f93;
+	--base05: #d3d0c8;
+	--base06: #e8e6df;
+	--base07: #f2f0ec;
+	--red: #f2777a;
+	--orange: #f99157;
+	--yellow: #ffcc66;
+	--green: #99cc99;
+	--cyan: #66cccc;
+	--blue: #6699cc;
+	--violet: #cc99cc;
+	--magenta: #d27b53;
+
+	/* Timinds */
+	--defaultTiming: 350ms;
+}

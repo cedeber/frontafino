@@ -1,0 +1,15 @@
+/* SVG Icon container */
+.-icon {
+    line-height: 0;
+}
+
+/* SVG icon */
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+/* If some icon don't have a squared viewBow, define the ratio here */
