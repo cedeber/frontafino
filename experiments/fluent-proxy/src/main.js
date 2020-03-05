@@ -1,6 +1,6 @@
 import {FluentBundle, FluentResource} from "@fluent/bundle";
 
-let proxy = getProxy(`
+let localization = getLocalization(`
 -brand-name = Foo 3000
 welcome = Welcome, {$name}, to {-brand-name}!
 
@@ -15,7 +15,7 @@ shared-photos =
     }.
 `, "en-US");
 
-let {welcome, sharedPhotos} = proxy;
+let {welcome, sharedPhotos} = localization;
 
 console.log(welcome({name: "Anna"}));
 console.log(sharedPhotos({
