@@ -1,6 +1,6 @@
 {
     "name": "Minimal manifest",
-    "short_name": "miniman",
+    "short_name": "minimal",
     "start_url": "/",
     "icons": [
         {
