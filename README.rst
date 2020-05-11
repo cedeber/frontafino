@@ -1,7 +1,7 @@
-Ευκολία (Eukolía)
-=================
+Fronta Fino
+===========
 
-The best the Web has to offer, probably.
+The best the Web has to offer, probably. Previously Ευκολία (Eukolía).
 
 0. Some concerns
 ----------------
