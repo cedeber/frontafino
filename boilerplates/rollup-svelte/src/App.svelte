@@ -1,7 +1,8 @@
 <script>
     import router from "./web_modules/page.js";
-
     import Home from "./routes/Home.svelte";
+
+    export let foo;
 
     let page;
     let params;
@@ -13,6 +14,8 @@
     }, () => page = Home);
 
     router.start();
+
+    console.log(foo);
 </script>
 
 <svelte:component this={page} params={params}/>
