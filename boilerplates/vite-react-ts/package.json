@@ -1,0 +1,35 @@
+{
+    "name": "vite-react-ts",
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build"
+    },
+    "dependencies": {
+        "@pika/react": "^16.13.1",
+        "@pika/react-dom": "^16.13.1",
+        "react": "npm:@pika/react@^16.13.1",
+        "react-dom": "npm:@pika/react-dom@^16.13.1"
+    },
+    "devDependencies": {
+        "@types/react": "^16.9.43",
+        "@types/react-dom": "^16.9.8",
+        "@typescript-eslint/eslint-plugin": "^3.7.0",
+        "@typescript-eslint/parser": "^3.7.0",
+        "eslint": "^7.5.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-jsx-a11y": "^6.3.1",
+        "eslint-plugin-react": "^7.20.4",
+        "eslint-plugin-react-hooks": "^4.0.8",
+        "prettier": "^2.0.5",
+        "sass": "^1.26.10",
+        "typescript": "^3.9.7",
+        "vite": "^1.0.0-rc.3",
+        "vite-plugin-react": "^3.0.2"
+    },
+    "prettier": {
+        "printWidth": 100,
+        "trailingComma": "all",
+        "tabWidth": 4
+    }
+}
