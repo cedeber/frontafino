@@ -3,19 +3,19 @@ export default class ExpandableLightbox extends HTMLElement {
 
     startLeft = 0;
     startTop = 0;
-    startRect!: ClientRect;
-    endRect!: ClientRect;
+    startRect; // ClientRect;
+    endRect; // ClientRect;
     isOpen = false;
     windowWidth = 0;
 
     opacity = 0;
     duration = 300;
 
-    scrollable: HTMLElement = document.body;
+    scrollable = document.body;
 
-    closeMeMaybe = this.checkWindowWidth.bind(this);
+    closeMeMaybe = this._checkWindowWidth.bind(this);
 
-    public connectedCallback() {
+    connectedCallback() {
         this.shadow.innerHTML = `
             ${styles}
             <slot name="content"></slot>
@@ -25,17 +25,17 @@ export default class ExpandableLightbox extends HTMLElement {
         const contentElement = this.shadow.querySelector("slot[name='content']");
         const closeElement = this.shadow.querySelector("slot[name='close']");
 
-        contentElement!.addEventListener("click", this.open.bind(this));
-        closeElement!.addEventListener("click", this.close.bind(this));
+        contentElement.addEventListener("click", this._open.bind(this));
+        closeElement.addEventListener("click", this._close.bind(this));
     }
 
-    private checkWindowWidth() {
+    _checkWindowWidth() {
         if (window.innerWidth !== this.windowWidth) {
-            this.close();
+            this._close();
         }
     }
 
-    private open() {
+    _open() {
         if (this.isOpen) {
             return;
         }
@@ -67,10 +67,11 @@ export default class ExpandableLightbox extends HTMLElement {
         const scaleWidth = 1 / (this.endRect.width / this.startRect.width);
         const translateX = endLeft - this.startRect.left;
         const translateY = endTop - this.startRect.top;
-        const player = this.animate([
-            {
-                opacity: this.opacity,
-                transform: `matrix(
+        const player = this.animate(
+            [
+                {
+                    opacity: this.opacity,
+                    transform: `matrix(
                     ${scaleWidth},
                     0,
                     0,
@@ -78,15 +79,18 @@ export default class ExpandableLightbox extends HTMLElement {
                     ${-translateX},
                     ${-translateY}
                 ) translateZ(0)`,
-            }, {
-                opacity: 1,
-                transform: `matrix(1,0,0,1,0,0) translateZ(0)`,
+                },
+                {
+                    opacity: 1,
+                    transform: `matrix(1,0,0,1,0,0) translateZ(0)`,
+                },
+            ],
+            {
+                duration: this.duration,
+                easing: "cubic-bezier(0.645, 0.045, 0.355, 1.000)",
+                iterations: 1,
             },
-        ], {
-            duration: this.duration,
-            easing: "cubic-bezier(0.645, 0.045, 0.355, 1.000)",
-            iterations: 1,
-        });
+        );
 
         player.addEventListener("finish", () => {
             this.classList.remove("has-no-transitions");
@@ -94,7 +98,7 @@ export default class ExpandableLightbox extends HTMLElement {
         });
     }
 
-    private close(event?: Event) {
+    _close(event) {
         if (!this.isOpen) {
             return;
         }
@@ -116,19 +120,23 @@ export default class ExpandableLightbox extends HTMLElement {
         const scaleWidth = this.startRect.width / this.endRect.width;
         const translateX = this.startRect.left - this.endRect.left;
         const translateY = this.startRect.top - this.endRect.top;
-        const player = this.animate([
+        const player = this.animate(
+            [
+                {
+                    opacity: 1,
+                    transform: `matrix(1,0,0,1,${-translateX},${-translateY}) translateZ( 0 )`,
+                },
+                {
+                    opacity: this.opacity,
+                    transform: `matrix(${scaleWidth},0,0,${scaleWidth},0,0) translateZ( 0 )`,
+                },
+            ],
             {
-                opacity: 1,
-                transform: `matrix(1,0,0,1,${-translateX},${-translateY}) translateZ( 0 )`,
-            }, {
-                opacity: this.opacity,
-                transform: `matrix(${scaleWidth},0,0,${scaleWidth},0,0) translateZ( 0 )`,
+                duration: this.duration,
+                easing: "cubic-bezier(0.645, 0.045, 0.355, 1.000)",
+                iterations: 1,
             },
-        ], {
-            duration: this.duration,
-            easing: "cubic-bezier(0.645, 0.045, 0.355, 1.000)",
-            iterations: 1,
-        });
+        );
 
         player.addEventListener("finish", () => {
             this.classList.remove("is-expanded");
