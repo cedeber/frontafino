@@ -1,7 +1,0 @@
-.Temperature.-up { background: #f2777aaa; }
-.Temperature.-down { background: #6699ccaa; }
-.Temperature .action > .less { background: var( --base05 ); }
-.Temperature .action > .more { background: var( --base03 ); }
-.Temperature.-up .action > .more { background: var( --red ); }
-.Temperature.-down .action > .less { background: var( --blue ); }
-.Temperature .action { background: #ffffff6e; }

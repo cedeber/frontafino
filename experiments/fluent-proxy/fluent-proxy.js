@@ -1,6 +1,7 @@
-import {FluentBundle, FluentResource} from "@fluent/bundle";
+import { FluentBundle, FluentResource } from "https://cdn.skypack.dev/@fluent/bundle";
 
-let localization = getLocalization(`
+let localization = getLocalization(
+    `
 -brand-name = Foo 3000
 welcome = Welcome, {$name}, to {-brand-name}!
 
@@ -13,16 +14,21 @@ shared-photos =
         [female] her stream
        *[other] their stream
     }.
-`, "en-US");
+`,
+    "en-US",
+);
 
-let {welcome, sharedPhotos} = localization;
+let { welcome, sharedPhotos } = localization;
 
-console.log(welcome({name: "Anna"}));
-console.log(sharedPhotos({
-    "userName": "Anne",
-    "userGender": "female",
-    "photoCount": 3
-}));
+const txt1 = document.querySelector("#txt1");
+const txt2 = document.querySelector("#txt2");
+
+txt1.innerHTML = welcome({ name: "Anna" });
+txt2.innerHTML = sharedPhotos({
+    userName: "Anne",
+    userGender: "female",
+    photoCount: 3,
+});
 
 function getLocalization(resource, language) {
     let bundle = new FluentBundle(language);
@@ -33,12 +39,15 @@ function getLocalization(resource, language) {
         {},
         {
             get(_obj, prop) {
-                let key = prop.toString().replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase();
+                let key = prop
+                    .toString()
+                    .replace(/([a-zA-Z])(?=[A-Z])/g, "$1-")
+                    .toLowerCase();
                 let { value } = bundle.getMessage(key);
 
-                return function(params) {
+                return function (params) {
                     return bundle.formatPattern(value, params);
-                }
+                };
             },
         },
     );
