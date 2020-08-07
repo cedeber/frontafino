@@ -1,24 +1,3 @@
-# Node.js
-node_modules
-package-lock.json
-yarn.lock
-
-# Parcel
-.cache
-.parcel-cache
-dist
-
-# Rust
-target
-Cargo.lock
-
-# Sapper / Svelte
-__sapper__
-build/
-
-#TypeScript
-tsconfig.tsbuildinfo
-
 # IDE
 .idea
 .vscode
