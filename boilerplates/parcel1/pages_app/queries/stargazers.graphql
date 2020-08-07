@@ -1,7 +1,0 @@
-query {
-    repository(owner: "cedeber", name: "web-client-boilerplate") {
-        stargazers {
-            totalCount
-        }
-    }
-}
