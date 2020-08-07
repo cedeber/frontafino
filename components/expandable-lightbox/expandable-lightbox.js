@@ -3,8 +3,8 @@ export default class ExpandableLightbox extends HTMLElement {
 
     startLeft = 0;
     startTop = 0;
-    startRect; // ClientRect;
-    endRect; // ClientRect;
+    startClientRect;
+    endClientRect;
     isOpen = false;
     windowWidth = 0;
 
@@ -49,13 +49,13 @@ export default class ExpandableLightbox extends HTMLElement {
         this.classList.add("has-no-transitions");
 
         // Get start and final positions
-        this.startRect = this.getBoundingClientRect();
+        this.startClientRect = this.getBoundingClientRect();
         this.classList.add("is-expanded");
-        this.endRect = this.getBoundingClientRect();
+        this.endClientRect = this.getBoundingClientRect();
         this.classList.remove("is-expanded");
 
-        const endTop = window.innerHeight / 2 - this.endRect.height / 2;
-        const endLeft = window.innerWidth / 2 - this.endRect.width / 2;
+        const endTop = window.innerHeight / 2 - this.endClientRect.height / 2;
+        const endLeft = window.innerWidth / 2 - this.endClientRect.width / 2;
 
         // Place to final destination
         this.classList.add("is-expanded");
@@ -64,9 +64,9 @@ export default class ExpandableLightbox extends HTMLElement {
         this.style.opacity = "1"; // avoid flickering
 
         // Scale and translation animation
-        const scaleWidth = 1 / (this.endRect.width / this.startRect.width);
-        const translateX = endLeft - this.startRect.left;
-        const translateY = endTop - this.startRect.top;
+        const scaleWidth = 1 / (this.endClientRect.width / this.startClientRect.width);
+        const translateX = endLeft - this.startClientRect.left;
+        const translateY = endTop - this.startClientRect.top;
         const player = this.animate(
             [
                 {
@@ -117,9 +117,9 @@ export default class ExpandableLightbox extends HTMLElement {
         this.style.left = `${this.startLeft}px`;
 
         // Scale and translation animation
-        const scaleWidth = this.startRect.width / this.endRect.width;
-        const translateX = this.startRect.left - this.endRect.left;
-        const translateY = this.startRect.top - this.endRect.top;
+        const scaleWidth = this.startClientRect.width / this.endClientRect.width;
+        const translateX = this.startClientRect.left - this.endClientRect.left;
+        const translateY = this.startClientRect.top - this.endClientRect.top;
         const player = this.animate(
             [
                 {
