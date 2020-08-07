@@ -1,5 +1,5 @@
 # Components
 
-| Name                                                    | Description |
-| :------------------------------------------------------ | :---------- |
-| [Expandable Lightbox](/components/expandable-lightbox/) | ...         |
+| Name                                                     | Description |
+| :------------------------------------------------------- | :---------- |
+| [Expandable Lightbox](./components/expandable-lightbox/) | ...         |
