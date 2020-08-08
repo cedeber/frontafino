@@ -1,0 +1,242 @@
+{
+  "Default": {
+    "Original": {
+      "Default": "identity.png"
+    }
+  },
+  "Black and White": {
+    "Agfa": {
+      "APX 25": "film_simulation/black_and_white/agfa/agfa_apx_25.png",
+      "APX 100": "film_simulation/black_and_white/agfa/agfa_apx_100.png"
+    },
+    "Fujifilm": {
+      "FP 3000b": "film_simulation/black_and_white/fuji/fuji_fp-3000b_3.png",
+      "FP 3000b Negative": "film_simulation/black_and_white/fuji/fuji_fp-3000b_negative_3.png",
+      "Neopan 1600": "film_simulation/black_and_white/fuji/fuji_neopan_1600_2.png",
+      "Neopan Acros 100": "film_simulation/black_and_white/fuji/fuji_neopan_acros_100.png"
+    },
+    "Ilforfd": {
+      "Delta 100": "film_simulation/black_and_white/ilford/ilford_delta_100.png",
+      "Delta 400": "film_simulation/black_and_white/ilford/ilford_delta_400.png",
+      "Delta 3200": "film_simulation/black_and_white/ilford/ilford_delta_3200_2.png",
+      "FP4 Plus 125": "film_simulation/black_and_white/ilford/ilford_fp4_plus_125.png",
+      "HP5": "film_simulation/black_and_white/ilford/ilford_hp5_2.png",
+      "HP5 Plus 400": "film_simulation/black_and_white/ilford/ilford_hp5_plus_400.png",
+      "HPS 800": "film_simulation/black_and_white/ilford/ilford_hps_800.png",
+      "Pan F Plus 50": "film_simulation/black_and_white/ilford/ilford_pan_f_plus_50.png",
+      "XP2": "film_simulation/black_and_white/ilford/ilford_xp2.png"
+    },
+    "Kodak": {
+      "BW 400 CN": "film_simulation/black_and_white/kodak/kodak_bw_400_cn.png",
+      "HIE": "film_simulation/black_and_white/kodak/kodak_hie_(hs_infra).png",
+      "T-Max 100": "film_simulation/black_and_white/kodak/kodak_t-max_100.png",
+      "T-Max 400": "film_simulation/black_and_white/kodak/kodak_t-max_400.png",
+      "T-Max 3200": "film_simulation/black_and_white/kodak/kodak_tmax_3200_2.png",
+      "Tri-X 400": "film_simulation/black_and_white/kodak/kodak_tri-x_400_2.png"
+    },
+    "Polaroid": {
+      "664": "film_simulation/black_and_white/polaroid/polaroid_664.png",
+      "665": "film_simulation/black_and_white/polaroid/polaroid_665_3.png",
+      "665 Negative": "film_simulation/black_and_white/polaroid/polaroid_665_negative_2.png",
+      "667": "film_simulation/black_and_white/polaroid/polaroid_667.png",
+      "672": "film_simulation/black_and_white/polaroid/polaroid_672.png"
+    },
+    "Rollei": {
+      "IR 400": "film_simulation/black_and_white/rollei/rollei_ir_400.png",
+      "Ortho 25": "film_simulation/black_and_white/rollei/rollei_ortho_25.png",
+      "Retro 80's": "film_simulation/black_and_white/rollei/rollei_retro_80s.png",
+      "Retro 100 Tonal": "film_simulation/black_and_white/rollei/rollei_retro_100_tonal.png"
+    }
+  },
+  "Color": {
+    "Agfa": {
+      "Precisa 100": "film_simulation/color/agfa/agfa_precisa_100.png",
+      "Ultra Color 100": "film_simulation/color/agfa/agfa_ultra_color_100.png",
+      "Vista 200": "film_simulation/color/agfa/agfa_vista_200.png"
+    },
+    "Fujifilm": {
+      "160C": "film_simulation/color/fuji/fuji_160c_2.png",
+      "400H": "film_simulation/color/fuji/fuji_400h_2.png",
+      "800Z": "film_simulation/color/fuji/fuji_800z_2.png",
+      "Astia 100": "film_simulation/color/fuji/fuji_astia_100_generic.png",
+      "Astia 100F": "film_simulation/color/fuji/fuji_astia_100f.png",
+      "FP 100C": "film_simulation/color/fuji/fuji_fp-100c_3.png",
+      "FP 100C Cool": "film_simulation/color/fuji/fuji_fp-100c_cool_3.png",
+      "FP 100C Negative": "film_simulation/color/fuji/fuji_fp-100c_negative_3.png",
+      "Provia 100": "film_simulation/color/fuji/fuji_provia_100_generic.png",
+      "Provia 100F": "film_simulation/color/fuji/fuji_provia_100f.png",
+      "Provia 400F": "film_simulation/color/fuji/fuji_provia_400f.png",
+      "Provia 400X": "film_simulation/color/fuji/fuji_provia_400x.png",
+      "Sensia 100": "film_simulation/color/fuji/fuji_sensia_100.png",
+      "Superia 100": "film_simulation/color/fuji/fuji_superia_100_2.png",
+      "Superia 200": "film_simulation/color/fuji/fuji_superia_200.png",
+      "Superia 200 X-Pro": "film_simulation/color/fuji/fuji_superia_200_xpro.png",
+      "Superia 400": "film_simulation/color/fuji/fuji_superia_400_2.png",
+      "Superia 800": "film_simulation/color/fuji/fuji_superia_800_2.png",
+      "Superia 1600": "film_simulation/color/fuji/fuji_superia_1600_2.png",
+      "Superia HG 1600": "film_simulation/color/fuji/fuji_superia_hg_1600.png",
+      "Superia Reala 100": "film_simulation/color/fuji/fuji_superia_reala_100.png",
+      "Superia X-tra 800": "film_simulation/color/fuji/fuji_superia_x-tra_800.png",
+      "Velvia 50": "film_simulation/color/fuji/fuji_velvia_50.png",
+      "Velvia 100": "film_simulation/color/fuji/fuji_velvia_100_generic.png"
+    },
+    "Kodak": {
+      "E 100 GX Ektachrome": "film_simulation/color/kodak/kodak_e-100_gx_ektachrome_100.png",
+      "Ektachrome 100 VS": "film_simulation/color/kodak/kodak_ektachrome_100_vs.png",
+      "Ektachrome 100 VS Generic": "film_simulation/color/kodak/kodak_ektachrome_100_vs_generic.png",
+      "Ektar 100": "film_simulation/color/kodak/kodak_ektar_100.png",
+      "Elite 100 XPro": "film_simulation/color/kodak/kodak_elite_100_xpro.png",
+      "Elite Chrome 200": "film_simulation/color/kodak/kodak_elite_chrome_200.png",
+      "Elite Chrome 400": "film_simulation/color/kodak/kodak_elite_chrome_400.png",
+      "Elite Color 200": "film_simulation/color/kodak/kodak_elite_color_200.png",
+      "Elite Color 400": "film_simulation/color/kodak/kodak_elite_color_400.png",
+      "Elite Extracolor 100": "film_simulation/color/kodak/kodak_elite_extracolor_100.png",
+      "Kodachrome 25": "film_simulation/color/kodak/kodak_kodachrome_25.png",
+      "Kodachrome 64": "film_simulation/color/kodak/kodak_kodachrome_64.png",
+      "Kodachrome 64 Generic": "film_simulation/color/kodak/kodak_kodachrome_64_generic.png",
+      "Kodachrome 200": "film_simulation/color/kodak/kodak_kodachrome_200.png",
+      "Portra 160": "film_simulation/color/kodak/kodak_portra_160_2.png",
+      "Portra 160 NC": "film_simulation/color/kodak/kodak_portra_160_nc_2.png",
+      "Portra 160 VC": "film_simulation/color/kodak/kodak_portra_160_vc_2.png",
+      "Portra 400": "film_simulation/color/kodak/kodak_portra_400_2.png",
+      "Portra 400 NC": "film_simulation/color/kodak/kodak_portra_400_nc_2.png",
+      "Portra 400 UC": "film_simulation/color/kodak/kodak_portra_400_uc_2.png",
+      "Portra 400 VC": "film_simulation/color/kodak/kodak_portra_400_vc_2.png",
+      "Portra 800": "film_simulation/color/kodak/kodak_portra_800_2.png",
+      "Portra 800 HC": "film_simulation/color/kodak/kodak_portra_800_hc.png"
+    },
+    "Lomography": {
+      "Redscale 100": "film_simulation/color/lomography/lomography_redscale_100.png",
+      "X-Pro Slide 200": "film_simulation/color/lomography/lomography_x-pro_slide_200.png"
+    },
+    "Polaroid": {
+      "669": "film_simulation/color/polaroid/polaroid_669_3.png",
+      "669 Cold": "film_simulation/color/polaroid/polaroid_669_cold_3.png",
+      "690": "film_simulation/color/polaroid/polaroid_690_3.png",
+      "690 Cold": "film_simulation/color/polaroid/polaroid_690_cold_3.png",
+      "690 Warm": "film_simulation/color/polaroid/polaroid_690_warm_3.png",
+      "Polachrome": "film_simulation/color/polaroid/polaroid_polachrome.png",
+      "PX 70": "film_simulation/color/polaroid/polaroid_px-70_3.png",
+      "PX 70 Cold": "film_simulation/color/polaroid/polaroid_px-70_cold_3.png",
+      "PX 70 Warm": "film_simulation/color/polaroid/polaroid_px-70_warm_3.png",
+      "PX 100 UV+ Cold": "film_simulation/color/polaroid/polaroid_px-100uv+_cold_3.png",
+      "PX 100 UV+ Warm": "film_simulation/color/polaroid/polaroid_px-100uv+_warm_3.png",
+      "PX 680": "film_simulation/color/polaroid/polaroid_px-680_3.png",
+      "PX 680 Cold": "film_simulation/color/polaroid/polaroid_px-680_cold_3.png",
+      "PX 680 Warm": "film_simulation/color/polaroid/polaroid_px-680_warm_3.png",
+      "Time Zero": "film_simulation/color/polaroid/polaroid_time_zero_(expired)_4.png",
+      "Time Zero Cold": "film_simulation/color/polaroid/polaroid_time_zero_(expired)_cold_4.png"
+    },
+    "Creative": {
+      "Anime": "film_simulation/color/creativepack-1/anime.png",
+      "Bleach ByPass 1": "film_simulation/color/creativepack-1/bleachbypass1.png",
+      "Bleach ByPass 2": "film_simulation/color/creativepack-1/bleachbypass2.png",
+      "Bleach ByPass 3": "film_simulation/color/creativepack-1/bleachbypass3.png",
+      "Bleach ByPass 4": "film_simulation/color/creativepack-1/bleachbypass4.png",
+      "Candle Light": "film_simulation/color/creativepack-1/candlelight.png",
+      "Crisp Warm": "film_simulation/color/creativepack-1/crispwarm.png",
+      "Crisp Winter": "film_simulation/color/creativepack-1/crispwinter.png",
+      "Drop Blues": "film_simulation/color/creativepack-1/dropblues.png",
+      "Edgyember": "film_simulation/color/creativepack-1/edgyember.png",
+      "Fall Colors": "film_simulation/color/creativepack-1/fallcolors.png",
+      "Foggy Night": "film_simulation/color/creativepack-1/foggynight.png",
+      "Futuristic Bleak 1": "film_simulation/color/creativepack-1/futuristicbleak1.png",
+      "Futuristic Bleak 2": "film_simulation/color/creativepack-1/futuristicbleak2.png",
+      "Futuristic Bleak 3": "film_simulation/color/creativepack-1/futuristicbleak3.png",
+      "Futuristic Bleak 4": "film_simulation/color/creativepack-1/futuristicbleak4.png",
+      "Horror Blue": "film_simulation/color/creativepack-1/horrorblue.png",
+      "Late Sunset": "film_simulation/color/creativepack-1/latesunset.png",
+      "Moonlight": "film_simulation/color/creativepack-1/moonlight.png",
+      "Night from Day": "film_simulation/color/creativepack-1/nightfromday.png",
+      "Red Blue Yellow": "film_simulation/color/creativepack-1/redblueyellow.png",
+      "Smokey": "film_simulation/color/creativepack-1/smokey.png",
+      "Soft Warning": "film_simulation/color/creativepack-1/softwarming.png",
+      "Teal Magenta Gold": "film_simulation/color/creativepack-1/tealmagentagold.png",
+      "Teal Orange": "film_simulation/color/creativepack-1/tealorange.png",
+      "Teal Orange 1": "film_simulation/color/creativepack-1/tealorange1.png",
+      "Teal Orange 2": "film_simulation/color/creativepack-1/tealorange2.png",
+      "Teal Orange 3": "film_simulation/color/creativepack-1/tealorange3.png",
+      "Tension Green 1": "film_simulation/color/creativepack-1/tensiongreen1.png",
+      "Tension Green 2": "film_simulation/color/creativepack-1/tensiongreen2.png",
+      "Tension Green 3": "film_simulation/color/creativepack-1/tensiongreen3.png",
+      "Tension Green 4": "film_simulation/color/creativepack-1/tensiongreen4.png"
+    }
+  },
+  "XTrans III": {
+    "Fuji X-Trans": {
+      "Acros": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_acros.png",
+      "Acros + Green": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_acros+g.png",
+      "Acros + Red": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_acros+r.png",
+      "Acros + Yellow": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_acros+ye.png",
+      "Astia": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_astia.png",
+      "Classic Chrome": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_classic_chrome.png",
+      "Mono": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_mono.png",
+      "Mono + Green": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_mono+g.png",
+      "Mono + Red": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_mono+r.png",
+      "Mono + Yellow": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_mono+ye.png",
+      "Pro Negative Standard": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_pro_neg_std.png",
+      "Pro Negative High": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_pro_neg_hi.png",
+      "Provia": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_provia.png",
+      "Sepia": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_sepia.png",
+      "Velvia": "fujifilm_xtrans_iii/fuji_xtrans_iii_-_velvia.png"
+    }
+  },
+  "Apple": {
+    "Apple": {
+      "Mono": "apple/apple_mono.png",
+      "Silver": "apple/apple_silver.png",
+      "Black": "apple/apple_black.png",
+      "Intense": "apple/apple_intense.png",
+      "Intense Cold": "apple/apple_intense_cold.png",
+      "Intense Warm": "apple/apple_intense_warm.png",
+      "Spectacular": "apple/apple_spectacular.png",
+      "Spectacular Cold": "apple/apple_spectacular_cold.png",
+      "Spectacular Warm": "apple/apple_spectacular_warm.png"
+    }
+  },
+  "Pixelmator": {
+    "Pixelmator Pro": {
+      "Mono": "pixelmator_pro/mono.png",
+      "Dark": "pixelmator_pro/dark.png",
+      "Smoky": "pixelmator_pro/smoky.png",
+      "Loud": "pixelmator_pro/loud.png",
+      "Intense": "pixelmator_pro/intense.png",
+      "Calm": "pixelmator_pro/calm.png",
+      "Bright": "pixelmator_pro/bright.png",
+      "Dramatic": "pixelmator_pro/dramatic.png",
+      "Rosy": "pixelmator_pro/rosy.png",
+      "Flamboyant": "pixelmator_pro/flamboyant.png",
+      "Vintage": "pixelmator_pro/vintage.png",
+      "Cold": "pixelmator_pro/cold.png",
+      "Warm": "pixelmator_pro/warm.png"
+    }
+  },
+  "Picture FX": {
+    "Analog FX": {
+      "Anno 1870": "picturefx/analogfx/analogfx-anno-1870-color.png",
+      "Old Style 1": "picturefx/analogfx/analogfx-old-style-i.png",
+      "Old Style 2": "picturefx/analogfx/analogfx-old-style-ii.png",
+      "Old Style 3": "picturefx/analogfx/analogfx-old-style-iii.png",
+      "Sepia": "picturefx/analogfx/analogfx-sepia-color.png",
+      "Soft Sepia 1": "picturefx/analogfx/analogfx-soft-sepia-i.png",
+      "Soft Sepia 2": "picturefx/analogfx/analogfx-soft-sepia-ii.png"
+    },
+    "Gold FX": {
+      "Spring Breeze": "picturefx/goldfx/goldfx-spring-breeze.png",
+      "Bright Spring Breeze": "picturefx/goldfx/goldfx-bright-spring-breeze.png",
+      "Summer Heat": "picturefx/goldfx/goldfx-summer-heat.png",
+      "Hot Summer Heat": "picturefx/goldfx/goldfx-summer-heat.png",
+      "Bright Summer Heat": "picturefx/goldfx/goldfx-summer-heat.png",
+      "Perfect Sunset 1min": "picturefx/goldfx/goldfx-perfect-sunset-01min.png",
+      "Perfect Sunset 5min": "picturefx/goldfx/goldfx-perfect-sunset-05min.png",
+      "Perfect Sunset 10min": "picturefx/goldfx/goldfx-perfect-sunset-10min.png"
+    },
+    "Technical FX": {
+      "Backlight": "picturefx/technicalfx/technicalfx-backlight-filter.png"
+    },
+    "Zilver FX": {
+      "Infrared": "picturefx/zilverfx/zilverfx-infrared.png",
+      "Vintage": "picturefx/zilverfx/zilverfx-vintage-b&w.png"
+    }
+  }
+}
