@@ -9,4 +9,4 @@
 
 ## License
 
-Copyright (c) 2015-2019 Cédric Eberhardt - MIT License
+Copyright (c) 2015-2020 Cédric Eberhardt - MIT License
