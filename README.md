@@ -6,3 +6,7 @@
 | [Fluent Proxy](./experiments/fluent-proxy/)               | ...         |
 | [Minimal PWA](./experiments/pwa-minimal/)                 | ...         |
 | [Simple Worker](./experiments/simple-worker/)             | ...         |
+
+## License
+
+Copyright (c) 2015-2019 Cédric Eberhardt - MIT License
