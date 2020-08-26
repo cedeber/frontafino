@@ -15,3 +15,7 @@ JavaScript Utilities and Experiments.
 | [Pimiö](./experiments/pimio/)                             | ...         |
 | [Minimal PWA](./experiments/pwa-minimal/)                 | ...         |
 | [Simple Worker](./experiments/simple-worker/)             | ...         |
+
+## License
+
+Copyright (c) 2015-2020 Cédric Eberhardt - MIT License
