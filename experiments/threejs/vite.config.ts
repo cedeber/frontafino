@@ -3,4 +3,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
     plugins: [reactRefresh()],
+    optimizeDeps: {
+        include: ["three/examples/jsm/controls/OrbitControls"],
+    },
 });

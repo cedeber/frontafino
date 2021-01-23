@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
+import style from "./App.module.css";
 import {
     Scene,
-    BoxGeometry,
+    BoxBufferGeometry,
     MeshBasicMaterial,
     Mesh,
     PerspectiveCamera,
@@ -10,18 +11,27 @@ import {
     Clock,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import dat from "dat.gui";
 
 function App() {
     const canvas = useRef<HTMLCanvasElement>(null);
-    const renderer = useRef<WebGLRenderer>();
-    const controls = useRef<OrbitControls>();
+    const gui = useRef<dat.GUI>();
 
-    const sizes = { width: 800, height: 600 };
+    let renderer: WebGLRenderer;
+    let controls: OrbitControls;
+
+    let sizes = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+    };
+    const parameters = {
+        color: 0x990000,
+    };
 
     const clock = new Clock();
     const scene = new Scene();
-    const geometry = new BoxGeometry(1, 1, 1);
-    const material = new MeshBasicMaterial({ color: 0x990000 });
+    const geometry = new BoxBufferGeometry(1, 1, 1);
+    const material = new MeshBasicMaterial({ color: parameters.color });
     const mesh = new Mesh(geometry, material);
     const axesHelper = new AxesHelper();
     const camera = new PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 100);
@@ -34,30 +44,49 @@ function App() {
 
     useEffect(() => {
         if (canvas.current) {
-            renderer.current = new WebGLRenderer({ canvas: canvas.current });
-            controls.current = new OrbitControls(camera, canvas.current);
+            renderer = new WebGLRenderer({ canvas: canvas.current });
+            renderer.setSize(sizes.width, sizes.height);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            controls = new OrbitControls(camera, canvas.current);
+            controls.enableDamping = true;
 
-            renderer.current.setSize(sizes.width, sizes.height);
-            controls.current.enableDamping = true;
+            window.addEventListener("resize", () => {
+                sizes = {
+                    width: window.innerWidth,
+                    height: window.innerHeight,
+                };
+                renderer.setSize(sizes.width, sizes.height);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                camera.aspect = sizes.width / sizes.height;
+                camera.updateProjectionMatrix();
+            });
         }
-    }, [canvas]);
+
+        gui.current = new dat.GUI();
+        gui.current.add(mesh.position, "y", -3, 3, 0.01).name("elevation");
+        gui.current.add(material, "wireframe");
+        gui.current.addColor(parameters, "color").onChange((color) => {
+            material.color.set(color);
+        });
+
+        return function cleanup() {
+            gui.current?.destroy();
+        };
+    }, []);
 
     useRequestAnimationFrame((_deltaTime) => {
-        if (renderer.current && controls.current) {
-            mesh.position.set(0.7, -0.6, 1);
-            mesh.scale.set(2, 0.5, 0.5);
-            mesh.rotation.reorder("XYZ");
-            mesh.rotation.x = Math.sin(clock.getElapsedTime());
-            mesh.rotation.y = Math.cos(clock.getElapsedTime());
+        mesh.scale.set(2, 0.5, 0.5);
+        mesh.rotation.reorder("XYZ");
+        mesh.rotation.x = Math.sin(clock.getElapsedTime());
+        mesh.rotation.y = Math.cos(clock.getElapsedTime());
 
-            camera.lookAt(mesh.position);
+        camera.lookAt(mesh.position);
 
-            controls.current.update();
-            renderer.current.render(scene, camera);
-        }
+        controls.update();
+        renderer.render(scene, camera);
     });
 
-    return <canvas ref={canvas}></canvas>;
+    return <canvas ref={canvas} className={style.webgl}></canvas>;
 }
 
 export { App };
