@@ -25,4 +25,7 @@ describe("classNames", () => {
     it("With all", () => {
         expect(classNames(["foo", 12], [{ baz: true }, "foobar"])).toBe("foo 12 baz foobar");
     });
+    it("With more falsy values", () => {
+        expect(classNames(0, false, "")).toBe("");
+    });
 });
