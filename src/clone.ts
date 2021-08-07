@@ -30,19 +30,13 @@ const deepClone = <T>(obj: T): T => {
     }
 
     // Handle Object
-    if (obj instanceof Object) {
-        const copy: Record<string, unknown> = {};
+    const copy: Record<string, unknown> = {};
 
-        for (const attr in obj) {
-            if (Object.prototype.hasOwnProperty.call(obj, attr)) {
-                copy[attr] = deepClone(obj[attr]);
-            }
-        }
-
-        return copy as unknown as T;
+    for (const attr in obj) {
+        copy[attr] = deepClone(obj[attr]);
     }
 
-    throw new Error("Unable to clone! Its type is not supported.");
+    return copy as unknown as T;
 };
 
 export { deepClone };
