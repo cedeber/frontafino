@@ -1,6 +1,6 @@
 import { ForwardedRef, MutableRefObject, useCallback, useEffect, useMemo } from "react";
 import { useForwardedRef } from "./useForwardedRef";
-import { difference } from "../difference";
+import { deepDifference } from "../difference";
 
 type KeyboardEventHandler = (event: KeyboardEvent) => void;
 
@@ -115,7 +115,7 @@ const getOnKeyDown = (
 
         // Compare if modKeys arrays matches, not necessarily in the same order
         // We don't compare the length, as [Control, Control] === [Control]. We don't care about double modKeys.
-        const isAllModKeysPressed = difference(modKeys, pressedModKeys).length === 0;
+        const isAllModKeysPressed = deepDifference(modKeys, pressedModKeys).length === 0;
 
         // Check that the last key stroke of the sequence is the correct sign, like in Control+Shift+C
         if (isAllModKeysPressed && event.key.toLowerCase() === actionKey?.toLowerCase()) {

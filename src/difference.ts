@@ -1,57 +1,35 @@
-const result = [];
+// Symmetric difference (lodash xor equivalent)
+const deepDifference = (arr1: unknown[], arr2: unknown[]): unknown[] => {
+    const result: unknown[] = [];
 
-/* Defining the function with two
-    arguments array inputs */
-function difference(arr1, arr2) {
-    var i = 0,
-        j = 0;
-    var flag = false;
+    const checkArray = (a1: unknown[], a2: unknown[]) => {
+        let flag = false;
 
-    /* For array 1 */
-    for (i = 0; i < arr1.length; i++) {
-        /* Reseting the flag and the
-            other array iterator */
-        j = 0;
-        flag = false;
-        while (j != arr2.length) {
-            if (arr1[i] == arr2[j]) {
-                flag = true;
-                break;
+        for (const val of a1) {
+            flag = false;
+            for (const otherVal of a2) {
+                if (Array.isArray(val) && Array.isArray(otherVal)) {
+                    const res = deepDifference(val, otherVal);
+                    if (res.length == 0) {
+                        flag = true;
+                    }
+                    break;
+                } else if (val == otherVal) {
+                    flag = true;
+                    break;
+                }
             }
-            j++;
-        }
 
-        /* If value is not present in the
-            second array then push that value
-            to the resultant array */
-        if (!flag) {
-            result.push(arr1[i]);
-        }
-    }
-    flag = false;
-
-    /* For array 2 */
-    for (i = 0; i < arr2.length; i++) {
-        /* Reseting the flag and the
-            other array iterator */
-        j = 0;
-        flag = false;
-        while (j != arr1.length) {
-            if (arr2[i] == arr1[j]) {
-                flag = true;
-                break;
+            if (!flag) {
+                result.push(val);
             }
-            j++;
         }
+    };
 
-        /* If value is not present in the
-            first array then push that value
-            to the resultant array */
-        if (!flag) {
-            result.push(arr2[i]);
-        }
-    }
+    checkArray(arr1, arr2);
+    checkArray(arr2, arr1);
+
     return result;
-}
+};
 
-export { difference };
+export { deepDifference };
