@@ -1,6 +1,6 @@
 import { ForwardedRef, MutableRefObject, useCallback, useEffect, useMemo } from "react";
-import { useForwardedRef } from "./useForwardedRef";
-import { deepDifference } from "../difference";
+import { useForwardedRef } from "./useForwardedRef.js";
+import { deepDifference } from "../difference.js";
 
 type KeyboardEventHandler = (event: KeyboardEvent) => void;
 

@@ -2,9 +2,11 @@
   "name": "@cedeber/frontafino",
   "version": "1.0.0",
   "description": "Utilities and React Hooks",
-  "main": "index.js",
+  "module": "build/index.js",
+  "typings": "build/index.d.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc --project tsconfig.production.json"
   },
   "repository": {
     "type": "git",

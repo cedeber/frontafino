@@ -1,5 +1,5 @@
-import { uid } from "./uid";
-import { flatten } from "./flatten";
+import { uid } from "./uid.js";
+import { flatten } from "./flatten.js";
 
 interface TaggedDOM {
     fragment: DocumentFragment;
@@ -15,7 +15,7 @@ export default function dom(strings: TemplateStringsArray, ...expressions: any[]
     const template = document.createElement("template");
     const tagPromise = promiseTagger();
     const proxyProperties: Map<PropertyKey, HTMLElement> = new Map();
-    let html = [strings[0]];
+    const html = [strings[0]];
 
     const proxy = new Proxy(
         {},

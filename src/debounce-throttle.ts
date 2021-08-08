@@ -21,6 +21,6 @@ export function debounce(func: Function, delay: number): (...rest: any[]) => voi
 
     return function (this: any, ...args: any[]) {
         clearTimeout(timer);
-        timer = setTimeout(func.bind(this, ...args), delay);
+        timer = window.setTimeout(func.bind(this, ...args), delay);
     };
 }

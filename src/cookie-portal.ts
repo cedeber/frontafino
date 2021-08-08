@@ -1,6 +1,6 @@
 /** @see Based on https://github.com/js-cookie/js-cookie */
 
-import { deepClone } from "./clone";
+import { deepClone } from "./clone.js";
 
 /**
  * @param name The name of the property to read from this document's cookies

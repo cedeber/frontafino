@@ -1,8 +1,6 @@
 # Frontafino
 
-JavaScript Utilities and Experiments.
-
-## Utilities
+JavaScript Utilities and React hooks.
 
 | Name                                          | Description                                                                           |
 | --------------------------------------------- | ------------------------------------------------------------------------------------- |
@@ -18,16 +16,6 @@ JavaScript Utilities and Experiments.
 | [Lorem Ipsum](#lorem-ipsum)                   | Lorem ipsum generator.                                                                |
 | [Proxy Storage](#proxy-storage)               | Web Storage with Cookie fallback via a Proxy.                                         |
 | [Service Worker](#service-worker)             | A collection of Service Worker strategies.                                            |
-
-## Experiments
-
-| Name                                                      | Description |
-| :-------------------------------------------------------- | :---------- |
-| [Expandable Lightbox](./experiments/expandable-lightbox/) | ...         |
-| [Fluent Proxy](./experiments/fluent-proxy/)               | ...         |
-| [Pimiö](./experiments/pimio/)                             | ...         |
-| [Minimal PWA](./experiments/pwa-minimal/)                 | ...         |
-| [Simple Worker](./experiments/simple-worker/)             | ...         |
 
 ## Dynamics Styles
 

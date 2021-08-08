@@ -1,6 +1,6 @@
 import { ForwardedRef, MutableRefObject, useEffect, useState } from "react";
-import { useForwardedRef } from "./useForwardedRef";
-import { throttle } from "../debounce-throttle";
+import { useForwardedRef } from "./useForwardedRef.js";
+import { throttle } from "../debounce-throttle.js";
 
 interface Position {
     x: number;
