@@ -1,5 +1,5 @@
-import { deepDifference } from "./difference";
-import { deepClone } from "./clone";
+import { deepDifference } from "../src/difference";
+import { deepClone } from "../src/clone";
 
 describe("difference", () => {
     it("With numbers", () => {

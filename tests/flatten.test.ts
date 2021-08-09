@@ -1,4 +1,4 @@
-import { flatten } from "./flatten";
+import { flatten } from "../src/flatten";
 
 describe("flatten", () => {
     it("With Array", () => {

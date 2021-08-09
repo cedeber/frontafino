@@ -3,6 +3,7 @@
 /.github/
 /archives/
 /src/
+/tests/
 /*config*
 /.*rc*
 *.md

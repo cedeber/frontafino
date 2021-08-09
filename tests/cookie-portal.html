@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Cookie Portal</title>
+    </head>
+    <body>
+        <script type="module">
+            import { writeCookie, readCookie, deleteCookie } from "../build/cookie-portal.js";
+
+            window.writeCookie = writeCookie;
+            window.readCookie = readCookie;
+            window.deleteCookie = deleteCookie;
+        </script>
+    </body>
+</html>

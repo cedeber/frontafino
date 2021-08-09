@@ -1,4 +1,6 @@
-import { classNames } from "./classnames";
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
+import { classNames } from "../src/classnames";
 
 describe("classNames", () => {
     it("With string", () => {
@@ -14,8 +16,11 @@ describe("classNames", () => {
         expect(classNames({ bar: false })).toBe("");
         expect(classNames({ foo: true, bar: false })).toBe("foo");
         // Test truthy/falsy values
+        // @ts-ignore
         expect(classNames({ bar: 0 })).toBe("");
+        // @ts-ignore
         expect(classNames({ bar: "" })).toBe("");
+        // @ts-ignore
         expect(classNames({ foo: "bar" })).toBe("foo");
     });
     it("With array", () => {
@@ -26,6 +31,7 @@ describe("classNames", () => {
         expect(classNames(["foo", 12], [{ baz: true }, "foobar"])).toBe("foo 12 baz foobar");
     });
     it("With more falsy values", () => {
+        // @ts-ignore
         expect(classNames(0, false, "")).toBe("");
     });
 });

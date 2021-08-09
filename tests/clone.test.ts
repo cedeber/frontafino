@@ -1,4 +1,4 @@
-import { deepClone } from "./clone";
+import { deepClone } from "../src/clone";
 
 describe("deepClone", () => {
     it("Cloning undefined or null", () => {
@@ -56,6 +56,7 @@ describe("deepClone", () => {
 
         it("should have the same values", () => {
             expect(obj[0]).toBe(clone[0]);
+            // @ts-ignore
             expect(clone[2].b[1].x).toBe(7);
         });
     });
