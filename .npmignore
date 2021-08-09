@@ -1,0 +1,8 @@
+/.idea/
+/.vscode/
+/.github/
+/archives/
+/src/
+/*config*
+/.*rc*
+*.md
