@@ -12,6 +12,8 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "importHelpers": true,
+    "removeComments": true,
     "noEmit": true,
     "jsx": "react"
   },
