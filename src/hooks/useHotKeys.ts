@@ -1,6 +1,9 @@
 import { ForwardedRef, MutableRefObject, useCallback, useEffect, useMemo } from "react";
 import { useForwardedRef } from "./useForwardedRef.js";
-import { deepDifference } from "../difference.js";
+import { concat, without } from "ramda";
+
+const deepDifference = <T = unknown>(arr1: T[], arr2: T[]): T[] =>
+    concat(without(arr1, arr2), without(arr2, arr1));
 
 type KeyboardEventHandler = (event: KeyboardEvent) => void;
 

@@ -3,7 +3,7 @@
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -14,8 +14,7 @@
     "isolatedModules": true,
     "importHelpers": true,
     "removeComments": true,
-    "noEmit": true,
-    "jsx": "react"
+    "noEmit": true
   },
   "include": ["src", "tests"]
 }

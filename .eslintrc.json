@@ -42,6 +42,7 @@
       "error",
       { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }
     ],
+    "@typescript-eslint/no-explicit-any": ["error", { "ignoreRestArgs": true }],
     "react/prop-types": "off" // Replaced by TypeScript
   }
 }

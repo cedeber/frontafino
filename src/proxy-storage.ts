@@ -1,9 +1,9 @@
-import { readCookie, writeCookie } from "./cookie-portal.js";
+import { readCookie, writeCookie } from "./cookie-portal";
 
 const storage = getProxy(localStorage);
 const session = getProxy(sessionStorage);
 
-function getProxy(webStorage: Storage): object {
+function getProxy(webStorage: Storage): Record<string, unknown> {
     const hasStorage = hasStorageSupport(webStorage);
 
     return new Proxy(

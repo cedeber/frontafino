@@ -1,27 +1,31 @@
+import { dropRepeats, flatten, join, map, split, trim } from "ramda";
+
 type Obj = { [name: string]: boolean };
-type T = string | number | Obj;
+type T = string | number | { [key: string]: boolean };
 
 const classNames = (...args: Array<T | T[]>): string => {
-    const classes: string[] = [];
+    let classes: string[] = [];
 
     for (const arg of args) {
         if (!arg) continue;
 
         if (typeof arg === "string" || typeof arg === "number") {
+            // TODO split spaces for duplicates?
             classes.push(String(arg));
         } else if (Array.isArray(arg) && arg.length) {
             const inner = classNames(...arg);
-            if (inner) classes.push(inner);
+            // Extract again as array to drop duplicates at the end.
+            if (inner) classes = flatten([classes, split(" ", inner)]);
         } else if (typeof arg === "object") {
             for (const key in arg) {
-                if (Object.prototype.hasOwnProperty.call(arg, key) && (arg as Obj)[key]) {
+                if (Reflect.has(arg, key) && (arg as Obj)[key]) {
                     classes.push(key);
                 }
             }
         }
     }
 
-    return classes.map((c) => c.trim()).join(" ");
+    return join(" ", dropRepeats(map(trim, classes)));
 };
 
 export { classNames };

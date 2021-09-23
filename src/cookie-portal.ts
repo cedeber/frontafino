@@ -1,6 +1,6 @@
 /** @see Based on https://github.com/js-cookie/js-cookie */
 
-import { deepClone } from "./clone.js";
+import { clone } from "ramda";
 
 /**
  * @param name The name of the property to read from this document's cookies
@@ -51,8 +51,8 @@ export function writeCookie(
     value: string | number | Record<string, unknown>,
     attributes: { [key: string]: number | string | boolean } = {},
 ): string {
-    const clonedAttributes = Object.assign({ path: "/" }, deepClone(attributes));
-    let clonedValue = deepClone(value);
+    const clonedAttributes = Object.assign({ path: "/" }, clone(attributes));
+    let clonedValue = clone(value);
 
     if (typeof clonedAttributes.expires === "number") {
         const expires = new Date(Number(new Date()) + clonedAttributes.expires * 864e5);

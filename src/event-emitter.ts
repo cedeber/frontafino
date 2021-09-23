@@ -1,19 +1,16 @@
-export default class EventEmitter {
-    constructor() {
-        /** @type {Map<string, Function[]>} */
-        this.listeners = new Map();
+type UnknownFn = (...args: unknown[]) => unknown;
 
-        /** @type {Set<string>} */
-        this.onceLabels = new Set(); // all listeners names that will trigger only once
-    }
+class EventEmitter {
+    listeners: Map<string, UnknownFn[]> = new Map();
+    onceLabels: Set<string> = new Set(); // all listeners names that will trigger only once
 
     /**
      * Delete events which run only once
      * @private
-     * @param {string} label Event name
-     * @returns {boolean} true if removed
+     * @param label Event name
+     * @returns true if removed
      */
-    __deleteOnce(label) {
+    __deleteOnce(label: string): boolean {
         if (this.onceLabels.has(label)) {
             this.listeners.delete(label);
             this.onceLabels.delete(label);
@@ -26,10 +23,10 @@ export default class EventEmitter {
 
     /**
      * Set up an event callback
-     * @param {string} label Event name
-     * @param {Function} callback An event callback
+     * @param label Event name
+     * @param callback An event callback
      */
-    on(label, callback) {
+    on(label: string, callback: UnknownFn): void {
         let labelListeners = this.listeners.get(label);
 
         if (labelListeners === undefined) {
@@ -44,20 +41,20 @@ export default class EventEmitter {
 
     /**
      * Set up an event callback which will only run once
-     * @param {string} label Event name
-     * @param {Function} callback An event callback
+     * @param label Event name
+     * @param callback An event callback
      */
-    once(label, callback) {
+    once(label: string, callback: UnknownFn): void {
         this.on(label, callback);
         this.onceLabels.add(label);
     }
 
     /**
      * Remove an event callback
-     * @param {string} label Event name
-     * @param {Function} callback An event callback
+     * @param label Event name
+     * @param callback An event callback
      */
-    remove(label, callback) {
+    remove(label: string, callback: UnknownFn): void {
         const listeners = this.listeners.get(label);
 
         if (this.__deleteOnce(label)) {
@@ -83,15 +80,17 @@ export default class EventEmitter {
 
     /**
      * Emit an event
-     * @param {string} label Event name
-     * @param {...*} args Callback parameters
+     * @param label Event name
+     * @param args Callback parameters
      */
-    emit(label, ...args) {
+    emit(label: string, ...args: unknown[]): void {
         const listeners = this.listeners.get(label);
 
         if (listeners) {
-            listeners.forEach(listener => listener(...args));
+            listeners.forEach((listener) => listener(...args));
             this.__deleteOnce(label);
         }
     }
 }
+
+export { EventEmitter };

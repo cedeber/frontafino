@@ -1,10 +1,12 @@
+type UnknownFn = (...args: any[]) => unknown;
+
 /**
  * Throttle a function
  */
-export function throttle(func: Function, delay: number): (...rest: any[]) => any {
+function throttle(func: UnknownFn, delay: number): (...rest: any[]) => unknown {
     let start = performance.now();
 
-    return function (this: any, ...args: any[]): any {
+    return function (this: unknown, ...args: any[]): unknown {
         if (performance.now() - start > delay) {
             start = performance.now();
 
@@ -16,11 +18,13 @@ export function throttle(func: Function, delay: number): (...rest: any[]) => any
 /**
  * Debounce a function
  */
-export function debounce(func: Function, delay: number): (...rest: any[]) => void {
+function debounce(func: UnknownFn, delay: number): (...rest: any[]) => void {
     let timer: number;
 
-    return function (this: any, ...args: any[]) {
+    return function (this: unknown, ...args: any[]) {
         clearTimeout(timer);
         timer = window.setTimeout(func.bind(this, ...args), delay);
     };
 }
+
+export { throttle, debounce };

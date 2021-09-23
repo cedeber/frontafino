@@ -8,3 +8,5 @@ const locale = (locales: string[] = ["en"]): string => {
 };
 
 export { locale };
+
+// TODO Add search params + hooks
