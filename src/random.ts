@@ -19,6 +19,7 @@ const uid = (): string => {
 
 /**
  * UUID v4
+ * Use crypto.randomUUID() once available
  */
 const uuidv4 = (): string => {
     const hex: string[] = [];
