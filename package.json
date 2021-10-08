@@ -6,8 +6,8 @@
   "typings": "build/index.d.ts",
   "scripts": {
     "test": "npm run build && jest",
-    "build": "rm -rf build/ && tsc --project tsconfig.production.json",
-    "prepublishOnly": "npm run build"
+    "build": "tsc --project tsconfig.production.json",
+    "prepublishOnly": "rm -rf build/ && npm run build"
   },
   "repository": {
     "type": "git",
