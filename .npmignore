@@ -2,6 +2,7 @@
 /.vscode/
 /.github/
 /archives/
+/coverage/
 /src/
 /tests/
 /*config*
