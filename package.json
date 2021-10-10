@@ -1,6 +1,6 @@
 {
   "name": "@cedeber/frontafino",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "Utilities and React Hooks",
   "module": "build/index.js",
   "typings": "build/index.d.ts",
