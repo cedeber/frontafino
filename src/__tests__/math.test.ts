@@ -1,4 +1,4 @@
-import { normalize, random } from "../src/math";
+import { normalize, random } from "../math";
 
 it("normalize", () => {
     expect(normalize(0.5, -1, 1, 10, 20)).toBe(17.5);

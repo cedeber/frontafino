@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-import { classNames } from "../src/classnames";
+import { classNames } from "../classnames";
 
 describe("classNames", () => {
     it("With string", () => {
