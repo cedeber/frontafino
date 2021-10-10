@@ -4,6 +4,15 @@
   "description": "Utilities and React Hooks",
   "module": "build/index.js",
   "typings": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./build/index.js"
+    },
+    "./hooks": {
+      "import": "./build/hooks/index.js"
+    }
+  },
+  "type": "module",
   "scripts": {
     "test": "npm run build && jest",
     "build": "tsc --project tsconfig.production.json",
