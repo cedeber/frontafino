@@ -3,8 +3,10 @@
 /.github/
 /archives/
 /coverage/
+/.docusaurus/
 /src/
 /tests/
+/docs/
 /*config*
 /.*rc*
 *.md
