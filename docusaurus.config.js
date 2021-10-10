@@ -7,7 +7,12 @@ module.exports = {
     baseUrl: "/frontafino/",
     trailingSlash: false,
     tagline: "JavaScript Utilities and React Hooks.",
-    plugins: [["@docusaurus/plugin-content-docs", { routeBasePath: "/" }]],
+    plugins: [
+        [
+            "@docusaurus/plugin-content-docs",
+            { path: "docs", sidebarPath: "./sidebars.js", routeBasePath: "/" },
+        ],
+    ],
     themes: ["@docusaurus/theme-classic"],
     themeConfig: {
         colorMode: {
@@ -17,11 +22,19 @@ module.exports = {
             title: "Frontafino",
             items: [
                 {
+                    href: "https://www.npmjs.com/package/@cedeber/frontafino",
+                    label: "npm",
+                    position: "right",
+                },
+                {
                     href: "https://github.com/cedeber/frontafino",
                     label: "GitHub",
                     position: "right",
                 },
             ],
+        },
+        footer: {
+            copyright: `Copyright © 2015-${new Date().getFullYear()} Cédric Eberhardt - MIT License.`,
         },
     },
 };
