@@ -1,34 +1,21 @@
 {
   "env": {
     "browser": true,
-    "worker": true,
-    "serviceworker": true,
-    "node": true,
     "es6": true,
     "jest": true
   },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended",
     "plugin:testing-library/react"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json",
-    "extraFileExtensions": [".jpg", ".png", ".svg", ".css", ".scss", ".woff", ".woff2"]
+    "project": "./tsconfig.json"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "react",
-    "react-hooks",
-    "prettier",
-    "jsx-a11y",
-    "testing-library"
-  ],
+  "plugins": ["@typescript-eslint", "react-hooks", "prettier", "testing-library"],
   "overrides": [
     {
       // Enable eslint-plugin-testing-library rules or preset only for matching files!
@@ -42,7 +29,6 @@
       "error",
       { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }
     ],
-    "@typescript-eslint/no-explicit-any": ["error", { "ignoreRestArgs": true }],
-    "react/prop-types": "off" // Replaced by TypeScript
+    "@typescript-eslint/no-explicit-any": ["error", { "ignoreRestArgs": true }]
   }
 }
