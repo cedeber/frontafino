@@ -12,9 +12,8 @@
       "import": "./build/hooks/index.js"
     }
   },
-  "type": "module",
   "scripts": {
-    "test": "npm run build && jest",
+    "test": "jest",
     "build": "tsc --project tsconfig.production.json",
     "prepublishOnly": "rm -rf build/ && npm run build"
   },
