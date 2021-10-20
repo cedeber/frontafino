@@ -18,6 +18,8 @@ const KEY_SEQUENCE_TIMEOUT = 1000;
 // Use ESCAPE_HATCH_KEY ot react to all key strokes
 const ESCAPE_HATCH_KEY = "*";
 
+// TODO Probably also need support for iPad + keyboard, etc.
+//      Is detecting Safari enough in these iPhone/iPad platforms as the browser engine is always Safari-based?
 // Supports of Mac
 const IS_MAC = navigator.platform.toLowerCase().indexOf("mac") >= 0;
 
