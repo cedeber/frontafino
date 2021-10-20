@@ -9,3 +9,4 @@ export { normalize, random, randomIntIncl, randomIntExcl, uid, uuidv4 } from "./
 export { storage, session } from "./proxy-storage";
 export { shorten } from "./shorten";
 export { workerManager } from "./worker-manager";
+export { lipsum, toText } from "./lorem-ipsum";
