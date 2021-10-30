@@ -10,3 +10,4 @@ export { storage, session } from "./proxy-storage";
 export { shorten } from "./shorten";
 export { workerManager } from "./worker-manager";
 export { lipsum, toText } from "./lorem-ipsum";
+export { verticalState, getTopPosition } from "./vertical-state";
