@@ -50,8 +50,8 @@ const getBoxDistance = (a: Box, b: Position) => {
     return Math.min(topLeft, topRight, bottomRight, bottomLeft);
 };
 
-const useDistance = (
-    ref?: MutableRefObject<Element> | ForwardedRef<Element>,
+const useDistance = <T extends Element>(
+    ref?: MutableRefObject<T> | ForwardedRef<T>,
 ): number | undefined => {
     const [distance, setDistance] = useState<number>();
     const elRef = useForwardedRef(ref);

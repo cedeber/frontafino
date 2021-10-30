@@ -2,10 +2,10 @@ import { ForwardedRef, MutableRefObject, useEffect, useRef } from "react";
 
 // Make a difference between undefined (not set) and null (waiting for render)
 // Need this difference for useHotKeys
-const useForwardedRef = (
-    ref?: MutableRefObject<Element> | ForwardedRef<Element>,
-): MutableRefObject<Element | null> | undefined => {
-    const innerRef = useRef<Element | null>(null);
+const useForwardedRef = <T extends Element>(
+    ref?: MutableRefObject<T> | ForwardedRef<T>,
+): MutableRefObject<T | null> | undefined => {
+    const innerRef = useRef<T | null>(null);
 
     useEffect(() => {
         if (!ref) return;
