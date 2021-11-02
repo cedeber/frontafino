@@ -3,7 +3,10 @@
   "exclude": ["**/*.spec.ts", "**/*.test.ts"],
   "compilerOptions": {
     "noEmit": false,
+    "sourceMap": true,
     "declaration": true,
+    "declarationMap": true,
+    // "declarationDir": "./types",
     "outDir": "build"
   },
   "include": ["src"]
