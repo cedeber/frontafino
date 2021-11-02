@@ -12,6 +12,7 @@ module.exports = {
             "@docusaurus/plugin-content-docs",
             { path: "docs", sidebarPath: "./sidebars.js", routeBasePath: "/" },
         ],
+        ["@docusaurus/plugin-content-pages", { path: "docs/pages" }],
     ],
     themes: ["@docusaurus/theme-classic"],
     themeConfig: {

@@ -1,0 +1,27 @@
+.test {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500vh;
+    font-size: 20px;
+}
+
+.box {
+    background: crimson;
+    height: 380px;
+    width: 220px;
+}
+
+.data {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+    padding: 10px;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+}

@@ -1,20 +1,22 @@
 {
+  "extends": "@tsconfig/docusaurus/tsconfig.json",
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Node", // "node12" after typescript@4.5+ to support the "exports" in package.json
     "resolveJsonModule": true,
     "isolatedModules": true,
     "importHelpers": true,
     "removeComments": true,
-    "noEmit": true
+    "noEmit": true,
+    "jsx": "react-jsx"
   },
-  "include": ["src"]
+  "include": ["src", "docs"]
 }
