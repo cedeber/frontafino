@@ -6,7 +6,9 @@
 /.docusaurus/
 /src/
 /tests/
+/static/
 /docs/
 /*config*
 /.*rc*
 *.md
+*-lock*
