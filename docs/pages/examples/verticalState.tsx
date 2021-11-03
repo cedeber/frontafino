@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Layout from "@theme/Layout";
 import style from "./verticalState.module.css";
-import { verticalState } from "../../../src";
-import { VerticalState } from "../../../src/vertical-state";
+import { verticalState } from "../../../src/vertical-state";
+import type { VerticalState } from "../../../src/vertical-state";
 
 export default () => {
     const ref = useRef<HTMLDivElement>(null);
