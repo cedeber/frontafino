@@ -2,8 +2,8 @@
  * Normalization
  * @param v Initial value
  * @param vmin Initial minimum
- * @param vmax Initial maximun
- * @param tmin Transformed minimun
+ * @param vmax Initial maximum
+ * @param tmin Transformed minimum
  * @param tmax Transformed maximum
  * @return Transformed value
  * @example normalize(0.5, -1, 1, 10, 20); // 17.5
