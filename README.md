@@ -13,4 +13,4 @@ This is only available from [TypeScript 4.5](https://devblogs.microsoft.com/type
 
 ## License
 
-Copyright (c) 2015-2021 Cédric Eberhardt - MIT License
+Copyright (c) 2015-2022 Cédric Eberhardt - MIT License
