@@ -1,75 +1,56 @@
 {
-  "name": "@cedeber/frontafino",
-  "version": "1.0.0-beta.7",
-  "description": "Utilities and React Hooks",
-  "module": "build/index.js",
-  "typings": "build/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./build/index.js",
-      "types": "./build/index.d.ts"
-    },
-    "./hooks": {
-      "import": "./build/hooks/index.js",
-      "types": "./build/hooks/index.d.ts"
-    }
-  },
-  "scripts": {
-    "test": "jest",
-    "build": "tsc --project tsconfig.production.json",
-    "doc": "docusaurus start",
-    "deploy": "docusaurus deploy",
-    "prepublishOnly": "rm -rf build/ && npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cedeber/frontafino.git"
-  },
-  "keywords": [
-    "utility",
-    "react",
-    "hooks"
-  ],
-  "author": "Cédric Eberhardt <hello+code@cedeber.fr>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cedeber/frontafino/issues"
-  },
-  "homepage": "https://github.com/cedeber/frontafino#readme",
-  "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
-    "@babel/preset-react": "^7.16.0",
-    "@babel/preset-typescript": "^7.16.0",
-    "@docusaurus/core": "^2.0.0-beta.9",
-    "@docusaurus/module-type-aliases": "^2.0.0-beta.9",
-    "@docusaurus/plugin-content-docs": "^2.0.0-beta.9",
-    "@docusaurus/plugin-content-pages": "^2.0.0-beta.9",
-    "@docusaurus/theme-classic": "^2.0.0-beta.9",
-    "@mdx-js/react": "^1.6.22",
-    "@testing-library/react-hooks": "^7.0.2",
-    "@tsconfig/docusaurus": "^1.0.4",
-    "@types/jest": "^27.0.2",
-    "@types/node": "^16.11.6",
-    "@types/ramda": "^0.27.46",
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
-    "@typescript-eslint/eslint-plugin": "5",
-    "@typescript-eslint/parser": "5",
-    "babel-jest": "^27.3.1",
-    "eslint": "8",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-testing-library": "5",
-    "jest": "^27.3.1",
-    "prettier": "^2.4.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.4.4"
-  },
-  "dependencies": {
-    "ramda": "^0.27.1"
-  }
+	"name": "@cedeber/frontafino",
+	"version": "1.0.0-beta.7",
+	"description": "Utilities and React Hooks",
+	"module": "dist/index.js",
+	"typings": "dist/index.d.ts",
+	"source": "src/index.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./hooks": {
+			"import": "./dist/hooks/index.js",
+			"types": "./dist/hooks/index.d.ts"
+		}
+	},
+	"scripts": {
+		"build": "rm -rf dist && tsc --project tsconfig.production.json",
+		"prepublishOnly": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cedeber/frontafino.git"
+	},
+	"keywords": [
+		"utility",
+		"react",
+		"hooks"
+	],
+	"author": "Cédric Eberhardt <hello+code@cedeber.fr>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/cedeber/frontafino/issues"
+	},
+	"homepage": "https://github.com/cedeber/frontafino#readme",
+	"devDependencies": {
+		"@types/node": "^16.11.27",
+		"@types/ramda": "^0.28.11",
+		"@types/react": "^18.0.5",
+		"@types/react-dom": "^18.0.1",
+		"@typescript-eslint/eslint-plugin": "^5.20.0",
+		"@typescript-eslint/parser": "^5.20.0",
+		"eslint": "^8.13.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"eslint-plugin-react-hooks": "^4.4.0",
+		"prettier": "^2.6.2",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0",
+		"typescript": "^4.6.3"
+	},
+	"dependencies": {
+		"ramda": "^0.28.0"
+	}
 }

@@ -91,6 +91,11 @@ const getOnKeyDown = (
 
     // Used to check the key strokes in order and compare it to the keys string defined in the hook
     const handleKeySequence = (event: KeyboardEvent, hotkeys: string[]) => {
+        const key = event.key
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/\p{Diacritic}/gu, "");
+
         clearTimeout(sequenceTimer);
 
         // The key strokes sequence becomes invalid after KEY_SEQUENCE_TIMEOUT
@@ -99,7 +104,7 @@ const getOnKeyDown = (
         }, KEY_SEQUENCE_TIMEOUT);
 
         // Add new key stroke to the registered sequence
-        keySequence.push(event.key.toLowerCase());
+        keySequence.push(key);
 
         // Check key strokes in order
         if (isArraysEqualInOrder(keySequence, hotkeys)) {
@@ -123,6 +128,7 @@ const getOnKeyDown = (
         const isAllModKeysPressed = deepDifference(modKeys, pressedModKeys).length === 0;
 
         // Check that the last key stroke of the sequence is the correct sign, like in Control+Shift+C
+        // TODO key
         if (isAllModKeysPressed && event.key.toLowerCase() === actionKey?.toLowerCase()) {
             callback(event);
         }
@@ -148,6 +154,7 @@ const getOnKeyDown = (
             // Handle modifier key combos
             handleModifierCombo(event, hotkeysArray);
         } else {
+            // TODO key
             if (hotkeysArray.length > 1) {
                 // Handle key sequences
                 handleKeySequence(event, hotkeysArray);

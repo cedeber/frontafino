@@ -1,13 +1,16 @@
 {
-  "extends": "./tsconfig.json",
-  "exclude": ["**/*.spec.ts", "**/*.test.ts"],
-  "compilerOptions": {
-    "noEmit": false,
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-    // "declarationDir": "./types",
-    "outDir": "build"
-  },
-  "include": ["src"]
+	"extends": "./tsconfig.json",
+	"exclude": ["**/*.spec.ts", "**/*.test.ts"],
+	"compilerOptions": {
+		"composite": false,
+		"declaration": true,
+		"declarationMap": true,
+		"incremental": false,
+		"moduleResolution": "Node",
+		"noEmit": false,
+		"outDir": "dist",
+		"sourceMap": true
+		// "declarationDir": "./types",
+	},
+	"include": ["src"]
 }

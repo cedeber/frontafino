@@ -1,5 +1,6 @@
 # Build
-build/
+dist/
+*.tsbuildinfo
 
 # IDE
 .idea
@@ -7,12 +8,6 @@ build/
 
 # Node.js
 node_modules
-
-# Jest
-/coverage/
-
-# Docusaurus
-/.docusaurus/
 
 # OS
 .DS_Store

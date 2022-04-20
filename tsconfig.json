@@ -1,22 +1,29 @@
 {
-  "extends": "@tsconfig/docusaurus/tsconfig.json",
-  "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": true,
-    "skipLibCheck": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node", // "node12" after typescript@4.5+ to support the "exports" in package.json
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "importHelpers": true,
-    "removeComments": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
-  },
-  "include": ["src", "docs"]
+	"compilerOptions": {
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"checkJs": true,
+		"composite": true,
+		"declaration": true,
+		"declarationMap": true,
+		"esModuleInterop": false,
+		"forceConsistentCasingInFileNames": true,
+		"importHelpers": true,
+		"importsNotUsedAsValues": "error",
+		"incremental": true,
+		"isolatedModules": true,
+		"jsx": "react-jsx",
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"module": "ESNext",
+		"moduleResolution": "NodeNext",
+		"noEmit": true,
+		"removeComments": true,
+		"resolveJsonModule": true,
+		"rootDir": "src",
+		"skipLibCheck": false,
+		"sourceMap": true,
+		"strict": true,
+		"target": "ESNext"
+	},
+	"include": ["src"]
 }
