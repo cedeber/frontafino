@@ -3,10 +3,11 @@ import { dropRepeats, flatten, join, map, split, trim } from "ramda";
 type Obj = { [name: string]: boolean };
 type T = string | number | { [key: string]: boolean };
 
-const classNames = (...args: Array<T | T[]>): string => {
+const classNames = (...args: Array<T | T[] | undefined | null>): string => {
 	let classes: string[] = [];
 
 	for (const arg of args) {
+		// Keep it falsy for undefined, null, empty string...
 		if (!arg) continue;
 
 		if (typeof arg === "string" || typeof arg === "number") {
