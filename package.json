@@ -3,9 +3,6 @@
 	"version": "1.0.0-beta.8",
 	"description": "Utilities and React Hooks",
   "type": "module",
-	"module": "dist/index.js",
-	"typings": "dist/index.d.ts",
-	"source": "src/index.ts",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
