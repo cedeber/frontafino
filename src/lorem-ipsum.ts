@@ -23,44 +23,44 @@ const words = [
  * @param maxWords Maximum amount of words per sentence
  */
 const lipsum = (
-    minSentences = 1,
-    maxSentences = minSentences,
-    minWords = 5,
-    maxWords = minWords,
+	minSentences = 1,
+	maxSentences = minSentences,
+	minWords = 5,
+	maxWords = minWords,
 ): string[][] => {
-    const lorem: string[][] = [];
-    const numberOfSentences = randomIntIncl(minSentences, maxSentences);
+	const lorem: string[][] = [];
+	const numberOfSentences = randomIntIncl(minSentences, maxSentences);
 
-    for (let i = 0; i < numberOfSentences; i += 1) {
-        const count = randomIntIncl(minWords, maxWords);
-        const wordIndex = randomIntIncl(0, words.length - count - 1);
+	for (let i = 0; i < numberOfSentences; i += 1) {
+		const count = randomIntIncl(minWords, maxWords);
+		const wordIndex = randomIntIncl(0, words.length - count - 1);
 
-        lorem.push(words.slice(wordIndex, wordIndex + count));
-    }
+		lorem.push(words.slice(wordIndex, wordIndex + count));
+	}
 
-    return lorem;
+	return lorem;
 };
 
 /**
  * Turn array of words into sentences
  */
 const toText = (data: string[][]): string => {
-    let paragraph = "";
+	let paragraph = "";
 
-    data.forEach((sentence) => {
-        sentence.forEach((word, index) => {
-            if (index < 1) {
-                word = word.substr(0, 1).toUpperCase() + word.substr(1);
-            }
+	data.forEach((sentence) => {
+		sentence.forEach((word, index) => {
+			if (index < 1) {
+				word = word.substr(0, 1).toUpperCase() + word.substr(1);
+			}
 
-            // remove "," and "."
-            paragraph += ` ${word.replace(/[.,]/g, "")}`;
-        });
+			// remove "," and "."
+			paragraph += ` ${word.replace(/[.,]/g, "")}`;
+		});
 
-        paragraph += `.`;
-    });
+		paragraph += `.`;
+	});
 
-    return paragraph.trim();
+	return paragraph.trim();
 };
 
 export { lipsum, toText };
