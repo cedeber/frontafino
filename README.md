@@ -9,7 +9,7 @@ Frontafino is the missing part in my daily web developer life.
 
 This collection uses the new `"exports"` entry in `package.json` and in order to use types,
 you need to configure TypeScript `tsconfig.json` with `"moduleResolution": "node12"` (or `nodenext`).
-This is only available from [TypeScript 4.5](https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/).
+This is only available from [TypeScript 4.7](https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/).
 
 ## License
 

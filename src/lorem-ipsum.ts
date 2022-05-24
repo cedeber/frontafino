@@ -1,4 +1,4 @@
-import { randomIntIncl } from "./math";
+import { randomIntIncl } from "./math.js";
 
 // prettier-ignore
 const words = [

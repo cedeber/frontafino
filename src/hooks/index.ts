@@ -1,6 +1,6 @@
-export { useDistance } from "./useDistance";
-export { useForwardedRef } from "./useForwardedRef";
-export { useHotKeys } from "./useHotKeys";
-export { useLongLoading, useVisuallyLoading } from "./useLoading";
-export { useURLSearchParamsList } from "./useUrl";
-export { useResizeObserver } from "./useResizeObserver";
+export { useDistance } from "./useDistance.js";
+export { useForwardedRef } from "./useForwardedRef.js";
+export { useHotKeys } from "./useHotKeys.js";
+export { useLongLoading, useVisuallyLoading } from "./useLoading.js";
+export { useResizeObserver } from "./useResizeObserver.js";
+export { useURLSearchParamsList } from "./useUrl.js";

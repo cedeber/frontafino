@@ -1,4 +1,4 @@
-import { readCookie, writeCookie } from "./cookie-portal";
+import { readCookie, writeCookie } from "./cookie-portal.js";
 
 const storage = getProxy(localStorage);
 const session = getProxy(sessionStorage);
