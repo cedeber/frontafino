@@ -9,7 +9,7 @@ function throttle(func: UnknownFn, delay: number): (...rest: any[]) => unknown {
 	return function (this: unknown, ...args: any[]): unknown {
 		if (performance.now() - start > delay) {
 			start = performance.now();
-
+			// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 			return func.call(this, ...args);
 		}
 	};
@@ -23,6 +23,7 @@ function debounce(func: UnknownFn, delay: number): (...rest: any[]) => void {
 
 	return function (this: unknown, ...args: any[]) {
 		clearTimeout(timer);
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 		timer = window.setTimeout(func.bind(this, ...args), delay);
 	};
 }

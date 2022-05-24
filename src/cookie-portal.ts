@@ -23,6 +23,7 @@ export function readCookie(name: string): string | Record<string, unknown> {
 			cookie = decode(cookie);
 
 			try {
+				// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 				cookie = JSON.parse(cookie);
 			} catch (e) {
 				/* empty */

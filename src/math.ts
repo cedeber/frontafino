@@ -46,7 +46,7 @@ const randomToInteger = (fn: typeof random) => {
  * @param min (included)
  * @param max (excluded)
  */
-const randomIntExcl = (min = 0, max = 9): number => randomToInteger(random)(min, max, false);
+const randomIntExcl = (min = 0, max = 10): number => randomToInteger(random)(min, max, false);
 
 /**
  * Generated a random integer. Max included.
