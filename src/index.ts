@@ -5,7 +5,6 @@ export { debounce, throttle } from "./debounce-throttle.js";
 export { EventEmitter } from "./event-emitter.js";
 export { getImageData } from "./image-data.js";
 export { locale } from "./locale.js";
-export { lipsum, toText } from "./lorem-ipsum.js";
 export { normalize, random, randomIntExcl, randomIntIncl, uid, uuidv4 } from "./math.js";
 export { session, storage } from "./proxy-storage.js";
 export { shorten } from "./shorten.js";
