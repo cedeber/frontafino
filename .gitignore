@@ -5,6 +5,7 @@ dist/
 # IDE
 .idea
 .vscode
+.fleet
 
 # Node.js
 node_modules
