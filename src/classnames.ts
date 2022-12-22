@@ -1,3 +1,4 @@
+// import { dropRepeats, flatten, join, map, split, trim } from "https://x.nest.land/ramda@0.27.2/mod.ts";
 import { dropRepeats, flatten, join, map, split, trim } from "ramda";
 
 type Obj = { [name: string]: boolean };

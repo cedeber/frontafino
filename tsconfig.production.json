@@ -6,7 +6,6 @@
 		"declaration": true,
 		"declarationMap": true,
 		"incremental": false,
-		"moduleResolution": "Node",
 		"noEmit": false,
 		"outDir": "dist",
 		"sourceMap": true
