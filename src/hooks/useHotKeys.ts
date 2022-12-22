@@ -70,7 +70,7 @@ const useHotKeys = (
 
 	useEffect(() => {
 		// ref may be null. React needs to render first.
-		const element = fRef === undefined ? window : fRef?.current;
+		const element = ref === undefined ? window : fRef?.current;
 
 		if (element) element.addEventListener("keydown", onKeyDown, { capture: true });
 
