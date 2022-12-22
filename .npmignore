@@ -8,3 +8,4 @@ tests
 /.*rc*
 *.md
 *lock*
+deno.json
