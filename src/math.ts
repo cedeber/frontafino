@@ -8,7 +8,13 @@
  * @return Transformed value
  * @example normalize(0.5, -1, 1, 10, 20); // 17.5
  */
-const normalize = (v: number, vmin: number, vmax: number, tmin: number, tmax: number): number => {
+export const normalize = (
+	v: number,
+	vmin: number,
+	vmax: number,
+	tmin: number,
+	tmax: number,
+): number => {
 	const NV = Math.max(Math.min(v, vmax), vmin);
 	const DV = vmax - vmin;
 	const PC = (NV - vmin) / DV;
@@ -22,7 +28,7 @@ const normalize = (v: number, vmin: number, vmax: number, tmin: number, tmax: nu
  * @param [max=1] - Maximum value
  * @returns float between min and max
  */
-const random = (min = 0, max = 1): number => {
+export const random = (min = 0, max = 1): number => {
 	const mn = Math.min(min, max);
 	const mx = Math.max(min, max);
 
@@ -46,19 +52,20 @@ const randomToInteger = (fn: typeof random) => {
  * @param min (included)
  * @param max (excluded)
  */
-const randomIntExcl = (min = 0, max = 10): number => randomToInteger(random)(min, max, false);
+export const randomIntExcl = (min = 0, max = 10): number =>
+	randomToInteger(random)(min, max, false);
 
 /**
  * Generated a random integer. Max included.
  * @param min (included)
  * @param max (included)
  */
-const randomIntIncl = (min = 0, max = 9): number => randomToInteger(random)(min, max, true);
+export const randomIntIncl = (min = 0, max = 9): number => randomToInteger(random)(min, max, true);
 
 /**
  * Unsafe uid
  */
-const uid = (): string => {
+export const uid = (): string => {
 	return Math.random().toString(36).substr(2);
 };
 
@@ -66,7 +73,7 @@ const uid = (): string => {
  * UUID v4
  * Use crypto.randomUUID() once available
  */
-const uuidv4 = (): string => {
+export const uuidv4 = (): string => {
 	const hex: string[] = [];
 
 	for (let i = 0; i < 256; i++) {
@@ -105,5 +112,3 @@ const uuidv4 = (): string => {
 
 	return makeUUID();
 };
-
-export { normalize, random, randomIntIncl, randomIntExcl, uid, uuidv4 };

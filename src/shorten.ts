@@ -1,7 +1,11 @@
 /**
  * Returns shorten text
  */
-const shorten = (wordsNumber = 15, endChars = "…", splitter = " "): ((text: string) => string) => {
+export const shorten = (
+	wordsNumber = 15,
+	endChars = "…",
+	splitter = " ",
+): (text: string) => string => {
 	return function (text: string): string {
 		const textArray = text.split(splitter, wordsNumber);
 
@@ -14,5 +18,3 @@ const shorten = (wordsNumber = 15, endChars = "…", splitter = " "): ((text: st
 		return textArray.join(splitter);
 	};
 };
-
-export { shorten };

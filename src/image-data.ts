@@ -1,4 +1,4 @@
-const getImageData = (src: string, size?: number): Promise<ImageData> => {
+export const getImageData = (src: string, size?: number): Promise<ImageData> => {
 	return new Promise((resolve, reject) => {
 		const image = new Image();
 		const canvas = document.createElement("canvas");
@@ -25,5 +25,3 @@ const getImageData = (src: string, size?: number): Promise<ImageData> => {
 		image.src = src;
 	});
 };
-
-export { getImageData };

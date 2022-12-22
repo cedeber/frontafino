@@ -3,7 +3,7 @@ type UnknownFn = (...args: any[]) => unknown;
 /**
  * Throttle a function
  */
-function throttle(func: UnknownFn, delay: number): (...rest: any[]) => unknown {
+export function throttle(func: UnknownFn, delay: number): (...rest: any[]) => unknown {
 	let start = performance.now();
 
 	return function (this: unknown, ...args: any[]): unknown {
@@ -18,14 +18,12 @@ function throttle(func: UnknownFn, delay: number): (...rest: any[]) => unknown {
 /**
  * Debounce a function
  */
-function debounce(func: UnknownFn, delay: number): (...rest: any[]) => void {
+export function debounce(func: UnknownFn, delay: number): (...rest: any[]) => void {
 	let timer: number;
 
 	return function (this: unknown, ...args: any[]) {
 		clearTimeout(timer);
 		// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-		timer = window.setTimeout(func.bind(this, ...args), delay);
+		timer = self.window.setTimeout(func.bind(this, ...args), delay);
 	};
 }
-
-export { throttle, debounce };

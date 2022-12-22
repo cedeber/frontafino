@@ -31,7 +31,7 @@ let runningId: number | undefined;
  * Create a new Worker to receive task
  * @param path Path of the worker
  */
-const workerManager = (path: string) => {
+export const workerManager = (path: string) => {
 	/**
 	 * Register a new task
 	 * @todo Check parameters
@@ -52,7 +52,7 @@ const workerManager = (path: string) => {
 		});
 
 		if (!runningId) {
-			runningId = window.setInterval(checkForTasks, delay);
+			runningId = self.window.setInterval(checkForTasks, delay);
 		}
 	};
 };
@@ -145,5 +145,3 @@ function checkForTasks() {
 
 	cleanupWorkers();
 }
-
-export { workerManager };

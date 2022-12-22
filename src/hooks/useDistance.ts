@@ -66,8 +66,8 @@ const useDistance = <T extends Element>(
 			setDistance(getBoxDistance(elBox, event));
 		}, 85); // every 5 frames
 
-		window.addEventListener("pointermove", listener);
-		return () => window.removeEventListener("pointermove", listener);
+		self.window.addEventListener("pointermove", listener);
+		return () => self.window.removeEventListener("pointermove", listener);
 	}, [elRef]);
 
 	return distance;

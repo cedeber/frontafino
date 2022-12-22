@@ -8,12 +8,12 @@ function useVisuallyLoading(isLoading: boolean, debounceStart = 0, minimumTimeou
 
 	useEffect(() => {
 		// reset loading
-		window.clearTimeout(visuallyLoadingTimeoutRef.current);
+		self.window.clearTimeout(visuallyLoadingTimeoutRef.current);
 
 		if (isLoading) {
 			// start the loading, debounced if set
 			timeoutStartRef.current = Date.now();
-			visuallyLoadingTimeoutRef.current = window.setTimeout(
+			visuallyLoadingTimeoutRef.current = self.window.setTimeout(
 				() => setVisuallyLoading(true),
 				debounceStart,
 			);
@@ -23,7 +23,7 @@ function useVisuallyLoading(isLoading: boolean, debounceStart = 0, minimumTimeou
 			const remainingTime = timeoutStartRef.current
 				? Math.max(0, minimumTimeout - (now - timeoutStartRef.current))
 				: 0;
-			visuallyLoadingTimeoutRef.current = window.setTimeout(
+			visuallyLoadingTimeoutRef.current = self.window.setTimeout(
 				() => setVisuallyLoading(false),
 				remainingTime,
 			);
@@ -39,15 +39,18 @@ const useLongLoading = (isLoading: boolean, delay = 1500, minimumTimeout = 700):
 
 	useEffect(() => {
 		if (!isLoading) {
-			window.clearTimeout(loadingTimeoutRef.current);
+			self.window.clearTimeout(loadingTimeoutRef.current);
 			loadingTimeoutRef.current = undefined;
 			setLoadingForLong(false);
 		} else if (loadingTimeoutRef.current == undefined) {
-			loadingTimeoutRef.current = window.setTimeout(() => setLoadingForLong(true), delay);
+			loadingTimeoutRef.current = self.window.setTimeout(
+				() => setLoadingForLong(true),
+				delay,
+			);
 		}
 	}, [isLoading]);
 
 	return useVisuallyLoading(isLoadingForLong, 0, minimumTimeout);
 };
 
-export { useVisuallyLoading, useLongLoading };
+export { useLongLoading, useVisuallyLoading };

@@ -10,15 +10,16 @@ export interface VerticalState {
 	behind: boolean;
 }
 
-const verticalState = (
+export const verticalState = (
 	domElement: HTMLElement,
 	container: HTMLElement | Window = window,
 	marginTop = 0,
 	marginBottom = marginTop,
 ): VerticalState => {
 	const wTop = container === window ? window.scrollY : (container as HTMLElement).scrollTop;
-	const wHeight =
-		container === window ? window.innerHeight : (container as HTMLElement).offsetHeight;
+	const wHeight = container === window
+		? window.innerHeight
+		: (container as HTMLElement).offsetHeight;
 	const topPosition = getTopPosition(domElement, container);
 	const topProgress = getTopProgress();
 	const bottomProgress = getBottomProgress();
@@ -30,8 +31,8 @@ const verticalState = (
 		ahead: topProgress < 0,
 		entering: topProgress > 0 && topProgress < 1 && bottomProgress < 0,
 		inside: topProgress > 0 && bottomProgress < 1,
-		contained:
-			(topProgress < 1 && bottomProgress > 0) || (topProgress > 1 && bottomProgress < 0),
+		contained: (topProgress < 1 && bottomProgress > 0) ||
+			(topProgress > 1 && bottomProgress < 0),
 		exiting: topProgress > 1 && bottomProgress > 0 && bottomProgress < 1,
 		behind: bottomProgress > 1,
 	};
@@ -61,7 +62,7 @@ const verticalState = (
  * Get top position of an element in the page
  * @returns {number} The top position in pixels
  */
-const getTopPosition = (
+export const getTopPosition = (
 	domElement: HTMLElement,
 	boundary: HTMLElement | Window = window,
 ): number => {
@@ -78,5 +79,3 @@ const getTopPosition = (
 
 	return top;
 };
-
-export { verticalState, getTopPosition };

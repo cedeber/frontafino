@@ -3,7 +3,7 @@ import { dropRepeats, flatten, join, map, split, trim } from "ramda";
 type Obj = { [name: string]: boolean };
 type T = string | number | { [key: string]: boolean };
 
-const classNames = (...args: Array<T | T[] | undefined | null>): string => {
+export const classNames = (...args: Array<T | T[] | undefined | null>): string => {
 	let classes: string[] = [];
 
 	for (const arg of args) {
@@ -28,5 +28,3 @@ const classNames = (...args: Array<T | T[] | undefined | null>): string => {
 
 	return join(" ", dropRepeats(map(trim, classes)));
 };
-
-export { classNames };

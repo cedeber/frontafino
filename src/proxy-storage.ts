@@ -1,7 +1,7 @@
 import { readCookie, writeCookie } from "./cookie-portal.js";
 
-const storage = getProxy(localStorage);
-const session = getProxy(sessionStorage);
+export const storage = getProxy(localStorage);
+export const session = getProxy(sessionStorage);
 
 function getProxy(webStorage: Storage): Record<string, unknown> {
 	const hasStorage = hasStorageSupport(webStorage);
@@ -44,9 +44,7 @@ function hasStorageSupport(webStorage: Storage): boolean {
 		webStorage.removeItem("__storage__");
 
 		return true;
-	} catch (e) {
+	} catch {
 		return false;
 	}
 }
-
-export { storage, session };

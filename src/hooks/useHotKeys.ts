@@ -12,10 +12,10 @@ type KeyboardEventHandler = (event: KeyboardEvent) => void;
  * @see https://github.com/palantir/blueprint/blob/develop/packages/core/src/hooks/hotkeys/useHotkeys.ts (v4)
  */
 
-// After KEY_SEQUENCE_TIMEOUT we consider the key stroke sequence invalid
+// After KEY_SEQUENCE_TIMEOUT we consider the keystroke sequence invalid
 const KEY_SEQUENCE_TIMEOUT = 1000;
 
-// Use ESCAPE_HATCH_KEY ot react to all key strokes
+// Use ESCAPE_HATCH_KEY ot react to all keystrokes
 const ESCAPE_HATCH_KEY = "*";
 
 // TODO Probably also need support for iPad + keyboard, etc.
@@ -89,7 +89,7 @@ const getOnKeyDown = (
 	let sequenceTimer: number;
 	let keySequence: string[] = [];
 
-	// Used to check the key strokes in order and compare it to the keys string defined in the hook
+	// Used to check the keystrokes in order and compare it to the keys string defined in the hook
 	const handleKeySequence = (event: KeyboardEvent, hotkeys: string[]) => {
 		const key = event.key
 			.toLowerCase()
@@ -98,15 +98,15 @@ const getOnKeyDown = (
 
 		clearTimeout(sequenceTimer);
 
-		// The key strokes sequence becomes invalid after KEY_SEQUENCE_TIMEOUT
-		sequenceTimer = window.setTimeout(() => {
+		// The keystrokes sequence becomes invalid after KEY_SEQUENCE_TIMEOUT
+		sequenceTimer = self.window.setTimeout(() => {
 			keySequence = []; // reset
 		}, KEY_SEQUENCE_TIMEOUT);
 
-		// Add new key stroke to the registered sequence
+		// Add new keystroke to the registered sequence
 		keySequence.push(key);
 
-		// Check key strokes in order
+		// Check keystrokes in order
 		if (isArraysEqualInOrder(keySequence, hotkeys)) {
 			keySequence = []; // reset
 			clearTimeout(sequenceTimer);
@@ -127,7 +127,7 @@ const getOnKeyDown = (
 		// We don't compare the length, as [Control, Control] === [Control]. We don't care about double modKeys.
 		const isAllModKeysPressed = deepDifference(modKeys, pressedModKeys).length === 0;
 
-		// Check that the last key stroke of the sequence is the correct sign, like in Control+Shift+C
+		// Check that the last keystroke of the sequence is the correct sign, like in Control+Shift+C
 		// TODO key
 		if (isAllModKeysPressed && event.key.toLowerCase() === actionKey?.toLowerCase()) {
 			callback(event);
@@ -210,7 +210,7 @@ const getHotkeysArray = (hotkeys: string): string[] => {
 	 * it signifies a space key and not a delimiter.
 	 */
 	return [...(hkeys.match(/[^\s"']+|"([^"]*)"|'([^']*)'/g) || [])].map((key) =>
-		key.replace(/(["']).*?(["'])/, " "),
+		key.replace(/(["']).*?(["'])/, " ")
 	);
 };
 
@@ -218,7 +218,7 @@ const getHotkeysArray = (hotkeys: string): string[] => {
 const modifierKeyPressed = (event: KeyboardEvent): boolean =>
 	event.altKey || event.ctrlKey || event.shiftKey || event.metaKey;
 
-// Map key stroke to the corresponding keys string names
+// Map keystroke to the corresponding keys string names
 const getPressedModifierKeys = (event: KeyboardEvent, convertForMac: boolean): string[] => {
 	const doMacConvert = IS_MAC && convertForMac;
 	const modifiers: string[] = [];

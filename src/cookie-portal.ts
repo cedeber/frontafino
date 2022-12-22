@@ -1,6 +1,6 @@
 /** @see Based on https://github.com/js-cookie/js-cookie */
 
-import { clone } from "ramda";
+import { deepClone } from "./clone.js";
 
 /**
  * @param name The name of the property to read from this document's cookies
@@ -25,7 +25,7 @@ export function readCookie(name: string): string | Record<string, unknown> {
 			try {
 				// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 				cookie = JSON.parse(cookie);
-			} catch (e) {
+			} catch {
 				/* empty */
 			}
 
@@ -34,7 +34,7 @@ export function readCookie(name: string): string | Record<string, unknown> {
 			if (name === key) {
 				break;
 			}
-		} catch (e) {
+		} catch {
 			/* empty */
 		}
 	}
@@ -52,8 +52,8 @@ export function writeCookie(
 	value: string | number | Record<string, unknown>,
 	attributes: { [key: string]: number | string | boolean } = {},
 ): string {
-	const clonedAttributes = Object.assign({ path: "/" }, clone(attributes));
-	let clonedValue = clone(value);
+	const clonedAttributes = Object.assign({ path: "/" }, deepClone(attributes));
+	let clonedValue = deepClone(value);
 
 	if (typeof clonedAttributes.expires === "number") {
 		const expires = new Date(Number(new Date()) + clonedAttributes.expires * 864e5);
@@ -67,7 +67,7 @@ export function writeCookie(
 			if (/^[{[]/.test(result)) {
 				clonedValue = result;
 			}
-		} catch (e) {
+		} catch {
 			/* empty */
 		}
 	}

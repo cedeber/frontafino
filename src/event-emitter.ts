@@ -1,6 +1,6 @@
 type UnknownFn = (...args: unknown[]) => unknown;
 
-class EventEmitter {
+export class EventEmitter {
 	listeners: Map<string, UnknownFn[]> = new Map();
 	onceLabels: Set<string> = new Set(); // all listeners names that will trigger only once
 
@@ -92,5 +92,3 @@ class EventEmitter {
 		}
 	}
 }
-
-export { EventEmitter };

@@ -5,7 +5,7 @@ type Fn = (values: Data) => ProxyConstructor;
 /**
  * Simulate an Enum data type
  */
-const Enum = (values: Data): ProxyConstructor => {
+export const Enum = (values: Data): ProxyConstructor => {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const handler: ProxyHandler<any> = {
 		set() {
@@ -29,7 +29,7 @@ const Enum = (values: Data): ProxyConstructor => {
 /**
  * Convert the Enum to have Symbols as values
  */
-const toSymbol = (fn: Fn) => {
+export const toSymbol = (fn: Fn) => {
 	return function (values: Data): ProxyConstructor {
 		const convertedValues = transformToSymbol(transformToObject(values));
 
@@ -42,7 +42,7 @@ const toSymbol = (fn: Fn) => {
  * @param {function(Object): Proxy} fn
  * @returns {function(Object): Proxy}
  */
-const asList = (fn: Fn) => {
+export const asList = (fn: Fn) => {
 	return function (...values: string[]): ProxyConstructor {
 		return fn(values);
 	};
@@ -81,5 +81,3 @@ const transformToObject = (data: Data): Obj => {
 
 	return newObj;
 };
-
-export { Enum, toSymbol, asList };
