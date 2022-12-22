@@ -1,6 +1,6 @@
 {
 	"name": "@cedeber/frontafino",
-	"version": "1.0.0-beta.10",
+	"version": "1.1.0-beta.1",
 	"description": "Utilities and React Hooks",
 	"type": "module",
 	"exports": {
@@ -34,16 +34,9 @@
 	"homepage": "https://github.com/cedeber/frontafino#readme",
 	"devDependencies": {
 		"@types/node": "^16.11.27",
-		"@types/ramda": "^0.28.11",
+		"@types/ramda": "^0.28.20",
 		"@types/react": "^18.0.5",
 		"@types/react-dom": "^18.0.1",
-		"@typescript-eslint/eslint-plugin": "^5.20.0",
-		"@typescript-eslint/parser": "^5.20.0",
-		"eslint": "^8.13.0",
-		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-prettier": "^4.0.0",
-		"eslint-plugin-react-hooks": "^4.4.0",
-		"prettier": "^2.6.2",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
 		"typescript": "^4.7.2"

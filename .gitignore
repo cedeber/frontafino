@@ -1,6 +1,7 @@
 # Build
 dist/
 *.tsbuildinfo
+deno.lock
 
 # IDE
 .idea

@@ -1,0 +1,32 @@
+{
+	"compilerOptions": {
+		"lib": ["deno.ns", "dom", "dom.iterable", "dom.asynciterable", "esnext"],
+		"strict": true
+	},
+	"lint": {
+		"files": {
+			"include": ["src/"]
+		},
+		"rules": {
+			"tags": ["recommended"],
+			"include": [],
+			"exclude": ["no-explicit-any"]
+		}
+	},
+	"fmt": {
+		"files": {
+			"include": ["src/", "tests/"]
+		},
+		"options": {
+			"useTabs": true,
+			"lineWidth": 100,
+			"indentWidth": 4,
+			"singleQuote": false
+		}
+	},
+	"test": {
+		"files": {
+			"include": ["tests/"]
+		}
+	}
+}
