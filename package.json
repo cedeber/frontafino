@@ -2,7 +2,7 @@
 	"name": "@cedeber/frontafino",
 	"version": "1.0.0-beta.10",
 	"description": "Utilities and React Hooks",
-  "type": "module",
+	"type": "module",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
