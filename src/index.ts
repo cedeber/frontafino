@@ -10,3 +10,5 @@ export { session, storage } from "./proxy-storage.js";
 export { shorten } from "./shorten.js";
 export { getTopPosition, verticalState } from "./vertical-state.js";
 export { workerManager } from "./worker-manager.js";
+export { deepClone } from "./clone.js";
+export { flatten } from "./flatten.js";
