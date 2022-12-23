@@ -5,7 +5,6 @@ deno.lock
 
 # IDE
 .idea
-.vscode
 .fleet
 
 # Node.js
