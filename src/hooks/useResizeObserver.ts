@@ -9,7 +9,7 @@ interface Rect extends Omit<DOMRect, "toJson"> {
 }
 
 export const useResizeObserver = (ref: RefObject<Element>): Rect | undefined => {
-	const [boxSize, setBoxSize] = useState<DOMRect>();
+	const [boxSize, setBoxSize] = useState<Rect>();
 
 	const observer = useRef(
 		new ResizeObserver((entries) => {

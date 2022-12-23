@@ -1,4 +1,4 @@
-export const useURLSearchParamSingleValue = (key: string): string | undefined => {
+export const useURLSearchParamSingleValue = (key: string): string | null => {
 	const searchParams = new URLSearchParams(window.location.search);
 	return searchParams.get(key) ?? null;
 };
