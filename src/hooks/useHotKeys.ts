@@ -37,7 +37,7 @@ const IS_MAC = navigator.platform.toLowerCase().indexOf("mac") >= 0;
  * @param continuePropagation Continue propagation of the keyboard event
  * @param convertForMac Mac support to convert "Meta" to "Control" like on PC (the usual way of using Mac keyboards)
  */
-const useHotKeys = (
+export const useHotKeys = (
 	keys: string,
 	callback: KeyboardEventHandler,
 	ref?: MutableRefObject<Element> | ForwardedRef<Element>,
@@ -234,5 +234,3 @@ const getPressedModifierKeys = (event: KeyboardEvent, convertForMac: boolean): s
 // Compare array in order: [1, 2] != [2, 1]
 const isArraysEqualInOrder = (arr1: string[], arr2: string[]) =>
 	arr1.length === arr2.length && arr1.every((item, i) => item === arr2[i]);
-
-export { useHotKeys };

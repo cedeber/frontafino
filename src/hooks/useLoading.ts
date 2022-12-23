@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-function useVisuallyLoading(isLoading: boolean, debounceStart = 0, minimumTimeout = 1000): boolean {
+export function useVisuallyLoading(
+	isLoading: boolean,
+	debounceStart = 0,
+	minimumTimeout = 1000,
+): boolean {
 	// fake loading for at least [minimumTimeout] ms
 	const [isVisuallyLoading, setVisuallyLoading] = useState(false);
 	const visuallyLoadingTimeoutRef = useRef(0);
@@ -33,7 +37,7 @@ function useVisuallyLoading(isLoading: boolean, debounceStart = 0, minimumTimeou
 	return isVisuallyLoading;
 }
 
-const useLongLoading = (isLoading: boolean, delay = 1500, minimumTimeout = 700): boolean => {
+export const useLongLoading = (isLoading: boolean, delay = 1500, minimumTimeout = 700): boolean => {
 	const [isLoadingForLong, setLoadingForLong] = useState(false);
 	const loadingTimeoutRef = useRef<number>();
 
@@ -52,5 +56,3 @@ const useLongLoading = (isLoading: boolean, delay = 1500, minimumTimeout = 700):
 
 	return useVisuallyLoading(isLoadingForLong, 0, minimumTimeout);
 };
-
-export { useLongLoading, useVisuallyLoading };

@@ -1,6 +1,14 @@
 import { RefObject, useEffect, useRef, useState } from "react";
 
-const useResizeObserver = (ref: RefObject<Element>): DOMRect | undefined => {
+interface Rect extends Omit<DOMRect, "toJson"> {
+	/** This is an Integer, use Math.round() with other values to compare. */
+	scrollWidth: number;
+	/** This is an Integer, use Math.round() with other values to compare. */
+	scrollHeight: number;
+	widthOverflow: boolean;
+}
+
+export const useResizeObserver = (ref: RefObject<Element>): Rect | undefined => {
 	const [boxSize, setBoxSize] = useState<DOMRect>();
 
 	const observer = useRef(
@@ -8,7 +16,12 @@ const useResizeObserver = (ref: RefObject<Element>): DOMRect | undefined => {
 			for (const entry of entries) {
 				// usually a single one as we pass a single ref
 				// @see `contentBoxSize` for later
-				setBoxSize(entry.contentRect);
+				setBoxSize({
+					...(entry.contentRect.toJSON() as Omit<DOMRect, "toJson">),
+					scrollWidth: entry.target.scrollWidth,
+					scrollHeight: entry.target.scrollHeight,
+					widthOverflow: entry.target.scrollWidth > Math.round(entry.contentRect.width),
+				});
 			}
 		}),
 	);
@@ -36,5 +49,3 @@ const useResizeObserver = (ref: RefObject<Element>): DOMRect | undefined => {
 
 	return boxSize;
 };
-
-export { useResizeObserver };
